@@ -1,0 +1,841 @@
+﻿@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Inter:wght@100..900&family=Lato:wght@100..900&family=Roboto:wght@100..900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #F2F9F8;
+  --foreground: #000000;
+  --primary-color: #006D5B;
+  --primary-light: #E4F1EF;
+  --text-dark: #091E29;
+}
+
+[data-theme="dark"] {
+  --background: #121212;
+  --foreground: #f3f4f6;
+  --primary-color: #009688;
+  --primary-light: #1e293b;
+  --text-dark: #e5e7eb;
+}
+
+body {
+  font-family: "Inter", sans-serif !important;
+  background-color: var(--background) !important;
+  color: var(--foreground) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+body{
+    font-family: "Inter", sans-serif !important;
+    background-color: #F2F9F8 !important;
+}
+.header_blk{
+    background: #006D5B;
+    border: 1px solid #CDCDCD;
+    padding: 5px 0px;
+}
+.align-items_center{
+    align-items: center;
+}
+.fw_med{
+    font-weight: 500 !important;
+}
+.lh_16{
+    line-height: 16px;
+}
+.fs_12{
+    font-size: 12px;
+}
+.fs_14{
+    font-size: 14px;
+}
+.mr_7{
+    margin-right: 7px;
+}
+.mr_15{
+    margin-right: 15px;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.header_below_blk{
+    padding: 8px 0px 4px;
+    box-shadow: 0px 4px 26px 13px #DBE7EE40;
+    background-color: #FFFFFF !important;
+}
+.header_below_blk .container{
+    align-items: center ;
+}
+.nav_tabs{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+}
+.nav-item{
+    border-radius: 4px;
+    padding: 6px 16px 5px;
+    color: #000000; 
+    text-decoration: none;
+}
+.nav-item.active{
+    background-color: #006D5B;
+    color: #FFFFFF;
+}
+.mr_20{
+    margin-right: 20px; 
+}
+.animation_txt_blk .scrollable_ft_txt {
+    font-weight: 400;
+    line-height: 22px;
+    padding: 6px 0px;
+    width: max-content;
+    position: absolute; 
+    animation-name: scroLLLeft ;
+    animation-duration: 18s ;
+    animation-timing-function: linear ;
+    animation-iteration-count: infinite ; 
+}
+@keyframes scroLLLeft {
+    from {
+        left: 100%; 
+    }
+    to {
+        left: -100%; 
+    }
+}
+.animation_txt_blk {
+    background: #006D5BA6;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+    height: 37px;
+    margin-top: -30px;
+}
+.banner-section{
+    position: relative;
+    min-height: calc(100vh - 114px) !important; 
+}
+/* .banner-section#carouselExample{
+    min-height: calc(100vh - 114px) !important;
+} */
+div#carouselExample {
+    min-height: calc(100vh - 114px);
+}
+.banner-section .carousel-inner{
+    min-height: calc(100vh - 114px);
+}
+.banner-section .carousel-item img{
+    min-height: calc(100vh - 114px);
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.banner-section .carousel-item .container {
+    z-index: 3;
+    position: relative;
+    min-height: calc(100vh - 114px);
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+.banner-section .carousel-caption {
+    display: flex;
+    width: 53%;
+    align-items: center;
+    position: static;
+} 
+.carousel-control-next, .carousel-control-prev {
+    z-index: 2 !important;
+    width: 5% !important;
+}
+.img_vh{
+    object-fit: cover !important;
+}
+.mb_0{
+    margin-bottom: 0px;
+}
+.color_wt{
+    color: #FFFFFF;
+}
+.img_txt_blk {
+  z-index: 2;
+} 
+.img_txt_blk h1 {
+  font-size: 42px;
+  line-height: 95px;
+  width: 100%;
+  text-shadow: 0px 4px 12px #006D5B;
+}
+.img_txt_blk p {
+    font-size: 24px;
+    font-weight: 400 !important;
+    text-shadow: 0px 4px 12px #006D5B;
+}
+.harish_txt {
+  font-weight: 600;
+  font-size: 24px;
+  text-shadow: 0px 4px 12px #006D5B;
+}
+.director_txt {
+  margin-left: 12px;
+  text-shadow: 0px 4px 12px #006D5B;
+}
+.pos-relative{
+    position: relative;
+}
+.lh_35{
+     line-height: 35px;
+}
+.banner-section .carousel-inner::after {
+    content: "";
+    width: 80%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(91.48deg, rgba(0, 109, 91, 0.25) 2.9%, rgba(0, 109, 91, 0.25) 21.92%, rgba(0, 109, 91, 0.25) 36.39%, rgba(0, 109, 91, 0.25) 53.18%, rgba(0, 109, 91, 0.25) 64.69%, rgba(0, 109, 91, 0.25) 75.65%, rgba(255, 255, 255, 0) 84.18%);
+    z-index: 2;
+}
+/* .carousel-control-prev {
+    left: 20px !important;
+}
+.carousel-control-next {
+    right: 20px !important;
+} */
+/*home page ends here*/
+
+/*About us page starts here*/
+.about_us_whole_blk{
+    padding: 89px 0px 22px;
+}
+.about_us_txt_heading{
+    margin-bottom: 32px;
+    line-height: 22px;
+}
+.about_us_img{
+    height: 486px !important;
+}
+.mb_28{
+    margin-bottom: 28px;
+}
+.mt_38{
+    margin-top: 38px;
+}
+.fs_16{
+    font-size: 16px !important;
+}
+.fourblks_txt{
+    position: absolute;
+    top: 39px;
+    left: 134px;
+}
+.about_us_whole_blk .container .row{
+    margin: 0 -15px;
+}
+.about_us_whole_blk .container .row>div{
+    padding: 0 16.5px 60px;
+}
+.trauma_care_blk{
+    box-shadow: 0px 4px 26px 0px #2E31921F;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 12px 15px 22px 24px;
+}
+.group_232_img{
+    position: absolute;
+    bottom: -19px;
+    z-index: -1;
+    left: -134px;
+}
+.group_220_img{
+    position: absolute;
+    right: -20px ;
+    bottom: 14px;
+    z-index: -1;
+}
+.bold_txt{
+    font-size: 44px;
+    color: #006D5B;
+}
+.fw_400{
+    font-weight: 400;
+}
+.hosptl_dept_blk{
+     background-color: #FFFFFF !important;
+     padding: 110px 0px 84px;
+}
+.hspt_dept_hdg{
+    text-align: center;
+    margin-bottom: 43px;
+}
+.hsp_dept_img_blk{
+    position: relative;
+    box-shadow: 0px 4px 26px 4px #DBE7EE40;
+    width: 100%;
+    height: 100%;
+}
+.hspt_dept_imgs_txt {  
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 57px;
+    background: linear-gradient(180deg, rgba(0, 109, 91, 0) 0%, #006D5B 100%);
+    border-radius: 0 0 8px 8px;
+}
+.img_txt{
+    padding-bottom: 8px;
+    line-height: 19px !important;
+}
+.img_wd{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.hosptl_dept_blk .row>div{
+    padding: 0 19px 26px;
+}
+.hosptl_dept_blk .row{
+    margin: 0 -19px;
+}
+/*special care css starts here*/
+.spcl_care_serv_blk{
+   padding: 63px 0px 35px;
+}
+.spcl_care_serv_blk .row>div{
+    padding: 0 16.5px 28px;
+}
+.spcl_care_serv_blk .row{
+    margin: 0 -16.5px;
+}
+.service_nd_trmt_txt{
+    color: #006D5B;
+    letter-spacing: 1.9px;
+}
+.mb_18{
+    margin-bottom: 18px;
+}
+.heading_services_txt{
+    font-size: 32px; 
+}
+.see_all_serv_btn{
+    background: #006D5B;
+    padding: 18.3px 6px;
+    border: none;
+    border-radius: 6px;
+    width: 211px;
+}
+.mb_60{
+    margin-bottom: 60px;
+}
+.fw_700{
+    font-weight: 700;
+}
+.mr_33{
+    margin-right: 33px;
+}
+.spcialized_mdcl_blk{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 26px 4px #DBE7EE40;
+    border-radius: 10px;
+    padding: 26px 31px 26px 23px;
+}
+.mr_27{
+    margin-right: 27px;
+}
+.mb_13{
+    margin-bottom: 13px;
+}
+.lorem_txt{
+    line-height: 22px;
+    color: #091E29;
+}
+/*doctors page starts here*/
+.our_doctors{
+    background-color: #FFFFFF !important;
+    padding: 104px 0px;
+}
+.fs_18{
+    font-size: 18px;
+}
+.doctors_heading{
+    text-align: center;
+    color: #000000;
+    font-size: 32px;
+    margin-bottom: 31px;
+    line-height: 23px;
+}
+.owl-item.active {
+    height: 350px !important;
+    margin-right: 0px !important;
+}
+.doctors_profile_img{
+   padding: 17px 18px 1px; 
+   background: #F2F9F8;
+   width: 100% !important;
+   height: 331px !important;
+   border-top-right-radius: 5px;
+   border-top-left-radius: 5px;
+} 
+.doctor_name_txt{
+    letter-spacing: 2.9px;
+    text-transform: uppercase;
+}
+.owl-theme .owl-dots .owl-dot.active span {
+    background: #006D5B !important;
+}
+.owl-theme .owl-dots .owl-dot span {
+    width: 18px !important;
+    height: 18px !important;
+    margin-right:10px  !important;
+    border-radius: 50px !important;
+    background: #E4F1EF !important;
+}
+.mb_8{
+    margin-bottom: 8px;
+}
+.color_blck{
+    color: #000000;
+}
+/*why choose css starts here*/
+.why_choose_us_blk{
+    padding: 76px 0px;
+}
+.square_img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 336px;
+}
+.h-100{
+    height: 100%;
+}
+.young_man_img{
+    position: absolute;
+    bottom: 0;
+    left: 44px;
+    z-index: 2;
+}
+.rectangle_square_img{
+    position: absolute;
+    bottom: 55px;
+    left: 20px;
+    z-index: 0;
+}
+.ellipse_img{
+    position: absolute;
+    left: 18px;
+    bottom: 195px;
+}
+.why_choose_txt_blk{
+    margin-top: 28px;
+    background-color: #FFFFFF;
+    padding: 40px 28px;
+}
+.why_choose_us_blk .row>div{
+    padding-bottom: 40px;
+}
+.fs_32{
+    font-size: 32px;
+}
+.mb_36{
+    margin-bottom: 36px;
+}
+.mr_11{
+    margin-right: 11px;
+}
+.mb_24{
+    margin-bottom: 24px;
+}
+.why_chose_dot_img{
+    position: absolute;
+    bottom: -35px;
+    right: 32px;
+}
+.mb_69{
+    margin-bottom: 69px;
+}
+.mb_40{
+    margin-bottom: 40px;
+}
+/*why choose us css end here*/
+.our_vision_blk{
+    background-color: #FFFFFF;
+    padding: 67px 0px;
+}
+.text-align-center{
+    text-align: center;
+}
+.lorem_txt{
+    color: #0B493F;
+}
+.open_qotes_img{
+    position: absolute;
+    top: -55px;
+    left: -3px;
+}
+.close_quotes_img{
+    position: absolute;
+    right: -5px;
+    bottom: -46px;
+}
+/*review page css starts here*/
+.review_page_plk{
+    padding: 87px 0px 81px;
+}
+.review_page_plk .row{
+    margin: 0 -48px;
+}
+.review_page_plk .row>div{
+    padding: 0 48px 48px;
+}
+.mb_75{
+    margin-bottom: 75px;
+}
+.img_blk_review{
+    width: 100%;
+}
+.small_siz_elipse{
+    position: absolute;
+    top: -11px;
+    right: -16px;
+}
+.rectangle_small_siz{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+.review_page_plk .carousel-inner{
+    padding: 30px 0px;
+}
+.fs_24{
+    font-size: 24px;
+}
+.mr_5{
+    margin-right: 5px;
+}
+.mt_14{
+    margin-top: 14px;
+}
+.quotes_img_pos{
+    position: absolute;
+    top: -55px;
+    left: 0px;
+}
+.mr_96{
+    margin-right: 96px;
+}
+.mb_52{
+    margin-bottom: 52px;
+}
+.ajay_shankar_txt{
+    color: #091E29;
+    font-weight: 500;
+    font-size: 20px;
+}
+.diabetes_color_txt{
+        color: #091E29;
+}
+.group62_img_blk{
+    margin: 48px;
+}
+.margin_18_minus{
+    margin-bottom: -18px !important;
+}
+.carousel-indicators [data-bs-target] {
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 50% !important; 
+  background-color: #C5E1DD !important; 
+  opacity: 0.5;
+  margin: 0 5px !important;
+  background-clip: border-box !important;
+  box-sizing: border-box !important;
+}
+.carousel-indicators .active {
+  opacity: 1;
+  background-color:#006D5B !important; 
+}
+/*Recent news page css starts here*/
+.recent_news_page_blk{
+    padding: 67px 0px;
+    background-color: #FFFFFF;
+}
+.recent_news_page_blk .row{
+    margin: 0 -15px;
+}
+.recent_news_page_blk .row>div{
+    padding: 0 15px 60px;
+}
+.recent_txt{
+    color: #159EEC;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.surgical_specl_blk{
+    box-shadow: 0px 4px 26px 4px #DBE7EE40;
+    background: #F2F9F8;
+}
+.surgical_txt_blk{
+    padding: 10px 13px 23px 21px;
+}
+.color_grey{
+    color: #777879;
+}
+.lorem_surical_txt{
+    color: #091E29;
+    line-height: 22px;
+}
+.read_more_txt{
+    color: #2E3192;
+    font-weight: 600;
+    line-height: 22px;
+}
+.lh_38px{
+    line-height: 38px;
+}
+/*summary page css starts here*/
+.summary_blk{
+    padding: 38px 0px 18px;
+    background: #0B493F;
+}
+.summary_blk .row>div{
+    padding-bottom: 20px;
+}
+.mb_3{
+    margin-bottom: 3px;
+}
+.img_wd_ht{
+    width: 105px;
+    height: 65px;
+}
+.lh_22{
+    line-height: 22px;
+}
+.bd_btm{
+    border-top: 1px solid #FFFFFF;
+}
+.summary_blk  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.mr_52{
+    margin-right: 52px;
+}
+.text-decoration{
+    text-decoration: none;
+}
+.max_wd{
+    max-width: 259px;
+}
+.mr_24{
+    margin-right: 24px;
+}
+.pb_20{
+        padding-bottom: 20px;
+}
+.mr_38{
+    margin-right: 38px;
+}
+.mt_5{
+    margin-top: 5px;
+}
+.bd_tp_left_rht{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.chat_bot_img{
+    /* width: 60px;
+    height: 60px; 
+    object-fit: cover; */
+    position: absolute;
+    bottom: -30px;
+    right: 41px;
+}
+.owl-stage-outer {
+    height: 450px !important;
+}
+.br_8px{
+    border-radius: 8px !important;
+}
+.align_left{
+    display: none;
+}
+.align_right_logo{
+    display: none;
+}
+.h_100{
+    height: 100%;
+}
+.align_item_center{
+    align-items: center;
+}
+/*  Mobile css (up to 767px) */
+@media (max-width: 767px) {
+    .banner-section .carousel-item .container {
+        min-height: calc(100vh - 75px) !important;
+     }
+    .sidemenu_displau_column{
+        display: flex;
+        flex-direction: column;
+        align-items: start !important;
+    }
+    .our_doctors {
+        padding: 104px 0px 50px !important;
+    }
+    .side_menu_blk{
+        display: none;
+    }
+    .side_menu_blk {    
+        position: fixed;   
+        top: 0;           
+        left: 0;          
+        width: 150px;     
+        height: 100%;      
+        z-index: 12;                     
+        min-width:150px;
+        padding: 4px ;  
+    }
+    /* .whole_container_blk{
+        width: calc(100% - 100px);
+    }  */
+    .banner-section .carousel-item img {
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 2;
+        position: absolute;
+        left: 0;
+        top: 0;
+        object-position: right;
+    } 
+    .banner-section_wd{
+        width: 100% !important;
+    }
+    .nav-item_mbl_mg{
+        margin: 10px 0px !important;
+    }
+    .ml_auto{
+        margin-left: auto;
+    }
+    .nav-item{
+        padding: 6px !important;
+    }
+    .margin_btm_20px{
+        margin-bottom: 20px;
+    }
+    .doctors_profile_img {
+        padding: 17px 18px;
+    }
+    .font_12_resp{
+        font-size: 12px !important;
+    }
+    .font_14_resp{
+        font-size: 14px ;
+    }
+    .font_26_resp{
+        font-size: 26px !important;
+    }
+    .banner-section .carousel-caption {
+        width: 100% !important;
+    }
+    .owl-dots{
+        display: none !important;
+    }
+    .header_blk.container{
+        align-items: start !important;
+    }
+    .heading_services_txt{
+        font-size: 25px !important;
+    }
+    .align_left{
+        display: block;
+    }
+    .align_right_logo{
+        display: block;
+    }
+    .h_396px_resp{
+        height: 396px !important;
+    }
+    .item_mr_0_resp{
+        margin-right: 0px !important;
+    }
+    .fw_600_resp{
+        font-weight: 600;
+    }
+    .fs_24_resp{
+        font-size: 24px !important;
+    }
+    .font_20_resp{
+        font-size: 20px !important;
+        line-height: 23px !important;
+    }
+    .font_26_lh{
+        font-size: 24px !important;
+        line-height: 27px !important;
+    }
+    .lh_17_resp_mb{
+        line-height: 17px !important;
+    }
+    
+}
+/*  Ipad css (768px â€“ 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .trauma_care_blk span{
+        font-size: 10px !important;
+        line-height: 13px !important;
+    }
+    .nav-item{
+        padding: 6px !important;
+    }
+    .images_media{
+        margin-right: 14px !important;
+    }
+    .review_imgs_square_circle{
+        width: 45px !important;
+    }
+    .banner-section .carousel-item img{
+        width: 100% !important;
+        height: 100% !important;
+        object-position: right;
+    }
+    .sidemenu_displau_column{
+        align-items: center !important;
+    }
+    .font_12_resp{
+        font-size: 12px !important;
+        line-height: 15px !important;
+    }
+    .font_20_resp{
+        font-size: 20px !important;
+        line-height: 23px !important;
+    }
+    .banner-section .carousel-caption {
+        width: 100% !important;
+    }
+    .font_26_resp{
+        font-size: 26px !important;
+        line-height: 30px !important;
+    }
+    .fw_600_resp{
+        font-weight: 600;
+    }  
+    .marginbtm_30px_resp{
+        margin-bottom: 30px !important;
+    }  
+}
+
+
+
+
+
+
