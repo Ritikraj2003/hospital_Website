@@ -19,67 +19,51 @@ export default function Header({ openAppointmentModal }) {
 
   return (
     <>
-      {/* Top Header Bar */}
-      <div className="header_blk color_wt">
-        <div className="container d-flex justify-content-between align-items-center flex-md-row flex-column py-2">
-          <div className="d-flex align-items-center flex-sm-row flex-column gap-3 mb-2 mb-md-0">
-            {/* Theme switcher / Hamburger toggle on mobile */}
-            <div className="d-flex align-items-center gap-2">
-              <button 
-                onClick={() => setSidebarOpen(true)}
-                className="btn p-0 border-0 d-md-none text-white mr-2"
-                aria-label="Toggle Navigation"
-              >
-                <img src="/images/align-right.svg" alt="Menu" style={{ width: "24px", height: "24px", filter: "invert(1)" }} />
-              </button>
-              
-              <div 
-                onClick={toggleTheme} 
-                className="d-flex align-items-center mr_15 cursor-pointer"
-                title="Toggle Dark/Light Mode"
-              >
-                <img 
-                  src="/images/align-right.svg" 
-                  alt="Theme toggle" 
-                  className="mr_7 cursor-pointer" 
-                  id="changing_theme"
-                  style={{ width: "16px", height: "16px", filter: "invert(1)" }}
-                />
-                <span className="fw_med fs_12 lh_16 select-none">
-                  {theme === "light" ? "Dark Mode" : "Light Mode"}
-                </span>
-              </div>
-            </div>
-
+      {/* Top Header Bar — hidden on mobile, shown on md+ */}
+      <div className="header_blk color_wt d-none d-md-block">
+        <div className="container d-flex justify-content-between align-items-center py-2">
+          <div className="d-flex align-items-center gap-3">
             <div className="d-flex align-items-center gap-2">
               <a href="tel:+919999999999" className="d-flex align-items-center text-white text-decoration-none">
-                <img src="/images/phone.svg" alt="Phone" className="mr_7" style={{ width: "14px", height: "14px" }} />
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" className="mr_7">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
                 <span className="fw_med fs_12 lh_16">+91 99999 99999</span>
               </a>
             </div>
-
             <div className="d-flex align-items-center gap-2">
-              <a href="mailto:demo@gmail.com" className="d-flex align-items-center text-white text-decoration-none">
-                <img src="/images/mail.svg" alt="Mail" className="mr_7" style={{ width: "14px", height: "14px" }} />
-                <span className="fw_med fs_12 lh_16">demo@gmail.com</span>
+              <a href="mailto:info@avnihospital.com" className="d-flex align-items-center text-white text-decoration-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" className="mr_7">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                <span className="fw_med fs_12 lh_16">info@avnihospital.com</span>
               </a>
             </div>
           </div>
 
           <div className="d-flex align-items-center gap-3">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover-opacity">
-              <img src="/images/facebook.svg" alt="Facebook" style={{ width: "16px", height: "16px", filter: "invert(1)" }} />
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:opacity-85 transition-opacity" style={{ display: "inline-flex" }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover-opacity">
-              <img src="/images/twitter.svg" alt="Twitter" style={{ width: "16px", height: "16px", filter: "invert(1)" }} />
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:opacity-85 transition-opacity" style={{ display: "inline-flex" }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+              </svg>
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover-opacity">
-              <img src="/images/linkedin.svg" alt="LinkedIn" style={{ width: "16px", height: "16px", filter: "invert(1)" }} />
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:opacity-85 transition-opacity" style={{ display: "inline-flex" }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover-opacity">
-              <img src="/images/instagram.svg" alt="Instagram" style={{ width: "16px", height: "16px", filter: "invert(1)" }} />
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:opacity-85 transition-opacity" style={{ display: "inline-flex" }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
             </a>
-            <button 
+            <button
               onClick={openAppointmentModal}
               className="btn btn-sm btn-light text-primary-color ms-3 fw-bold shadow-sm"
               style={{ fontSize: "12px", border: "1px solid #006D5B" }}
@@ -94,7 +78,7 @@ export default function Header({ openAppointmentModal }) {
       <div className="header_below_blk d-none d-md-block shadow-sm">
         <div className="container d-flex justify-content-between align-items-center py-2">
           <a href="#home-page" className="d-flex align-items-center">
-            <img src="/images/Asset11.svg" alt="Demo Hospital Logo" className="soflo-logo-image" style={{ height: "45px" }} />
+            <img src="/images/logo.png" alt="Avni Hospital Logo" className="soflo-logo-image" style={{ height: "45px" }} />
           </a>
           <div>
             <Nav />
@@ -105,8 +89,8 @@ export default function Header({ openAppointmentModal }) {
       {/* Mobile Header (Brand Bar) */}
       <div className="header_below_blk d-md-none border-bottom">
         <div className="container d-flex justify-content-between align-items-center py-2">
-          <img src="/images/Asset11.svg" alt="Demo Hospital Logo" style={{ height: "35px" }} />
-          <button 
+          <img src="/images/logo.png" alt="Avni Hospital Logo" style={{ height: "35px" }} />
+          <button
             onClick={() => setSidebarOpen(true)}
             className="btn btn-outline-primary border-0"
             style={{ color: "#006D5B" }}
@@ -118,29 +102,29 @@ export default function Header({ openAppointmentModal }) {
 
       {/* Mobile Drawer Sidebar Navigation */}
       {sidebarOpen && (
-        <div 
-          className="fixed-top h-100 w-100 d-md-none" 
+        <div
+          className="fixed-top h-100 w-100 d-md-none"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.5)", zIndex: 1050 }}
           onClick={() => setSidebarOpen(false)}
         >
-          <div 
-            className="h-100 bg-white shadow-lg p-3 position-relative" 
+          <div
+            className="h-100 bg-white shadow-lg p-3 position-relative"
             style={{ width: "260px", animation: "slideRight 0.3s ease-out" }}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
-              <img src="/images/Asset11.svg" alt="Demo Hospital Logo" style={{ height: "30px" }} />
-              <button 
+              <img src="/images/logo.png" alt="Avni Hospital Logo" style={{ height: "30px" }} />
+              <button
                 onClick={() => setSidebarOpen(false)}
                 className="btn btn-close"
                 aria-label="Close menu"
               ></button>
             </div>
-            
+
             <Nav isMobile={true} onItemClick={() => setSidebarOpen(false)} />
 
             <div className="position-absolute bottom-0 start-0 w-100 p-3 bg-light border-top">
-              <button 
+              <button
                 onClick={() => { setSidebarOpen(false); openAppointmentModal(); }}
                 className="btn btn-primary w-100 py-2 text-white fw-bold"
                 style={{ backgroundColor: "#006D5B", borderColor: "#006D5B" }}

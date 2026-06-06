@@ -111,11 +111,9 @@ export default function AppointmentModal({ isOpen, onClose }) {
           <h5 className="m-0 fw-bold">📅 Schedule Appointment</h5>
           <button 
             onClick={onClose} 
-            className="btn-close btn-close-white text-white border-0 bg-transparent fs-4 font-bold"
+            className="btn-close btn-close-white border-0 bg-transparent"
             aria-label="Close modal"
-          >
-            ×
-          </button>
+          />
         </div>
 
         {/* Modal Body */}

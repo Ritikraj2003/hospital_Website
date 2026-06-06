@@ -1,0 +1,81 @@
+.admin-sidebar {
+  background-color: #0b493f;
+  min-width: 260px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-nav-btn {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.sidebar-nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  padding-left: 20px;
+}
+
+.sidebar-nav-btn.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* ── Mobile: sidebar becomes a top tab bar ── */
+@media (max-width: 767px) {
+  .admin-sidebar {
+    min-width: unset !important;
+    width: 100% !important;
+    flex-direction: row !important;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0 !important;
+  }
+
+  /* Hide branding and user profile on mobile */
+  .admin-sidebar > div:first-child,
+  .admin-sidebar > div:last-child {
+    display: none !important;
+  }
+
+  /* Nav becomes horizontal scrollable tabs */
+  .admin-sidebar nav {
+    flex-direction: row !important;
+    gap: 4px !important;
+    padding: 8px !important;
+    overflow-x: auto;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .admin-sidebar nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar-nav-btn {
+    white-space: nowrap;
+    width: auto !important;
+    padding: 8px 16px !important;
+    border-radius: 20px !important;
+    font-size: 13px !important;
+    gap: 6px !important;
+    flex-shrink: 0;
+  }
+
+  .sidebar-nav-btn:hover {
+    padding-left: 16px !important;
+  }
+}

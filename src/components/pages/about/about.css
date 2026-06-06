@@ -1,0 +1,82 @@
+/* Styling for the About Us Page */
+
+.about_hospital_top_section {
+  background: linear-gradient(135deg, #006D5B 0%, #0B493F 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.about_hospital_top_section::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.about_hospital_top_section::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  left: 5%;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.facility_badge {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 14px;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+.facility_badge:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.about_hospital_card {
+  border-left: 5px solid #009688;
+  transition: transform 0.3s ease;
+}
+
+.about_hospital_card:hover {
+  transform: translateY(-3px);
+}
+
+.founder_profile_card {
+  border-radius: 12px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.founder_profile_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 109, 91, 0.15) !important;
+}
+
+.founder_overlay {
+  background: linear-gradient(to top, rgba(0, 109, 91, 0.95), transparent);
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 109, 91, 0.1) !important;
+}
+
+.transition {
+  transition: all 0.3s ease;
+}

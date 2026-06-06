@@ -1,4 +1,4 @@
-﻿@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Inter:wght@100..900&family=Lato:wght@100..900&family=Roboto:wght@100..900&display=swap');
 @import "tailwindcss";
 
@@ -834,8 +834,446 @@ div#carouselExample {
     }  
 }
 
+/* ============================================================
+   FULL PROJECT RESPONSIVE OVERRIDES
+   Breakpoints: xs(<576) | sm(576-767) | md(768-991) | lg(992-1199) | xl(1200+)
+   ============================================================ */
 
+/* ── Global Box Sizing & Overflow Guard ── */
+*, *::before, *::after { box-sizing: border-box; }
+body { overflow-x: hidden; }
+img { max-width: 100%; height: auto; }
 
+/* ── Header Top Bar ── */
+.header_blk .container {
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ── Banner / Hero ── */
+/* Keep a defined height so h-100 children work correctly */
+.banner_section_blk {
+  height: 580px;
+}
+
+/* ── About Us Page Top Section ── */
+.about_hospital_top_section .row {
+  gap: 0;
+}
+
+/* ── Appointment Modal ── */
+.modal-responsive {
+  width: 100%;
+  max-width: 520px;
+  margin: 16px;
+}
+
+/* ── Admin Sidebar ── */
+.admin-sidebar {
+  min-width: 220px;
+}
+
+/* ── Footer ── */
+.summary_blk .img_wd_ht {
+  width: auto !important;
+  height: 55px !important;
+}
+
+/* ============================================================
+   SMALL PHONES  ( max-width: 575px )
+   ============================================================ */
+@media (max-width: 575px) {
+
+  /* Header top bar */
+  .header_blk .container {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 4px;
+  }
+  .header_blk .container > div {
+    width: 100%;
+    justify-content: flex-start !important;
+  }
+
+  /* Hero — must keep a fixed height so h-100 children fill correctly */
+  .banner_section_blk {
+    height: 480px !important;
+  }
+  /* Ensure the image wrapper also fills the height */
+  .banner_section_blk .h-100 {
+    height: 100% !important;
+  }
+  .banner_section_blk .col-lg-7 {
+    width: 100% !important;
+    padding: 16px 0 !important;
+  }
+  .banner_section_blk h1 {
+    font-size: clamp(18px, 5vw, 26px) !important;
+    line-height: 1.35 !important;
+    margin-bottom: 12px !important;
+  }
+  .banner_section_blk .harish_txt {
+    font-size: 14px !important;
+  }
+  .banner_section_blk .director_txt {
+    font-size: 12px !important;
+    margin-left: 0 !important;
+  }
+  .banner_section_blk .btn-lg {
+    font-size: 13px !important;
+    padding: 10px 14px !important;
+  }
+  .banner_section_blk .mt-4.d-flex.flex-wrap {
+    margin-top: 12px !important;
+    gap: 8px !important;
+  }
+
+  /* Section headings */
+  .fs_32, .heading_services_txt, .doctors_heading {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* About page top banner */
+  .about_hospital_top_section h1 {
+    font-size: 26px !important;
+  }
+  .about_hospital_top_section .lead {
+    font-size: 14px !important;
+  }
+  .facility_badge {
+    font-size: 12px !important;
+    padding: 6px 10px !important;
+  }
+  .about_hospital_card {
+    margin-top: 16px;
+  }
+
+  /* Founder cards */
+  .founder_profile_card .position-relative {
+    height: 220px !important;
+  }
+
+  /* Staff cards — stack image on top */
+  .card.d-flex.flex-row {
+    flex-direction: column !important;
+  }
+  .card.d-flex.flex-row > div:first-child {
+    width: 100% !important;
+    height: 140px !important;
+  }
+
+  /* Appointment modal */
+  .modal-responsive, .bg-white.rounded-lg.shadow-lg {
+    max-width: 100% !important;
+    margin: 8px !important;
+    border-radius: 8px !important;
+  }
+
+  /* Admin sidebar — collapse to top bar */
+  .admin-sidebar {
+    width: 100% !important;
+    min-width: unset !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .admin-sidebar nav {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    gap: 6px !important;
+  }
+  .admin-sidebar .sidebar-nav-btn {
+    font-size: 12px !important;
+    padding: 6px 10px !important;
+  }
+
+  /* Admin dashboard header */
+  .min-vh-100.d-flex.flex-column.flex-md-row {
+    flex-direction: column !important;
+  }
+
+  /* Dashboard metric cards */
+  .metric-card {
+    padding: 12px !important;
+  }
+  .metric-icon-wrapper {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  /* Admin table — allow horizontal scroll */
+  .table-responsive { overflow-x: auto; }
+  .admin-table th, .admin-table td {
+    font-size: 11px !important;
+    padding: 6px 8px !important;
+  }
+
+  /* Footer */
+  .summary_blk .container .row > div {
+    text-align: center;
+    align-items: center !important;
+  }
+  .summary_blk .d-flex.justify-content-between {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 6px;
+  }
+  .summary_blk .img_wd_ht {
+    height: 45px !important;
+  }
+
+  /* Login card */
+  .login-card {
+    width: 100% !important;
+    margin: 12px !important;
+  }
+}
+
+/* ============================================================
+   PHONES (576px – 767px)
+   ============================================================ */
+@media (min-width: 576px) and (max-width: 767px) {
+
+  .banner_section_blk {
+    height: 460px !important;
+  }
+  .banner_section_blk h1 {
+    font-size: clamp(20px, 4.5vw, 28px) !important;
+  }
+
+  .about_hospital_top_section h1 {
+    font-size: 30px !important;
+  }
+
+  .founder_profile_card .position-relative {
+    height: 260px !important;
+  }
+
+  .card.d-flex.flex-row > div:first-child {
+    width: 100px !important;
+  }
+
+  .admin-sidebar {
+    width: 100% !important;
+    min-width: unset !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+  }
+  .admin-sidebar nav {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+  }
+}
+
+/* ============================================================
+   TABLETS (768px – 991px)
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .banner_section_blk {
+    height: 500px !important;
+  }
+  .banner_section_blk h1 {
+    font-size: 30px !important;
+  }
+
+  .about_hospital_top_section h1 {
+    font-size: 32px !important;
+  }
+
+  /* Sidebar collapses on tablets too */
+  .admin-sidebar {
+    width: 180px !important;
+    min-width: 180px !important;
+  }
+  .admin-sidebar .sidebar-nav-btn span {
+    font-size: 12px !important;
+  }
+
+  /* Doctor profile cards */
+  .doctors_profile_img {
+    height: 260px !important;
+  }
+}
+
+/* ============================================================
+   SMALL DESKTOP (992px – 1199px)
+   ============================================================ */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .banner_section_blk h1 {
+    font-size: 36px !important;
+  }
+  .admin-sidebar {
+    width: 200px !important;
+    min-width: 200px !important;
+  }
+}
+
+/* ============================================================
+   APPOINTMENT MODAL — all mobiles
+   ============================================================ */
+@media (max-width: 767px) {
+  div[style*="position: fixed"][style*="zIndex: 9999"],
+  div[style*="position:fixed"][style*="z-index:9999"] {
+    padding: 8px !important;
+    align-items: flex-start !important;
+    padding-top: 60px !important;
+  }
+  div[style*="maxWidth: 520px"],
+  div[style*="max-width: 520px"] {
+    max-width: 100% !important;
+    width: 100% !important;
+    border-radius: 10px !important;
+  }
+}
+
+/* ============================================================
+   ABOUT PAGE — mobile section ordering
+   ============================================================ */
+@media (max-width: 767px) {
+  .about_hospital_top_section .col-lg-7,
+  .about_hospital_top_section .col-lg-5 {
+    width: 100% !important;
+  }
+  .about_hospital_card {
+    margin-top: 20px;
+  }
+  /* Mission & Vision full width */
+  .col-md-6 {
+    width: 100%;
+  }
+  /* Staff filter buttons wrap */
+  .d-flex.justify-content-center.gap-3.mb-5 {
+    gap: 8px !important;
+  }
+  .d-flex.justify-content-center.gap-3.mb-5 > button {
+    font-size: 12px !important;
+    padding: 8px 14px !important;
+  }
+}
+
+/* ============================================================
+   HOME PAGE SECTIONS — mobile
+   ============================================================ */
+@media (max-width: 767px) {
+
+  /* About section */
+  .about_us_whole_blk {
+    padding: 50px 0 16px !important;
+  }
+  .about_us_img {
+    height: 260px !important;
+  }
+  .bold_txt {
+    font-size: 32px !important;
+  }
+
+  /* Departments grid */
+  .hosptl_dept_blk {
+    padding: 60px 0 40px !important;
+  }
+
+  /* Services */
+  .spcl_care_serv_blk {
+    padding: 40px 0 20px !important;
+  }
+  .spcialized_mdcl_blk {
+    padding: 16px !important;
+  }
+
+  /* Doctors carousel */
+  .our_doctors {
+    padding: 60px 0 40px !important;
+  }
+
+  /* Why choose us */
+  .why_choose_us_blk {
+    padding: 40px 0 !important;
+  }
+  .why_choose_txt_blk {
+    padding: 20px 16px !important;
+  }
+
+  /* Testimonials */
+  .our_vision_blk {
+    padding: 40px 0 !important;
+  }
+  .review_page_plk {
+    padding: 50px 0 !important;
+  }
+  .review_page_plk .row {
+    margin: 0 -12px !important;
+  }
+  .review_page_plk .row > div {
+    padding: 0 12px 24px !important;
+  }
+
+  /* Recent news */
+  .recent_news_page_blk {
+    padding: 40px 0 !important;
+  }
+  .surgical_txt_blk {
+    padding: 10px 12px 16px !important;
+  }
+}
+
+/* ============================================================
+   FOOTER — responsive
+   ============================================================ */
+@media (max-width: 991px) {
+  .summary_blk {
+    padding: 30px 0 16px !important;
+  }
+  .summary_blk .row > div {
+    padding-bottom: 16px !important;
+  }
+}
+
+/* ============================================================
+   ADMIN — responsive panel fixes
+   ============================================================ */
+@media (max-width: 767px) {
+  /* Stack sidebar above main */
+  .min-vh-100.d-flex.flex-column.flex-md-row {
+    flex-direction: column !important;
+  }
+  /* Full-width sidebar on mobile */
+  .admin-sidebar {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+  .admin-sidebar nav.d-flex.flex-column {
+    flex-direction: row !important;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .admin-sidebar .p-3.border-top {
+    display: none !important;
+  }
+
+  /* Admin main content */
+  main.flex-grow-1 .p-4 {
+    padding: 12px !important;
+  }
+  /* Row stats cards */
+  .row.g-4.mb-4 > .col-md-4 {
+    width: 100% !important;
+  }
+
+  /* Admin header */
+  header.bg-white.border-bottom {
+    flex-direction: column !important;
+    gap: 8px !important;
+    align-items: flex-start !important;
+  }
+  header.bg-white.border-bottom > div {
+    width: 100%;
+    justify-content: flex-start !important;
+    flex-wrap: wrap;
+    gap: 8px !important;
+  }
+}
 
 
 
