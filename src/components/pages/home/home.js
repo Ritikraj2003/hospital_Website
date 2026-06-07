@@ -99,7 +99,7 @@ function Hero({ openAppointmentModal }) {
                         Book Appointment Now
                       </button>
                       <button
-                        onClick={() => window.open("https://maps.google.com/?q=Boring+Road,+Patna,+Bihar,+800001", "_blank")}
+                        onClick={() => window.open("https://maps.google.com/?q=Amaranth+mandir+rode+near+bhoothnath+metro+station,+Patna,+Bihar,+800026", "_blank")}
                         className="btn btn-lg text-white font-semibold py-3 px-4 shadow hover-scale transition"
                         style={{
                           backgroundColor: "transparent",

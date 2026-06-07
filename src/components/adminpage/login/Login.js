@@ -24,13 +24,13 @@ export default function Login({
 
           <form onSubmit={handleLogin} className="d-flex flex-column gap-3">
             <div>
-              <label className="form-label fw-semibold text-dark mb-1">Username</label>
+              <label className="form-label fw-semibold text-dark mb-1">Email Address</label>
               <input 
                 type="text" 
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="form-control py-2 text-dark"
-                placeholder="admin"
+                placeholder="admin@gmail"
                 required
               />
             </div>

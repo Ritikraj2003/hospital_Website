@@ -1,1 +1,1 @@
-export { POST, GET } from "../routes/appointment_route";
+export { POST, GET, DELETE } from "../routes/appointment_route";

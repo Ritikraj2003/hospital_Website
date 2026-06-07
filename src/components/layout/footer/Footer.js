@@ -62,11 +62,11 @@ export default function Footer({ openAppointmentModal }) {
             <div className="d-flex flex-column text-md-start text-center align-items-center align-items-md-start">
               <h6 className="color_wt fw_700 fs_14 lh_16 mb_13 text-white">Contact & Connect</h6>
               <span className="text-white fs_12 mb-2 opacity-80">
-                Boring Road, Patna, Bihar, 800001
+                Amaranth mandir rode near bhoothnath metro station, Patna, Bihar, 800026
               </span>
               <div className="my-2 rounded overflow-hidden shadow-sm" style={{ height: "120px", width: "100%", maxWidth: "240px" }}>
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.558231571408!2d85.1121175762867!3d25.619623814041793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed5824e8eb87f7%3A0xc0fb196883e0bc94!2sBoring%20Rd%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1717688000000!5m2!1sen!2sin" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.6366113271717!2d85.17121287538356!3d25.58617187747864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed59dbb5d5d5d5%3A0x5d5d5d5d5d5d5d5d!2sBhoothnath%20Metro%20Station%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1717777777777!5m2!1sen!2sin" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 

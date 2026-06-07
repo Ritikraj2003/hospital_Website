@@ -65,18 +65,35 @@ export default function AdminPage() {
   };
 
   // Handle Login Submission
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     setLoginError("");
 
-    // Simple auth check
-    if (username.trim().toLowerCase() === "admin" && password === "admin123") {
-      sessionStorage.setItem("token", "admin-authenticated-token-value");
-      setIsLoggedIn(true);
-      fetchBookings();
-      router.push("/admin/dashboard");
-    } else {
-      setLoginError("Invalid username or password. Try admin / admin123");
+    try {
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: username.trim(),
+          password: password,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        sessionStorage.setItem("token", "admin-authenticated-token-value");
+        setIsLoggedIn(true);
+        fetchBookings();
+        router.push("/admin/dashboard");
+      } else {
+        setLoginError(data.error || "Invalid email or password.");
+      }
+    } catch (err) {
+      console.error("Login request error:", err);
+      setLoginError("Failed to connect to the server. Please try again.");
     }
   };
 
@@ -90,9 +107,22 @@ export default function AdminPage() {
   };
 
   // Delete Booking
-  const handleDeleteBooking = (id) => {
+  const handleDeleteBooking = async (id) => {
     if (confirm("Are you sure you want to remove this appointment booking?")) {
-      setBookings(prev => prev.filter(b => b.id !== id));
+      try {
+        const res = await fetch(`/api/appointment?id=${id}`, {
+          method: "DELETE",
+        });
+        const data = await res.json();
+        if (data.success) {
+          setBookings(prev => prev.filter(b => b.id !== id));
+        } else {
+          alert(data.error || "Failed to delete appointment from database.");
+        }
+      } catch (err) {
+        console.error("Failed to delete appointment:", err);
+        alert("Server connection error. Failed to delete appointment.");
+      }
     }
   };
 
