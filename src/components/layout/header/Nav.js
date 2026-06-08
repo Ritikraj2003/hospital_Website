@@ -7,7 +7,7 @@ export default function Nav({ onItemClick, isMobile = false }) {
 
   const navItems = [
     { label: "Home", href: "/" },
-    { label: "About Us", href: "/#about-us" },
+    { label: "About Us", href: "/about" },
     { label: "Departments", href: "/#department-blk" },
     { label: "Services", href: "/#services-blk" },
     { label: "Our Doctors", href: "/#our-doctor" },

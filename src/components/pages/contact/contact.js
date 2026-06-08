@@ -22,7 +22,7 @@ export default function ContactPage() {
 
   const infoCards = [
     { icon: "📍", title: "Our Address",  lines: ["Amaranth mandir rode near", "bhoothnath metro station,", "Patna, Bihar, 800026"] },
-    { icon: "📞", title: "Phone",        lines: ["General: +91 99999 99999", "Emergency: 1066"] },
+    { icon: "📞", title: "Phone",        lines: ["General: +91 99312 12664", "Emergency: 1066"] },
     { icon: "✉️", title: "Email",        lines: ["info@avnihospital.com"] },
     { icon: "🕐", title: "Hours",        lines: ["Emergency: 24/7", "OPD: 9:00 AM – 8:00 PM"] },
   ];
@@ -77,7 +77,7 @@ export default function ContactPage() {
                 <a href="tel:1066" className="emrg_btn_solid">
                   <span>📞</span> Call 1066
                 </a>
-                <a href="tel:+919999999999" className="emrg_btn_outline">
+                <a href="tel:+919931212664" className="emrg_btn_outline">
                   Ambulance Services
                 </a>
               </div>
