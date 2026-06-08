@@ -801,6 +801,10 @@ div#carouselExample {
     .lh_17_resp_mb{
         line-height: 17px !important;
     }
+    .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
     
 }
 /*  Ipad css (768px â€“ 1024px) */
