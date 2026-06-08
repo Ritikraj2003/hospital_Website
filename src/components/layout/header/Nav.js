@@ -12,7 +12,7 @@ export default function Nav({ onItemClick, isMobile = false }) {
     { label: "Services", href: "/#services-blk" },
     { label: "Our Doctors", href: "/#our-doctor" },
     { label: "Blogs", href: "/#recent-news" },
-    { label: "Contact Us", href: "/#footer-blk" },
+    { label: "Contact Us", href: "/contact" },
   ];
 
   if (isMobile) {

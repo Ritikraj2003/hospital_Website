@@ -5,6 +5,7 @@ import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
 import AppointmentModal from "@/components/AppointmentModal";
 import Link from "next/link";
+import Head from "next/head";
 import "./about.css";
 
 export default function AboutPage() {
@@ -14,226 +15,119 @@ export default function AboutPage() {
   const handleOpenModal = () => setModalOpen(true);
   const handleCloseModal = () => setModalOpen(false);
 
-  // Specialist Doctors List
   const doctorsList = [
-    {
-      name: "Dr. Manohar CV",
-      role: "Co-Founder & Chief Medical Officer",
-      dept: "Cardiology",
-      img: "/images/doctor-preparing-consult1.svg",
-      experience: "15+ Years",
-      education: "MD, DM (Cardiology)"
-    },
-    {
-      name: "Dr. Anika Parrikar",
-      role: "Senior Consultant",
-      dept: "Gynaecology",
-      img: "/images/front-view-laughing-female-doctor-holding-stethoscope-her-hands-standing-yellow-background1.svg",
-      experience: "12+ Years",
-      education: "MS (OBG), Fellowship in Reproductive Medicine"
-    },
-    {
-      name: "Dr. Prashanth A",
-      role: "Senior Consultant",
-      dept: "Neurology",
-      img: "/images/smiling-young-male-doctor-wearing-stethoscope-medical-gown-isolated-white-wall1.svg",
-      experience: "14+ Years",
-      education: "MD, DM (Neurology)"
-    },
-    {
-      name: "Dr. Rakshith M",
-      role: "Consultant Surgeon",
-      dept: "Orthopaedics",
-      img: "/images/doctor-preparing-consult1.svg",
-      experience: "10+ Years",
-      education: "MS (Orthopaedics), MCh"
-    },
-    {
-      name: "Dr. Nethra N",
-      role: "Consultant",
-      dept: "Pediatrics",
-      img: "/images/front-view-laughing-female-doctor-holding-stethoscope-her-hands-standing-yellow-background1.svg",
-      experience: "11+ Years",
-      education: "MD (Pediatrics), Fellowship in Neonatology"
-    },
-    {
-      name: "Dr. Kumarswamy",
-      role: "Consultant",
-      dept: "Urology",
-      img: "/images/smiling-young-male-doctor-wearing-stethoscope-medical-gown-isolated-white-wall1.svg",
-      experience: "18+ Years",
-      education: "MS, MCh (Urology)"
-    }
+    { name: "Dr. Manohar CV", role: "Co-Founder & Chief Medical Officer", dept: "Cardiology", img: "/images/doctor-preparing-consult1.svg", experience: "15+ Years", education: "MD, DM (Cardiology)" },
+    { name: "Dr. Anika Parrikar", role: "Senior Consultant", dept: "Gynaecology", img: "/images/front-view-laughing-female-doctor-holding-stethoscope-her-hands-standing-yellow-background1.svg", experience: "12+ Years", education: "MS (OBG), Fellowship" },
+    { name: "Dr. Prashanth A", role: "Senior Consultant", dept: "Neurology", img: "/images/smiling-young-male-doctor-wearing-stethoscope-medical-gown-isolated-white-wall1.svg", experience: "14+ Years", education: "MD, DM (Neurology)" },
+    { name: "Dr. Rakshith M", role: "Consultant Surgeon", dept: "Orthopaedics", img: "/images/doctor-preparing-consult1.svg", experience: "10+ Years", education: "MS (Orthopaedics), MCh" },
   ];
 
-  // Nursing Staff List
   const nursingList = [
-    {
-      name: "Sister Mercy Jose",
-      role: "Chief Nursing Officer",
-      dept: "Nursing Administration",
-      img: "/images/front-view-laughing-female-doctor-holding-stethoscope-her-hands-standing-yellow-background1.svg",
-      experience: "18+ Years",
-      education: "B.Sc Nursing, PG Dip in Critical Care"
-    },
-    {
-      name: "Sister Priya Varghese",
-      role: "ICU Head Nurse",
-      dept: "Critical Care",
-      img: "/images/front-view-laughing-female-doctor-holding-stethoscope-her-hands-standing-yellow-background1.svg",
-      experience: "10+ Years",
-      education: "B.Sc Nursing, Advanced Critical Care"
-    },
-    {
-      name: "Mr. Rajesh Kumar",
-      role: "Senior Lab Technician",
-      dept: "Diagnostics & Pathology",
-      img: "/images/smiling-young-male-doctor-wearing-stethoscope-medical-gown-isolated-white-wall1.svg",
-      experience: "12+ Years",
-      education: "DMLT, B.Sc MLT"
-    },
-    {
-      name: "Ms. Shruti Sinha",
-      role: "Chief Pharmacist",
-      dept: "Pharmacy Division",
-      img: "/images/front-view-laughing-female-doctor-holding-stethoscope-her-hands-standing-yellow-background1.svg",
-      experience: "8+ Years",
-      education: "B.Pharm, M.Pharm"
-    }
+    { name: "Sister Mercy Jose", role: "Chief Nursing Officer", dept: "Nursing Administration", img: "/images/front-view-laughing-female-doctor-holding-stethoscope-her-hands-standing-yellow-background1.svg", experience: "18+ Years" },
+    { name: "Sister Priya Varghese", role: "ICU Head Nurse", dept: "Critical Care", img: "/images/front-view-laughing-female-doctor-holding-stethoscope-her-hands-standing-yellow-background1.svg", experience: "10+ Years" },
+    { name: "Mr. Rajesh Kumar", role: "Senior Lab Technician", dept: "Diagnostics & Pathology", img: "/images/smiling-young-male-doctor-wearing-stethoscope-medical-gown-isolated-white-wall1.svg", experience: "12+ Years" },
+    { name: "Ms. Shruti Sinha", role: "Chief Pharmacist", dept: "Pharmacy Division", img: "/images/front-view-laughing-female-doctor-holding-stethoscope-her-hands-standing-yellow-background1.svg", experience: "8+ Years" },
   ];
 
-  // Administrative Staff List
   const adminList = [
-    {
-      name: "Mr. Amit Verma",
-      role: "Hospital Administrator",
-      dept: "Operations",
-      img: "/images/doctor-preparing-consult1.svg",
-      experience: "14+ Years",
-      education: "MBA in Healthcare Management"
-    },
-    {
-      name: "Ms. Priya Sharma",
-      role: "Patient Care Coordinator",
-      dept: "Front Desk & Admissions",
-      img: "/images/front-view-laughing-female-doctor-holding-stethoscope-her-hands-standing-yellow-background1.svg",
-      experience: "6+ Years",
-      education: "Master of Hospital Administration"
-    },
-    {
-      name: "Mr. Sunil Singh",
-      role: "Operations Manager",
-      dept: "Maintenance & Logistics",
-      img: "/images/smiling-young-male-doctor-wearing-stethoscope-medical-gown-isolated-white-wall1.svg",
-      experience: "11+ Years",
-      education: "B.Tech, Dip in Facility Management"
-    }
+    { name: "Mr. Amit Verma", role: "Hospital Administrator", dept: "Operations", img: "/images/doctor-preparing-consult1.svg", experience: "14+ Years" },
+    { name: "Ms. Priya Sharma", role: "Patient Care Coordinator", dept: "Front Desk & Admissions", img: "/images/front-view-laughing-female-doctor-holding-stethoscope-her-hands-standing-yellow-background1.svg", experience: "6+ Years" },
+    { name: "Mr. Sunil Singh", role: "Operations Manager", dept: "Maintenance & Logistics", img: "/images/smiling-young-male-doctor-wearing-stethoscope-medical-gown-isolated-white-wall1.svg", experience: "11+ Years" },
   ];
 
-  return (
+  const currentList = staffTab === "doctors" ? doctorsList : staffTab === "nursing" ? nursingList : adminList;
+
+  const mgmtItems = [
+    { icon: "🏥", title: "Medical Director", name: "Dr. Harish Prasad B.R.", desc: "Overseeing all clinical operations & surgical standards" },
+    { icon: "💼", title: "Administration", name: "Mr. Amit Verma", desc: "Managing hospital administration & patient experience" },
+    { icon: "🔬", title: "Lab & Diagnostics", name: "Mr. Rajesh Kumar", desc: "Ensuring precision diagnostics & lab quality control" },
+  ];
+
+  const familyStats = [
+    { icon: "👨‍⚕️", label: "Specialist Doctors", value: "100+" },
+    { icon: "👩‍⚕️", label: "Nursing Staff", value: "200+" },
+    { icon: "🧪", label: "Lab Technicians", value: "50+" },
+    { icon: "🏢", label: "Admin Staff", value: "80+" },
+    { icon: "🚑", label: "Support Staff", value: "60+" },
+  ];
+
+  const valuesItems = [
+    { num: "01", icon: "🏥", color: "blue", title: "Patient-Centric Care", desc: "Prioritizing the well-being and comfort of patients in all aspects of healthcare delivery." },
+    { num: "02", icon: "🧪", color: "green", title: "Clinical Excellence", desc: "Upholding high standards of medical expertise and evidence-based practice across all specialties." },
+    { num: "03", icon: "👨‍⚕️", color: "purple", title: "Compassion & Empathy", desc: "Demonstrating understanding and empathy in every interaction with patients and their families." },
+    { num: "04", icon: "🔬", color: "indigo", title: "Innovation & Technology", desc: "Implementing cutting-edge technologies for improved diagnostics and more effective treatments." },
+    { num: "05", icon: "⚖️", color: "yellow", title: "Integrity & Ethics", desc: "Maintaining the highest ethical standards in all medical and administrative practices." },
+    { num: "06", icon: "🏨", color: "red", title: "Safety & Quality", desc: "Ensuring patient safety and providing the highest quality of healthcare services at all times." },
+  ];
+
+  return (  
     <div className="d-flex flex-column min-h-screen">
-      {/* Navigation Header */}
+      <Head>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL,GRAD,opsz@400,0,0,24" rel="stylesheet" />
+      </Head>
       <Header openAppointmentModal={handleOpenModal} />
 
       <main className="flex-grow">
-        {/* SECTION 1: ABOUT HOSPITAL (TOP) */}
-        <section className="about_hospital_top_section py-5 text-white position-relative">
-          <div className="container relative z-2 py-4">
-            <nav aria-label="breadcrumb">
-              <ol className="breadcrumb mb-3">
-                <li className="breadcrumb-item">
-                  <Link href="/" className="text-white opacity-75 text-decoration-none">
-                    Home
-                  </Link>
-                </li>
-                <li className="breadcrumb-item active text-white fw-bold" aria-current="page">
-                  About Us
-                </li>
-              </ol>
-            </nav>
-            <div className="row align-items-center">
-              <div className="col-lg-7">
-                <h1 className="display-4 fw-bold text-shadow-sm mb-3">About Avni Hospital</h1>
-                <p className="lead mb-4 opacity-90 max-width-700">
-                  Avni Hospital, located in the heart of Patna, stands out as a premier 25-bedded multi-speciality clinical facility. We combine cutting-edge technology with compassionate care to deliver premium clinical outcomes.
+
+        {/* ── SECTION 1: HERO — full-bleed bg image ── */}
+        <section className="about_hero_section">
+          {/* Background image */}
+          <img src="/images/image(12).svg" alt="" className="about_hero_bg_img" />
+          {/* Overlay */}
+          <div className="about_hero_overlay" />
+
+          <div className="container about_hero_content">
+            <span className="about_hero_badge">About Avni Hospital</span>
+            <h1 className="fw-bold text-white mb-3" style={{ fontSize: "clamp(32px, 5vw, 56px)", lineHeight: 1.15, maxWidth: "640px" }}>
+              Clinical Excellence with a Human Touch
+            </h1>
+            <p className="text-white mb-5" style={{ opacity: 0.85, fontSize: "16px", lineHeight: 1.75, maxWidth: "540px" }}>
+              Providing Patna with world-class healthcare through advanced surgical technology and compassionate clinical care.
+            </p>
+            <div className="d-flex flex-wrap gap-3">
+              <Link href="#founders-section" className="hero_btn_solid">Meet Our Founders</Link>
+              <Link href="#infra-section" className="hero_btn_ghost">Our Facilities</Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ── SECTION 2: LEGACY — text left, image right ── */}
+        <section className="about_legacy_section" id="about-legacy">
+          <div className="container">
+            <div className="row align-items-center g-5">
+              {/* Left: text */}
+              <div className="col-lg-6">
+                <h2 className="legacy_heading mb-3">A Legacy of Care in Patna</h2>
+                <p className="legacy_text mb-3">
+                  Avni Hospital is a premier 25-bedded multi-speciality healthcare facility located in the heart of Patna. Led by the visionary Dr. Harish Prasad B.R., our institution was founded on the principle that high-end clinical services should be delivered with deep human compassion.
                 </p>
-                <div className="d-flex flex-wrap gap-3 mt-2">
-                  <div className="facility_badge px-3 py-2 rounded shadow-sm d-flex align-items-center gap-2">
-                    <img src="/images/Group232.svg" alt="" style={{ width: "20px" }} />
-                    <span className="fw-semibold">24/7 Critical Care</span>
+                <p className="legacy_text mb-4">
+                  Since our inception, we have evolved into a centre of excellence, particularly known for laparoscopic surgery and cardiology. Our patient-centric approach ensures that every individual receives personalized attention in an environment that prioritizes safety, hygiene, and rapid recovery.
+                </p>
+                {/* Stats row */}
+                <div className="legacy_stats_row">
+                  <div className="legacy_stat_block">
+                    <div className="legacy_stat_num">25+</div>
+                    <div className="legacy_stat_lbl">Beds Capacity</div>
                   </div>
-                  <div className="facility_badge px-3 py-2 rounded shadow-sm d-flex align-items-center gap-2">
-                    <img src="/images/Group220.svg" alt="" style={{ width: "20px" }} />
-                    <span className="fw-semibold">Advanced Modular OT</span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-5 mt-4 mt-lg-0">
-                <div className="about_hospital_card p-4 rounded shadow bg-white text-dark">
-                  <h4 className="fw-bold mb-3" style={{ color: "#006D5B" }}>Patna's Trusted Healthcare</h4>
-                  <p className="fs_14 text-muted mb-0">
-                    Under the leadership of Patna's top laparoscopic and general surgeons, Avni Hospital caters to diverse surgical and diagnostic requirements. We are dedicated to providing standard clinical care, individualized patient pathways, and affordable billing structure.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 2: FOUNDER & CO-FOUNDER */}
-        <section className="py-5 bg-white">
-          <div className="container py-3">
-            <div className="text-center mb-5">
-              <span className="fs_16 lh_16 service_nd_trmt_txt fw_700 d-block mb-2 text-uppercase">Leadership</span>
-              <h2 className="fw_700 fs_32 text-dark">Our Visionary Founders</h2>
-              <div className="mx-auto mt-2" style={{ width: "80px", height: "4px", backgroundColor: "#006D5B", borderRadius: "2px" }}></div>
-            </div>
-
-            <div className="row g-4 justify-content-center">
-              {/* Founder Profile */}
-              <div className="col-lg-5 col-md-6">
-                <div className="founder_profile_card card h-100 border-0 shadow-sm overflow-hidden">
-                  <div className="position-relative" style={{ height: "350px", backgroundColor: "#E4F1EF" }}>
-                    <img 
-                      src="/images/mature-doctor-sitting-desk-working-laptop1.svg" 
-                      alt="Dr. Harish Prasad B.R." 
-                      className="w-100 h-100 object-fit-cover"
-                      style={{ objectPosition: "top" }}
-                    />
-                    <div className="founder_overlay position-absolute bottom-0 start-0 w-100 p-3 text-white">
-                      <h4 className="fw-bold m-0 text-white">Dr. Harish Prasad B.R.</h4>
-                      <span className="fs-14 opacity-90 text-white">Founder & Chief Laparoscopic Surgeon</span>
-                    </div>
-                  </div>
-                  <div className="card-body p-4 bg-light">
-                    <h5 className="fw-bold mb-3" style={{ color: "#006D5B" }}>About the Founder</h5>
-                    <p className="card-text text-muted mb-0" style={{ lineHeight: "1.7", fontSize: "14px" }}>
-                      Dr. Harish Prasad B.R. is an eminent Laparoscopic and General Surgeon with over 20 years of clinical experience. He founded Avni Hospital with a vision to deliver sophisticated modular surgical and therapeutic care in Patna. He continues to lead with an absolute focus on clinical excellence and patient safety.
-                    </p>
+                  <div className="legacy_stat_divider" />
+                  <div className="legacy_stat_block">
+                    <div className="legacy_stat_num">15+</div>
+                    <div className="legacy_stat_lbl">Specialist Doctors</div>
                   </div>
                 </div>
               </div>
 
-              {/* Co-Founder Profile */}
-              <div className="col-lg-5 col-md-6">
-                <div className="founder_profile_card card h-100 border-0 shadow-sm overflow-hidden">
-                  <div className="position-relative" style={{ height: "350px", backgroundColor: "#E4F1EF" }}>
-                    <img 
-                      src="/images/doctor-preparing-consult1.svg" 
-                      alt="Dr. Manohar CV" 
-                      className="w-100 h-100 object-fit-cover"
-                      style={{ objectPosition: "top" }}
-                    />
-                    <div className="founder_overlay position-absolute bottom-0 start-0 w-100 p-3 text-white">
-                      <h4 className="fw-bold m-0 text-white">Dr. Manohar CV</h4>
-                      <span className="fs-14 opacity-90 text-white">Co-Founder & Chief of Cardiology</span>
-                    </div>
+              {/* Right: hospital building image + floating card */}
+              <div className="col-lg-6">
+                <div className="legacy_img_container">
+                  <div className="legacy_main_img_wrap">
+                    <img src="/images/image(13).svg" alt="Avni Hospital Building" className="legacy_main_img" />
                   </div>
-                  <div className="card-body p-4 bg-light">
-                    <h5 className="fw-bold mb-3" style={{ color: "#006D5B" }}>About the Co-Founder</h5>
-                    <p className="card-text text-muted mb-0" style={{ lineHeight: "1.7", fontSize: "14px" }}>
-                      Dr. Manohar CV is a leading cardiologist dedicated to establishing advanced coronary and critical care access in Patna. As Co-Founder, he spearheads the hospital's clinical protocols, emergency trauma systems, and medicine divisions, ensuring high-quality support to every patient.
-                    </p>
+                  {/* Floating card */}
+                  <div className="legacy_float_card">
+                    <div className="legacy_float_icon">🛡️</div>
+                    <div className="legacy_float_text">Leading Multi-speciality Facility in Bihar</div>
                   </div>
                 </div>
               </div>
@@ -241,194 +135,131 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* SECTION 3: MISSION & VISION */}
-        <section className="py-5" style={{ backgroundColor: "#F2F9F8" }}>
-          <div className="container py-3">
+        {/* ── SECTION 3: MISSION & VISION ── */}
+        <section className="mv_section">
+          <div className="container">
             <div className="row g-4">
-              {/* Mission Card */}
               <div className="col-md-6">
-                <div className="card border-0 h-100 p-4 shadow-sm hover-lift bg-white rounded-lg">
-                  <div className="d-flex align-items-start gap-3">
-                    <div 
-                      className="p-3 rounded-circle d-flex align-items-center justify-content-center text-white"
-                      style={{ backgroundColor: "#006D5B", width: "56px", height: "56px" }}
-                    >
-                      <span className="fs-3 fw-bold">M</span>
-                    </div>
-                    <div>
-                      <h3 className="fw-bold text-dark mb-3">Our Mission</h3>
-                      <p className="text-muted fs-14 mb-0" style={{ lineHeight: "1.7" }}>
-                        To deliver high-quality, patient-centric healthcare with empathy, ethical integrity, and advanced clinical technology. We aim to ensure premium clinical care is both accessible and affordable for the local communities in Patna and the wider Bihar region.
-                      </p>
-                    </div>
+                <div className="mv_card_new">
+                  <div className="mv_card_header">
+                    <div className="mv_icon_circle mission_c">🚩</div>
+                    <h3 className="mv_card_title">Our Mission</h3>
                   </div>
+                  <p className="mv_card_text">
+                    To inspire hope, and contribute to health and wellbeing by providing the best care to every patient through integrated clinical practice, education and research.
+                  </p>
+                  <span className="mv_arrow">→</span>
                 </div>
               </div>
-
-              {/* Vision Card */}
               <div className="col-md-6">
-                <div className="card border-0 h-100 p-4 shadow-sm hover-lift bg-white rounded-lg">
-                  <div className="d-flex align-items-start gap-3">
-                    <div 
-                      className="p-3 rounded-circle d-flex align-items-center justify-content-center text-white"
-                      style={{ backgroundColor: "#009688", width: "56px", height: "56px" }}
-                    >
-                      <span className="fs-3 fw-bold">V</span>
-                    </div>
-                    <div>
-                      <h3 className="fw-bold text-dark mb-3">Our Vision</h3>
-                      <p className="text-muted fs-14 mb-0" style={{ lineHeight: "1.7" }}>
-                        To be Patna's most trusted hospital for specialized surgery and women's health care. We envision a society where every individual receives standard diagnostic accuracy and surgical expertise in a caring and secure hospital environment.
-                      </p>
-                    </div>
+                <div className="mv_card_new">
+                  <div className="mv_card_header">
+                    <div className="mv_icon_circle vision_c">👁️</div>
+                    <h3 className="mv_card_title">Our Vision</h3>
                   </div>
+                  <p className="mv_card_text">
+                    To be the leading healthcare provider in the region, recognized for clinical excellence, compassionate care, and medical innovation that transforms lives.
+                  </p>
+                  <span className="mv_arrow">→</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* SECTION 4: STAFF DETAILS */}
-        <section className="py-5 bg-white" id="staff-directory">
-          <div className="container py-3">
+        {/* ── SECTION 4: FOUNDERS — horizontal photo+text cards ── */}
+        <section className="founders_section" id="founders-section">
+          <div className="container">
             <div className="text-center mb-5">
-              <span className="fs_16 lh_16 service_nd_trmt_txt fw_700 d-block mb-2 text-uppercase">Hospital Team</span>
-              <h2 className="fw_700 fs_32 text-dark">Meet Our Dedicated Staff</h2>
-              <div className="mx-auto mt-2" style={{ width: "80px", height: "4px", backgroundColor: "#006D5B", borderRadius: "2px" }}></div>
+              <span className="section_header_tag">Leadership</span>
+              <h2 className="fw-bold text-dark mt-2" style={{ fontSize: "clamp(24px, 3.5vw, 36px)" }}>Founded on Vision &amp; Expertise</h2>
             </div>
-
-            {/* Staff Navigation Tabs */}
-            <div className="d-flex justify-content-center gap-3 mb-5 flex-wrap">
-              <button
-                onClick={() => setStaffTab("doctors")}
-                className={`btn btn-md px-4 py-2 rounded-pill fw-bold transition ${
-                  staffTab === "doctors" ? "text-white" : "bg-light text-secondary border-0"
-                }`}
-                style={{
-                  backgroundColor: staffTab === "doctors" ? "#006D5B" : "#F8F9FA",
-                  boxShadow: staffTab === "doctors" ? "0 4px 12px rgba(0, 109, 91, 0.2)" : "none"
-                }}
-              >
-                Specialist Doctors
-              </button>
-              <button
-                onClick={() => setStaffTab("nursing")}
-                className={`btn btn-md px-4 py-2 rounded-pill fw-bold transition ${
-                  staffTab === "nursing" ? "text-white" : "bg-light text-secondary border-0"
-                }`}
-                style={{
-                  backgroundColor: staffTab === "nursing" ? "#006D5B" : "#F8F9FA",
-                  boxShadow: staffTab === "nursing" ? "0 4px 12px rgba(0, 109, 91, 0.2)" : "none"
-                }}
-              >
-                Nursing & Medical Staff
-              </button>
-              <button
-                onClick={() => setStaffTab("admin")}
-                className={`btn btn-md px-4 py-2 rounded-pill fw-bold transition ${
-                  staffTab === "admin" ? "text-white" : "bg-light text-secondary border-0"
-                }`}
-                style={{
-                  backgroundColor: staffTab === "admin" ? "#006D5B" : "#F8F9FA",
-                  boxShadow: staffTab === "admin" ? "0 4px 12px rgba(0, 109, 91, 0.2)" : "none"
-                }}
-              >
-                Administrative Staff
-              </button>
-            </div>
-
-            {/* Staff Grid Container */}
             <div className="row g-4 justify-content-center">
-              {/* Doctors Tab Content */}
-              {staffTab === "doctors" && doctorsList.map((doc, idx) => (
-                <div key={idx} className="col-xl-4 col-md-6 d-flex">
-                  <div className="card w-100 shadow-sm border border-light-subtle d-flex flex-row overflow-hidden" style={{ borderRadius: "10px" }}>
-                    <div style={{ width: "120px", backgroundColor: "#F2F9F8" }} className="flex-shrink-0 position-relative">
-                      <img 
-                        src={doc.img} 
-                        alt={doc.name} 
-                        className="w-100 h-100 object-fit-cover"
-                        style={{ objectPosition: "top" }}
-                      />
+              {[
+                { name: "Dr. Harish Prasad B.R.", subtitle: "Chief Laparoscopic Surgeon", tag: "Director", tagColor: "#006D5B", img: "/images/smiling-young-male-doctor-wearing-stethoscope-medical-gown-isolated-white-wall1.svg", desc: "A visionary leader with decades of experience in minimally invasive surgeries, committed to bringing global medical standards to Patna." },
+                { name: "Dr. Manohar CV", subtitle: "Chief of Cardiology", tag: "Co-Founder", tagColor: "#009688", img: "/images/doctor-preparing-consult1.svg", desc: "Leading our cardiac care unit with a focus on preventive cardiology and advanced interventional techniques for heart health." }
+              ].map((f) => (
+                <div key={f.name} className="col-lg-5 col-md-6">
+                  <div className="founder_h_card">
+                    <div className="founder_h_img_wrap">
+                      <img src={f.img} alt={f.name} className="founder_h_img" />
                     </div>
-                    <div className="card-body p-3 d-flex flex-column justify-content-between">
-                      <div>
-                        <span className="badge mb-2" style={{ backgroundColor: "#E4F1EF", color: "#006D5B", fontSize: "10px" }}>
-                          {doc.dept}
-                        </span>
-                        <h5 className="fw-bold text-dark fs-6 mb-1">{doc.name}</h5>
-                        <p className="fw-semibold mb-1" style={{ fontSize: "12px", color: "#006D5B" }}>{doc.role}</p>
-                        <span className="text-muted block" style={{ fontSize: "11px" }}>{doc.education}</span>
-                      </div>
-                      <div className="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
-                        <span className="text-muted fw-bold" style={{ fontSize: "11px" }}>{doc.experience} Experience</span>
-                        <button 
-                          onClick={handleOpenModal}
-                          className="btn btn-sm px-2 py-1 text-white border-0"
-                          style={{ backgroundColor: "#006D5B", fontSize: "11px", borderRadius: "4px" }}
-                        >
-                          Book Consult
-                        </button>
-                      </div>
+                    <div className="founder_h_body">
+                      <span className="founder_h_tag" style={{ background: f.tagColor }}>{f.tag}</span>
+                      <h4 className="founder_h_name">{f.name}</h4>
+                      <p className="founder_h_subtitle">{f.subtitle}</p>
+                      <p className="founder_h_desc">{f.desc}</p>
+                      <button onClick={handleOpenModal} className="founder_h_link">View Full Bio →</button>
                     </div>
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
 
-              {/* Nursing Tab Content */}
-              {staffTab === "nursing" && nursingList.map((nurse, idx) => (
-                <div key={idx} className="col-xl-4 col-md-6 d-flex">
-                  <div className="card w-100 shadow-sm border border-light-subtle d-flex flex-row overflow-hidden" style={{ borderRadius: "10px" }}>
-                    <div style={{ width: "120px", backgroundColor: "#F2F9F8" }} className="flex-shrink-0">
-                      <img 
-                        src={nurse.img} 
-                        alt={nurse.name} 
-                        className="w-100 h-100 object-fit-cover"
-                        style={{ objectPosition: "top" }}
-                      />
-                    </div>
-                    <div className="card-body p-3 d-flex flex-column justify-content-between">
-                      <div>
-                        <span className="badge mb-2 bg-secondary text-white" style={{ fontSize: "10px" }}>
-                          {nurse.dept}
-                        </span>
-                        <h5 className="fw-bold text-dark fs-6 mb-1">{nurse.name}</h5>
-                        <p className="text-muted fw-medium mb-1" style={{ fontSize: "12px" }}>{nurse.role}</p>
-                        <span className="text-muted block" style={{ fontSize: "11px" }}>{nurse.education}</span>
-                      </div>
-                      <div className="mt-3 pt-2 border-top d-flex justify-content-between align-items-center">
-                        <span className="text-muted fw-semibold" style={{ fontSize: "11px" }}>{nurse.experience} Experience</span>
-                        <span className="badge bg-success-subtle text-success border border-success-subtle px-2 py-1" style={{ fontSize: "10px" }}>Active Support</span>
-                      </div>
-                    </div>
+        {/* ── SECTION 5: MANAGEMENT & OPERATIONS ── */}
+        <section className="mgmt_section">
+          <div className="container">
+            <div className="text-center mb-5">
+              <span className="section_header_tag">Our Team</span>
+              <h2 className="fw-bold text-dark mt-2" style={{ fontSize: "clamp(24px, 3.5vw, 36px)" }}>Management & Operations</h2>
+              <div className="section_divider"></div>
+              <p className="text-muted mt-3 mx-auto" style={{ maxWidth: "560px", fontSize: "15px" }}>
+                A dedicated leadership team ensures every department runs with precision, empathy, and clinical excellence.
+              </p>
+            </div>
+            <div className="row g-4 justify-content-center">
+              {mgmtItems.map((m) => (
+                <div key={m.title} className="col-lg-4 col-md-6">
+                  <div className="mgmt_card">
+                    <div className="mgmt_icon_circle">{m.icon}</div>
+                    <div className="section_header_tag mb-2">{m.title}</div>
+                    <h5 className="fw-bold text-dark mb-1" style={{ fontSize: "16px" }}>{m.name}</h5>
+                    <p className="text-muted mb-0" style={{ fontSize: "13px", lineHeight: 1.6 }}>{m.desc}</p>
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
 
-              {/* Admin Tab Content */}
-              {staffTab === "admin" && adminList.map((admin, idx) => (
-                <div key={idx} className="col-xl-4 col-md-6 d-flex">
-                  <div className="card w-100 shadow-sm border border-light-subtle d-flex flex-row overflow-hidden" style={{ borderRadius: "10px" }}>
-                    <div style={{ width: "120px", backgroundColor: "#F2F9F8" }} className="flex-shrink-0">
-                      <img 
-                        src={admin.img} 
-                        alt={admin.name} 
-                        className="w-100 h-100 object-fit-cover"
-                        style={{ objectPosition: "top" }}
-                      />
+        {/* ── SECTION 6: OUR SPECIALISTS ── */}
+        <section className="specialists_section" id="staff-directory">
+          <div className="container">
+            <div className="text-center mb-5">
+              <span className="section_header_tag">Our Specialists</span>
+              <h2 className="fw-bold text-dark mt-2" style={{ fontSize: "clamp(24px, 3.5vw, 36px)" }}>Meet the Doctors</h2>
+              <div className="section_divider"></div>
+              <p className="text-muted mt-3 mx-auto" style={{ maxWidth: "560px", fontSize: "15px" }}>
+                Our multidisciplinary team of specialists delivers advanced diagnostics, surgical expertise, and evidence-based clinical care.
+              </p>
+            </div>
+
+            {/* Staff Tabs */}
+            <div className="d-flex justify-content-center gap-3 mb-5 flex-wrap">
+              {[["doctors", "Specialist Doctors"], ["nursing", "Nursing & Medical"], ["admin", "Administrative"]].map(([key, label]) => (
+                <button key={key} onClick={() => setStaffTab(key)} className={`staff_tab_btn ${staffTab === key ? "active" : ""}`}>
+                  {label}
+                </button>
+              ))}
+            </div>
+
+            <div className="row g-4 justify-content-center">
+              {currentList.map((doc, idx) => (
+                <div key={idx} className="col-xl-3 col-lg-4 col-sm-6">
+                  <div className="specialist_card">
+                    <div className="specialist_img_wrap">
+                      <img src={doc.img} alt={doc.name} />
+                      <span className="specialist_dept_badge">{doc.dept}</span>
+                      <span className="specialist_exp_badge">{doc.experience}</span>
                     </div>
-                    <div className="card-body p-3 d-flex flex-column justify-content-between">
-                      <div>
-                        <span className="badge mb-2 bg-dark text-white" style={{ fontSize: "10px" }}>
-                          {admin.dept}
-                        </span>
-                        <h5 className="fw-bold text-dark fs-6 mb-1">{admin.name}</h5>
-                        <p className="text-muted fw-medium mb-1" style={{ fontSize: "12px" }}>{admin.role}</p>
-                        <span className="text-muted block" style={{ fontSize: "11px" }}>{admin.education}</span>
-                      </div>
-                      <div className="mt-3 pt-2 border-top d-flex justify-content-between align-items-center">
-                        <span className="text-muted fw-semibold" style={{ fontSize: "11px" }}>{admin.experience} Experience</span>
-                        <span className="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1" style={{ fontSize: "10px" }}>Administration</span>
+                    <div className="specialist_body">
+                      <h5 className="fw-bold text-dark mb-1" style={{ fontSize: "15px" }}>{doc.name}</h5>
+                      <p className="mb-2" style={{ fontSize: "12px", color: "#006D5B", fontWeight: 600 }}>{doc.role}</p>
+                      {doc.education && <p className="text-muted mb-3" style={{ fontSize: "12px" }}>{doc.education}</p>}
+                      <div className="d-flex align-items-center justify-content-between">
+                        <button onClick={handleOpenModal} className="read_more_link">Book Consult →</button>
                       </div>
                     </div>
                   </div>
@@ -437,12 +268,130 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* ── SECTION 7: NURSING STAFF BANNER ── */}
+        <section className="nursing_section">
+          <div className="container position-relative" style={{ zIndex: 2 }}>
+            <div className="row align-items-center g-5">
+              <div className="col-lg-5">
+                <span className="section_header_tag" style={{ background: "rgba(255,255,255,0.15)", color: "#fff" }}>Nursing Excellence</span>
+                <h2 className="fw-bold text-white mt-2 mb-3" style={{ fontSize: "clamp(24px, 3.5vw, 36px)" }}>Nursing Staff Excellence</h2>
+                <p className="text-white mb-4" style={{ opacity: 0.85, fontSize: "15px", lineHeight: 1.75 }}>
+                  Our highly trained nursing team forms the backbone of Avni Hospital's 24/7 care delivery — providing round-the-clock support, monitoring, and compassionate patient attention across all departments.
+                </p>
+                <button onClick={handleOpenModal} className="cta_btn_primary">Meet Our Team</button>
+              </div>
+              <div className="col-lg-7">
+                <div className="row g-3">
+                  {[
+                    { icon: "👩‍⚕️", stat: "200+", label: "Nursing Staff" },
+                    { icon: "🏥", stat: "24/7", label: "ICU Support" },
+                    { icon: "💊", stat: "100%", label: "Care Quality" },
+                    { icon: "❤️", stat: "1M+", label: "Patients Cared" },
+                  ].map((n) => (
+                    <div key={n.label} className="col-6">
+                      <div className="nursing_card">
+                        <span className="nursing_icon">{n.icon}</span>
+                        <div className="nursing_stat">{n.stat}</div>
+                        <div className="nursing_stat_label mt-1">{n.label}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── SECTION 8: THE AVNI FAMILY ── */}
+        <section className="family_section">
+          <div className="container">
+            <div className="text-center mb-5">
+              <span className="section_header_tag">Our People</span>
+              <h2 className="fw-bold text-dark mt-2" style={{ fontSize: "clamp(24px, 3.5vw, 36px)" }}>The Avni Family</h2>
+              <div className="section_divider"></div>
+              <p className="text-muted mt-3 mx-auto" style={{ maxWidth: "560px", fontSize: "15px" }}>
+                Behind every successful patient story is a dedicated team that works together with one shared mission — to heal, care, and support.
+              </p>
+            </div>
+            <div className="row g-4 justify-content-center">
+              {familyStats.map((f) => (
+                <div key={f.label} className="col-lg-2 col-md-4 col-6">
+                  <div className="family_card">
+                    <div className="family_icon">{f.icon}</div>
+                    <div className="fw-bold text-dark mb-1" style={{ fontSize: "22px" }}>{f.value}</div>
+                    <div className="text-muted" style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "0.5px" }}>{f.label}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── SECTION 9: WHAT WE STAND FOR ── */}
+        <section className="values_section">
+          <div className="container">
+            <div className="text-center mb-5">
+              <span className="section_header_tag">
+                <span className="material-symbols-outlined" style={{ fontSize: "16px", marginRight: "6px" }}>diamond</span>
+                OUR VALUES
+              </span>
+              <h2 className="fw-bold text-dark mt-2" style={{ fontSize: "clamp(28px, 3.5vw, 42px)" }}>
+                What We <span style={{ color: "#006D5B" }}>Stand For</span>
+              </h2>
+              <p className="text-muted mt-3 mx-auto" style={{ maxWidth: "600px", fontSize: "15px", lineHeight: "1.7" }}>
+                Our core values define who we are, how we care, and the standard we hold ourselves to every single day.
+              </p>
+            </div>
+            <div className="row g-4">
+              {valuesItems.map((item) => (
+                <div key={item.title} className="col-lg-4 col-md-6">
+                  <div className={`value_card value_card_${item.color}`}>
+                    <div className="value_card_header">
+                      <div className="value_icon_box">
+                        <span style={{ fontFamily: "sans-serif" }}>{item.icon}</span>
+                      </div>
+                      <div className="value_bg_num">{item.num}</div>
+                    </div>
+                    <h4 className="fw-bold text-dark mb-2" style={{ fontSize: "18px" }}>{item.title}</h4>
+                    <p className="text-muted mb-0" style={{ fontSize: "14px", lineHeight: 1.6 }}>{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── SECTION 10: CTA BANNER ── */}
+        <section className="about_cta_section">
+          <div className="container">
+            <div className="cta_banner_card">
+              <div className="cta_banner_content">
+                <div className="cta_badge">
+                  <span className="material-symbols-outlined cta_badge_icon">health_and_safety</span>
+                  BOOK YOUR VISIT
+                </div>
+                <h2 className="cta_banner_h2">
+                  Ready to Take the First Step <span className="cta_banner_highlight">Towards Better Health?</span>
+                </h2>
+                <p className="cta_banner_p">
+                  Schedule an appointment with our expert doctors today. Walk-ins also welcome during OPD hours.
+                </p>
+              </div>
+              <div className="cta_banner_action">
+                <button onClick={handleOpenModal} className="cta_btn_primary">
+                  <span className="material-symbols-outlined">calendar_today</span>
+                  Book Appointment
+                  <span className="material-symbols-outlined">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </main>
 
-      {/* Structured Footer */}
       <Footer openAppointmentModal={handleOpenModal} />
-
-      {/* Appointment Popup Modal */}
       <AppointmentModal isOpen={modalOpen} onClose={handleCloseModal} />
     </div>
   );

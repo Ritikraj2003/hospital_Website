@@ -1,82 +1,721 @@
-/* Styling for the About Us Page */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL,GRAD,opsz@400,0,0,24');
 
-.about_hospital_top_section {
-  background: linear-gradient(135deg, #006D5B 0%, #0B493F 100%);
+/* ============================================================
+   About Us Page — Complete Styles
+   ============================================================ */
+
+/* ---- Hero: Full-bleed background image ---- */
+.about_hero_section {
   position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
   overflow: hidden;
 }
-
-.about_hospital_top_section::before {
-  content: "";
+.about_hero_bg_img {
   position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 300px;
-  height: 300px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 50%;
-  pointer-events: none;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
 }
-
-.about_hospital_top_section::after {
-  content: "";
+.about_hero_overlay {
   position: absolute;
-  bottom: -50px;
-  left: 5%;
-  width: 150px;
-  height: 150px;
-  background-color: rgba(255, 255, 255, 0.03);
-  border-radius: 50%;
-  pointer-events: none;
+  inset: 0;
+  background: linear-gradient(110deg, rgba(0,51,44,0.82) 0%, rgba(0,109,91,0.65) 60%, rgba(0,150,136,0.45) 100%);
+  z-index: 1;
 }
-
-.facility_badge {
-  background-color: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+.about_hero_content {
+  position: relative;
+  z-index: 2;
+  padding: 100px 0 80px;
+}
+.about_hero_badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 6px 16px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+.hero_btn_solid {
+  display: inline-flex;
+  align-items: center;
+  background: #006D5B;
+  color: #fff;
+  border: 2px solid #006D5B;
+  border-radius: 8px;
+  padding: 12px 28px;
   font-size: 14px;
-  backdrop-filter: blur(4px);
+  font-weight: 700;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
-
-.facility_badge:hover {
-  background-color: rgba(255, 255, 255, 0.25);
+.hero_btn_solid:hover {
+  background: #004D40;
+  border-color: #004D40;
+  color: #fff;
+  transform: translateY(-2px);
+}
+.hero_btn_ghost {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.55);
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.hero_btn_ghost:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: #fff;
+  color: #fff;
   transform: translateY(-2px);
 }
 
-.about_hospital_card {
-  border-left: 5px solid #009688;
-  transition: transform 0.3s ease;
+/* ---- Shared Section Utilities ---- */
+.section_header_tag {
+  display: inline-block;
+  background: #E4F1EF;
+  color: #006D5B;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+.section_divider {
+  width: 56px;
+  height: 4px;
+  background: linear-gradient(90deg, #006D5B, #009688);
+  border-radius: 2px;
+  margin: 12px auto 0;
+}
+.section_divider.left { margin: 12px 0 0; }
+
+/* ---- Legacy Section ---- */
+.about_legacy_section {
+  background: #fff;
+  padding: 90px 0;
+}
+.legacy_heading {
+  font-size: clamp(24px, 3.5vw, 34px);
+  font-weight: 700;
+  color: #1a2e2b;
+  line-height: 1.3;
+}
+.legacy_text {
+  font-size: 14px;
+  line-height: 1.85;
+  color: #006D5B;
+}
+.legacy_stats_row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 32px;
+  border-top: 2px solid #E4F1EF;
+  padding-top: 28px;
+}
+.legacy_stat_block {
+  padding-right: 36px;
+}
+.legacy_stat_num {
+  font-size: 32px;
+  font-weight: 800;
+  color: #006D5B;
+  line-height: 1;
+}
+.legacy_stat_lbl {
+  font-size: 11px;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+.legacy_stat_divider {
+  width: 1px;
+  height: 50px;
+  background: #D0E8E4;
+  margin: 0 36px 0 0;
+}
+.legacy_img_container {
+  position: relative;
+}
+.legacy_main_img_wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  height: 400px;
+  box-shadow: 0 16px 48px rgba(0,109,91,0.14);
+}
+.legacy_main_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.legacy_float_card {
+  position: absolute;
+  bottom: -20px;
+  left: -24px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.14);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 230px;
+  border: 1px solid #E4F1EF;
+}
+.legacy_float_icon {
+  font-size: 26px;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: #E4F1EF;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.legacy_float_text {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a2e2b;
+  line-height: 1.4;
 }
 
-.about_hospital_card:hover {
-  transform: translateY(-3px);
-}
 
-.founder_profile_card {
-  border-radius: 12px;
-  background-color: #ffffff;
+/* ---- Mission & Vision — new card style ---- */
+.mv_section {
+  background: #F4FAF9;
+  padding: 70px 0;
+}
+.mv_card_new {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 24px rgba(0,109,91,0.07);
+  border: 1px solid #E4F1EF;
+  height: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
-
-.founder_profile_card:hover {
+.mv_card_new:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 109, 91, 0.15) !important;
+  box-shadow: 0 14px 40px rgba(0,109,91,0.12);
 }
-
-.founder_overlay {
-  background: linear-gradient(to top, rgba(0, 109, 91, 0.95), transparent);
+.mv_card_header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
 }
-
-.hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.mv_icon_circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
 }
-
-.hover-lift:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 109, 91, 0.1) !important;
+.mv_icon_circle.mission_c { background: #E4F1EF; }
+.mv_icon_circle.vision_c  { background: #E0F7F5; }
+.mv_card_title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a2e2b;
+  margin: 0;
 }
-
-.transition {
+.mv_card_text {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+.mv_arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #E4F1EF;
+  color: #006D5B;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
   transition: all 0.3s ease;
+}
+.mv_card_new:hover .mv_arrow {
+  background: #006D5B;
+  color: #fff;
+}
+
+/* ---- Founders: horizontal photo+text cards ---- */
+.founders_section {
+  background: #fff;
+  padding: 80px 0;
+}
+.founder_h_card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: #fff;
+  border: 1px solid #E4F1EF;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0,109,91,0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+.founder_h_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 40px rgba(0,109,91,0.13);
+}
+.founder_h_img_wrap {
+  width: 100px;
+  height: 120px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #E4F1EF;
+}
+.founder_h_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.founder_h_body {
+  flex: 1;
+}
+.founder_h_tag {
+  display: inline-block;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+.founder_h_name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a2e2b;
+  margin-bottom: 2px;
+}
+.founder_h_subtitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: #006D5B;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.founder_h_desc {
+  font-size: 13px;
+  line-height: 1.75;
+  color: #6c757d;
+  margin-bottom: 14px;
+}
+.founder_h_link {
+  font-size: 13px;
+  font-weight: 700;
+  color: #006D5B;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.2s ease;
+}
+.founder_h_link:hover { gap: 8px; color: #004D40; }
+
+
+/* ---- Management & Operations ---- */
+.mgmt_section {
+  background: #F4FAF9;
+  padding: 80px 0;
+}
+.mgmt_card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 20px;
+  box-shadow: 0 4px 18px rgba(0,109,91,0.07);
+  border: 1px solid #E4F1EF;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+.mgmt_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,109,91,0.13);
+}
+.mgmt_icon_circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #006D5B, #009688);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 24px;
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(0,109,91,0.25);
+}
+
+/* ---- Specialists / Doctors ---- */
+.specialists_section {
+  background: #fff;
+  padding: 80px 0;
+}
+.specialist_card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.specialist_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(0,109,91,0.14);
+}
+.specialist_img_wrap {
+  position: relative;
+  height: 240px;
+  background: #E4F1EF;
+  overflow: hidden;
+}
+.specialist_img_wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.4s ease;
+}
+.specialist_card:hover .specialist_img_wrap img {
+  transform: scale(1.04);
+}
+.specialist_dept_badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #fff;
+  color: #006D5B;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.specialist_exp_badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(135deg, #006D5B, #009688);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.specialist_body {
+  padding: 18px;
+}
+.specialist_body .read_more_link {
+  font-size: 12px;
+  color: #006D5B;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  transition: gap 0.2s;
+}
+.specialist_body .read_more_link:hover { gap: 8px; }
+
+/* ---- Nursing Section ---- */
+.nursing_section {
+  background: linear-gradient(135deg, #004D40 0%, #006D5B 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+.nursing_section::before {
+  content: "";
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 300px; height: 300px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.nursing_card {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  padding: 24px 20px;
+  color: #fff;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.nursing_card:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-4px);
+}
+.nursing_icon {
+  font-size: 34px;
+  margin-bottom: 14px;
+  display: block;
+}
+.nursing_stat {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+}
+.nursing_stat_label {
+  font-size: 12px;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Our Family ---- */
+.family_section {
+  background: #fff;
+  padding: 80px 0;
+}
+.family_card {
+  text-align: center;
+  padding: 24px 16px;
+  border-radius: 14px;
+  background: #F4FAF9;
+  border: 1px solid #E4F1EF;
+  transition: all 0.3s ease;
+}
+.family_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,109,91,0.1);
+  background: #fff;
+}
+.family_icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #E4F1EF, #C8E6E3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin: 0 auto 14px;
+  transition: all 0.3s ease;
+}
+.family_card:hover .family_icon {
+  background: linear-gradient(135deg, #006D5B, #009688);
+  color: #fff;
+}
+
+/* ---- Values / What We Stand For ---- */
+.values_section {
+  background: linear-gradient(180deg, #F8FAFC 0%, #F0FDF4 100%);
+  padding: 80px 0;
+}
+.value_card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+.value_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+}
+.value_card_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+.value_icon_box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+.value_bg_num {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Color variations */
+.value_card_blue .value_icon_box { background: #E0F2FE; color: #0284C7; }
+.value_card_blue .value_bg_num { color: #EFF6FF; }
+
+.value_card_green .value_icon_box { background: #DCFCE7; color: #16A34A; }
+.value_card_green .value_bg_num { color: #F0FDF4; }
+
+.value_card_purple .value_icon_box { background: #F3E8FF; color: #9333EA; }
+.value_card_purple .value_bg_num { color: #FAF5FF; }
+
+.value_card_indigo .value_icon_box { background: #E0E7FF; color: #4F46E5; }
+.value_card_indigo .value_bg_num { color: #EEF2FF; }
+
+.value_card_yellow .value_icon_box { background: #FEF3C7; color: #D97706; }
+.value_card_yellow .value_bg_num { color: #FFFBEB; }
+
+.value_card_red .value_icon_box { background: #FEE2E2; color: #DC2626; }
+.value_card_red .value_bg_num { color: #FEF2F2; }
+
+/* ---- CTA Banner ---- */
+.about_cta_section {
+  padding: 80px 0;
+  background: #fff;
+}
+.cta_banner_card {
+  background: linear-gradient(135deg, #F0FDF4 0%, #E0F2FE 100%);
+  border-radius: 16px;
+  padding: 40px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+@media (max-width: 900px) {
+  .cta_banner_card {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+  }
+}
+.cta_badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  color: #0369A1;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.cta_badge_icon {
+  font-size: 14px;
+  color: #10B981;
+}
+.cta_banner_h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  color: #1a2e2b;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+.cta_banner_highlight {
+  color: #0369A1;
+}
+.cta_banner_p {
+  font-size: 14px;
+  color: #64748B;
+  max-width: 420px;
+  line-height: 1.6;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .cta_banner_p {
+    margin: 0 auto;
+  }
+}
+.cta_btn_primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #0263C0;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.cta_btn_primary .material-symbols-outlined {
+  font-size: 18px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.cta_btn_primary:hover {
+  background: #0252a1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2,99,192,0.3);
+}
+
+/* ---- Staff Filter Tabs ---- */
+.staff_tab_btn {
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 22px;
+  border: 1px solid #E4F1EF;
+  background: #F4FAF9;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.staff_tab_btn.active,
+.staff_tab_btn:hover {
+  background: #006D5B;
+  color: #fff;
+  border-color: #006D5B;
+  box-shadow: 0 4px 14px rgba(0,109,91,0.2);
+}
+
+/* ---- Misc ---- */
+.green_tag {
+  color: #006D5B;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.hover_lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover_lift:hover {
+  transform: translateY(-5px);
 }

@@ -1,4 +1,5 @@
 import "./globals.css";
+import AmbulanceWidget from "./AmbulanceWidget";
 
 export const metadata = {
   title: "Avni Hospital - Best Laparoscopic Surgeon and Gynaecologist in Patna",
@@ -8,8 +9,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full scroll-smooth" suppressHydrationWarning>
-      <body className="min-h-full bg-slate-50 text-slate-900 antialiased m-0 p-0">
+      <body className="min-h-full bg-slate-50 text-slate-900 antialiased m-0 p-0 relative">
         {children}
+        
+        {/* Moving Ambulance Widget */}
+        <AmbulanceWidget />
       </body>
     </html>
   );
