@@ -5,7 +5,6 @@ import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
 import AppointmentModal from "@/components/AppointmentModal";
 import Link from "next/link";
-import Head from "next/head";
 import "./about.css";
 
 export default function AboutPage() {
@@ -62,9 +61,6 @@ export default function AboutPage() {
 
   return (  
     <div className="d-flex flex-column min-h-screen">
-      <Head>
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL,GRAD,opsz@400,0,0,24" rel="stylesheet" />
-      </Head>
       <Header openAppointmentModal={handleOpenModal} />
 
       <main className="flex-grow">
@@ -368,7 +364,7 @@ export default function AboutPage() {
             <div className="cta_banner_card">
               <div className="cta_banner_content">
                 <div className="cta_badge">
-                  <span className="material-symbols-outlined cta_badge_icon">health_and_safety</span>
+                  <span className="material-symbols-outlined cta_badge_icon">monitor_heart</span>
                   BOOK YOUR VISIT
                 </div>
                 <h2 className="cta_banner_h2">
@@ -380,8 +376,8 @@ export default function AboutPage() {
               </div>
               <div className="cta_banner_action">
                 <button onClick={handleOpenModal} className="cta_btn_primary">
-                  <span className="material-symbols-outlined">calendar_today</span>
-                  Book Appointment
+                  <span className="material-symbols-outlined">event_available</span>
+                  <span className="cta_btn_text">Book Appointment</span>
                   <span className="material-symbols-outlined">arrow_forward</span>
                 </button>
               </div>

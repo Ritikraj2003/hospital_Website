@@ -6,6 +6,8 @@ export async function generateStaticParams() {
     { slug: ["dashboard"] },
     { slug: ["appointment"] },
     { slug: ["appointments"] },
+    { slug: ["inquiry"] },
+    { slug: ["inquiries"] },
   ];
 }
 

@@ -18,6 +18,14 @@
   --text-dark: #e5e7eb;
 }
 
+.text-primary-color {
+  color: var(--primary-color) !important;
+}
+
+.bg-primary-color {
+  background-color: var(--primary-color) !important;
+}
+
 html {
   scroll-behavior: smooth;
 }

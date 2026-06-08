@@ -43,6 +43,19 @@ async function initDb() {
       );
     `);
 
+    // Create inquiries table
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS inquiries (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(100) NOT NULL,
+        phone VARCHAR(20) NOT NULL,
+        email VARCHAR(100) NOT NULL,
+        department VARCHAR(100) NOT NULL,
+        message TEXT NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+    `);
+
     // 3. Insert default admin user if not exists
     const adminCheck = await pool.query("SELECT id FROM users WHERE email = $1 LIMIT 1", ["admin@gmail"]);
     if (adminCheck.rows.length === 0) {

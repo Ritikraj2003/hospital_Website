@@ -25,7 +25,7 @@ export default function Nav({ onItemClick, isMobile = false }) {
               <Link
                 href={item.href}
                 onClick={onItemClick}
-                className={`d-block py-2 text-decoration-none fw-medium border-bottom ${isActive ? "text-primary fw-bold" : "text-dark"
+                className={`d-block py-2 text-decoration-none fw-medium border-bottom ${isActive ? "text-primary-color fw-bold" : "text-dark"
                   }`}
               >
                 {item.label}

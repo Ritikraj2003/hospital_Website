@@ -657,32 +657,54 @@
     margin: 0 auto;
   }
 }
+.cta_banner_action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+@media (max-width: 900px) {
+  .cta_banner_action {
+    width: 100%;
+  }
+}
 .cta_btn_primary {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 12px;
   background: #0263C0;
   color: #fff;
   border: none;
   border-radius: 999px;
   padding: 14px 28px;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  white-space: nowrap;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 4px 15px rgba(2,99,192,0.25);
+  margin: 0 auto;
+}
+.cta_btn_text {
+  flex: 1;
+  text-align: center;
+  line-height: 1.25;
+  white-space: normal;
 }
 .cta_btn_primary .material-symbols-outlined {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 .cta_btn_primary:hover {
   background: #0252a1;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(2,99,192,0.3);
+  box-shadow: 0 6px 18px rgba(2,99,192,0.35);
 }
 
 /* ---- Staff Filter Tabs ---- */

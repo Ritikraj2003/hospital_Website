@@ -71,12 +71,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full scroll-smooth" suppressHydrationWarning>
       <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full bg-slate-50 text-slate-900 antialiased m-0 p-0 relative">
+      <body className="min-h-full bg-slate-50 text-slate-900 antialiased m-0 p-0 relative" suppressHydrationWarning>
         {children}
         
         {/* Moving Ambulance Widget */}

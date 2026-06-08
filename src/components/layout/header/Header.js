@@ -19,8 +19,8 @@ export default function Header({ openAppointmentModal }) {
 
   return (
     <>
-      {/* Top Header Bar — hidden on mobile, shown on md+ */}
-      <div className="header_blk color_wt d-none d-md-block">
+      {/* Top Header Bar — hidden on mobile/tablet, shown on lg+ */}
+      <div className="header_blk color_wt d-none d-lg-block hidden lg:block">
         <div className="container d-flex justify-content-between align-items-center py-2">
           <div className="d-flex align-items-center gap-3">
             <div className="d-flex align-items-center gap-2">
@@ -75,7 +75,7 @@ export default function Header({ openAppointmentModal }) {
       </div>
 
       {/* Main Navigation Header (Desktop) */}
-      <div className="header_below_blk d-none d-md-block shadow-sm">
+      <div className="header_below_blk d-none d-lg-block hidden lg:block shadow-sm">
         <div className="container d-flex justify-content-between align-items-center py-2">
           <a href="#home-page" className="d-flex align-items-center">
             <img src="/images/logo.png" alt="Avni Hospital Logo" className="soflo-logo-image" style={{ height: "45px" }} />
@@ -87,7 +87,7 @@ export default function Header({ openAppointmentModal }) {
       </div>
 
       {/* Mobile Header (Brand Bar) */}
-      <div className="header_below_blk d-md-none border-bottom">
+      <div className="header_below_blk d-lg-none lg:hidden border-bottom">
         <div className="container d-flex justify-content-between align-items-center py-2">
           <img src="/images/logo.png" alt="Avni Hospital Logo" style={{ height: "35px" }} />
           <button
@@ -103,7 +103,7 @@ export default function Header({ openAppointmentModal }) {
       {/* Mobile Drawer Sidebar Navigation */}
       {sidebarOpen && (
         <div
-          className="fixed-top h-100 w-100 d-md-none"
+          className="fixed-top h-100 w-100 d-lg-none lg:hidden"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.5)", zIndex: 1050 }}
           onClick={() => setSidebarOpen(false)}
         >

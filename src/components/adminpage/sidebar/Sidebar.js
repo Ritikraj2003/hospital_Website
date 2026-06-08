@@ -3,7 +3,7 @@
 import React from "react";
 import "./sidebar.css";
 
-export default function Sidebar({ activeTab, setActiveTab, bookingsCount, handleLogout }) {
+export default function Sidebar({ activeTab, setActiveTab, bookingsCount, inquiriesCount, handleLogout }) {
   return (
     <aside className="admin-sidebar text-white">
       <div className="p-4 d-flex align-items-center justify-content-between border-bottom border-white/10">
@@ -40,6 +40,19 @@ export default function Sidebar({ activeTab, setActiveTab, bookingsCount, handle
           Appointments
           {bookingsCount > 0 && (
             <span className="badge bg-danger ms-auto fs_10 py-1 px-1.5 rounded-pill">{bookingsCount}</span>
+          )}
+        </button>
+
+        <button 
+          onClick={() => setActiveTab("inquiries")}
+          className={`sidebar-nav-btn ${activeTab === "inquiries" ? "active" : ""}`}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+          Inquiries
+          {inquiriesCount > 0 && (
+            <span className="badge bg-danger ms-auto fs_10 py-1 px-1.5 rounded-pill">{inquiriesCount}</span>
           )}
         </button>
       </nav>

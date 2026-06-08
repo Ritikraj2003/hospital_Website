@@ -18,14 +18,23 @@ export default function AdminPage() {
   
   // Data State
   const [bookings, setBookings] = useState([]);
+  const [inquiries, setInquiries] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const activeTab = (pathname === "/admin/appointment" || pathname === "/admin/appointments") 
     ? "appointments" 
+    : (pathname === "/admin/inquiry" || pathname === "/admin/inquiries")
+    ? "inquiries"
     : "dashboard";
 
   const handleTabChange = (tab) => {
-    router.push(tab === "appointments" || tab === "appointment" ? "/admin/appointment" : "/admin/dashboard");
+    if (tab === "appointments" || tab === "appointment") {
+      router.push("/admin/appointment");
+    } else if (tab === "inquiries" || tab === "inquiry") {
+      router.push("/admin/inquiry");
+    } else {
+      router.push("/admin/dashboard");
+    }
   };
 
   // Session check on mount and path change (Auth Guard)
@@ -34,6 +43,7 @@ export default function AdminPage() {
     if (token) {
       setIsLoggedIn(true);
       fetchBookings();
+      fetchInquiries();
       if (pathname === "/admin") {
         router.push("/admin/dashboard");
       }
@@ -64,6 +74,22 @@ export default function AdminPage() {
     }
   };
 
+  // Fetch Inquiries
+  const fetchInquiries = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch("/api/inquiry");
+      const data = await res.json();
+      if (data.success) {
+        setInquiries(data.inquiries);
+      }
+    } catch (err) {
+      console.error("Failed to load inquiries:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   // Handle Login Submission
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -87,6 +113,7 @@ export default function AdminPage() {
         sessionStorage.setItem("token", "admin-authenticated-token-value");
         setIsLoggedIn(true);
         fetchBookings();
+        fetchInquiries();
         router.push("/admin/dashboard");
       } else {
         setLoginError(data.error || "Invalid email or password.");
@@ -126,6 +153,26 @@ export default function AdminPage() {
     }
   };
 
+  // Delete Inquiry
+  const handleDeleteInquiry = async (id) => {
+    if (confirm("Are you sure you want to remove this inquiry?")) {
+      try {
+        const res = await fetch(`/api/inquiry?id=${id}`, {
+          method: "DELETE",
+        });
+        const data = await res.json();
+        if (data.success) {
+          setInquiries(prev => prev.filter(inq => inq.id !== id));
+        } else {
+          alert(data.error || "Failed to delete inquiry from database.");
+        }
+      } catch (err) {
+        console.error("Failed to delete inquiry:", err);
+        alert("Server connection error. Failed to delete inquiry.");
+      }
+    }
+  };
+
   // Login Screen render
   if (!isLoggedIn) {
     return (
@@ -140,6 +187,8 @@ export default function AdminPage() {
     );
   }
 
+  const isLiveInquiries = activeTab === "inquiries";
+
   // Dashboard / Sidebar layout
   return (
     <div className="min-vh-100 d-flex flex-column flex-md-row bg-light" style={{ fontFamily: "'Inter', sans-serif" }}>
@@ -149,6 +198,7 @@ export default function AdminPage() {
         activeTab={activeTab}
         setActiveTab={handleTabChange}
         bookingsCount={bookings.length}
+        inquiriesCount={inquiries.length}
         handleLogout={handleLogout}
       />
 
@@ -158,11 +208,15 @@ export default function AdminPage() {
         {/* Top Header */}
         <header className="bg-white border-bottom shadow-sm px-4 py-3 d-flex justify-content-between align-items-center">
           <h5 className="m-0 fw-bold text-dark">
-            {activeTab === "dashboard" ? "🏥 Dashboard Overview" : "📅 Patient Appointments"}
+            {activeTab === "dashboard" 
+              ? "🏥 Dashboard Overview" 
+              : activeTab === "inquiries"
+              ? "✉️ Customer Inquiries"
+              : "📅 Patient Appointments"}
           </h5>
           <div className="d-flex align-items-center gap-3">
             <button 
-              onClick={fetchBookings}
+              onClick={activeTab === "inquiries" ? fetchInquiries : fetchBookings}
               className="btn btn-light border-0 d-flex align-items-center gap-2 py-2 text-dark shadow-sm"
               title="Refresh Data"
             >
@@ -179,15 +233,15 @@ export default function AdminPage() {
           {loading ? (
             <div className="d-flex flex-column align-items-center justify-content-center py-5">
               <div className="spinner-border text-teal mb-3" role="status" style={{ color: "#006D5B" }}></div>
-              <span className="text-muted">Loading appointments...</span>
+              <span className="text-muted">Loading data...</span>
             </div>
           ) : (() => {
             const Component = adminRoutes[pathname] || adminRoutes["/admin/dashboard"];
             return (
               <Component 
-                bookings={bookings}
+                bookings={isLiveInquiries ? inquiries : bookings}
                 setActiveTab={handleTabChange}
-                handleDeleteBooking={handleDeleteBooking}
+                handleDeleteBooking={isLiveInquiries ? handleDeleteInquiry : handleDeleteBooking}
               />
             );
           })()}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
 import AppointmentModal from "@/components/AppointmentModal";
@@ -10,14 +10,63 @@ export default function ContactPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", email: "", department: "General Consultation", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [inquiries, setInquiries] = useState([]);
+
+  useEffect(() => {
+    async function fetchInquiries() {
+      try {
+        const res = await fetch("/api/inquiry");
+        const data = await res.json();
+        if (data.success) {
+          setInquiries(data.inquiries);
+        }
+      } catch (error) {
+        console.error("Failed to fetch inquiries:", error);
+      }
+    }
+    fetchInquiries();
+  }, []);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setForm({ name: "", phone: "", email: "", department: "General Consultation", message: "" });
-    setTimeout(() => setSubmitted(false), 5000);
+    try {
+      const res = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+        setInquiries((prev) => [data.inquiry, ...prev]);
+        setForm({ name: "", phone: "", email: "", department: "General Consultation", message: "" });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        alert(data.error || "Failed to submit inquiry.");
+      }
+    } catch (error) {
+      console.error("Error submitting inquiry:", error);
+      alert("An error occurred. Please try again.");
+    }
+  };
+
+  const handleDeleteInquiry = async (id) => {
+    if (!confirm("Are you sure you want to delete this inquiry?")) return;
+    try {
+      const res = await fetch(`/api/inquiry?id=${id}`, {
+        method: "DELETE",
+      });
+      const data = await res.json();
+      if (data.success) {
+        setInquiries((prev) => prev.filter((inq) => inq.id !== id));
+      } else {
+        alert(data.error || "Failed to delete inquiry.");
+      }
+    } catch (error) {
+      console.error("Error deleting inquiry:", error);
+    }
   };
 
   const infoCards = [
@@ -188,6 +237,72 @@ export default function ContactPage() {
                 </div>
 
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── SECTION: RECENT INQUIRIES TABLE ── */}
+        <section className="inquiries_table_section py-5 bg-light border-top">
+          <div className="container">
+            <div className="text-center mb-4">
+              <span className="section_header_tag">INQUIRIES LIST</span>
+              <h2 className="fw-bold text-dark mt-2" style={{ fontSize: "clamp(24px, 3.5vw, 36px)" }}>Submitted Inquiries</h2>
+              <div className="section_divider"></div>
+            </div>
+
+            <div className="table-responsive bg-white rounded-3 shadow-sm border p-3">
+              {inquiries.length === 0 ? (
+                <p className="text-muted text-center py-4 my-0">No inquiries submitted yet. Be the first!</p>
+              ) : (
+                <table className="table table-hover align-middle mb-0">
+                  <thead className="table-light">
+                    <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Department</th>
+                      <th scope="col">Message</th>
+                      <th scope="col">Date</th>
+                      <th scope="col" className="text-center">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {inquiries.map((inq) => (
+                      <tr key={inq.id}>
+                        <td className="fw-semibold text-dark">{inq.name}</td>
+                        <td>{inq.phone}</td>
+                        <td>{inq.email}</td>
+                        <td>
+                          <span className="badge bg-primary-color px-2.5 py-1.5 rounded-pill text-xs fw-bold">
+                            {inq.department}
+                          </span>
+                        </td>
+                        <td style={{ maxWidth: "250px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }} title={inq.message}>
+                          {inq.message}
+                        </td>
+                        <td className="text-muted text-xs">
+                          {inq.created_at ? new Date(inq.created_at).toLocaleDateString("en-IN", {
+                            day: "2-digit",
+                            month: "short",
+                            year: "numeric",
+                            hour: "2-digit",
+                            minute: "2-digit"
+                          }) : "N/A"}
+                        </td>
+                        <td className="text-center">
+                          <button
+                            onClick={() => handleDeleteInquiry(inq.id)}
+                            className="btn btn-sm btn-outline-danger px-3 py-1 rounded-pill"
+                            style={{ fontSize: "12px" }}
+                          >
+                            Delete
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
             </div>
           </div>
         </section>
