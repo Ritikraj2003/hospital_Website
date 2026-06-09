@@ -111,12 +111,21 @@ export default function Footer({ openAppointmentModal }) {
         </div>
 
         {/* Bottom copyright section */}
-        <div className="d-flex justify-content-between flex-md-row flex-column align-items-center bd_btm pt-3 mt-4 text-center">
-          <div className="d-flex align-items-center mt_5 mb-2 mb-md-0 text-white gap-2">
-            <span className="color_wt fw_400 fs_12 lh_22 text-white">© 2026 Avni Hospital. All rights reserved.</span>
-          </div>
+        <div className="d-flex justify-content-center align-items-center flex-md-row flex-column bd_btm pt-3 mt-4 text-center gap-md-2 gap-1">
+          <span className="color_wt fw_400 fs_12 lh_22 text-white">
+            © 2026 Avni Hospital Pvt. Ltd. All rights reserved.
+          </span>
+          <span className="color_wt fw_400 fs_12 lh_22 text-white opacity-50 d-md-inline d-none">|</span>
           <span className="fw_400 fs_12 lh_22 color_wt text-white opacity-85">
-            Designed by Ritik
+            Design & Developed by{" "}
+            <a
+              href="https://ritikraj2003.github.io/My-portfolio/home"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="color_wt text-white text-decoration-underline"
+            >
+              Ritik Raj
+            </a>
           </span>
         </div>
       </div>

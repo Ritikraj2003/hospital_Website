@@ -59,7 +59,7 @@ export default function AboutPage() {
     { num: "06", icon: "🏨", color: "red", title: "Safety & Quality", desc: "Ensuring patient safety and providing the highest quality of healthcare services at all times." },
   ];
 
-  return (  
+  return (
     <div className="d-flex flex-column min-h-screen">
       <Header openAppointmentModal={handleOpenModal} />
 
@@ -275,7 +275,7 @@ export default function AboutPage() {
                 <p className="text-white mb-4" style={{ opacity: 0.85, fontSize: "15px", lineHeight: 1.75 }}>
                   Our highly trained nursing team forms the backbone of Avni Hospital's 24/7 care delivery — providing round-the-clock support, monitoring, and compassionate patient attention across all departments.
                 </p>
-                <button onClick={handleOpenModal} className="cta_btn_primary">Meet Our Team</button>
+                {/* <button onClick={handleOpenModal} className="cta_btn_primary">Meet Our Team</button> */}
               </div>
               <div className="col-lg-7">
                 <div className="row g-3">
