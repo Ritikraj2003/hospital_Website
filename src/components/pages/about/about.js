@@ -93,12 +93,12 @@ export default function AboutPage() {
             <div className="row align-items-center g-5">
               {/* Left: text */}
               <div className="col-lg-6">
-                <h2 className="legacy_heading mb-3">A Legacy of Care in Patna</h2>
+                <h2 className="legacy_heading mb-3">Best Private Hospital in Patna, Bihar</h2>
                 <p className="legacy_text mb-3">
-                  Avni Hospital is a premier 25-bedded multi-speciality healthcare facility located in the heart of Patna. Led by the visionary Dr. Harish Prasad B.R., our institution was founded on the principle that high-end clinical services should be delivered with deep human compassion.
+                  Avni Hospital is a premier 25-bedded Multispeciality Hospital in Patna, Bihar. Led by the visionary Dr. Harish Prasad B.R., our institution was founded on the principle of providing high-end clinical services with deep human compassion, establishing us as a top affordable hospital in Patna.
                 </p>
                 <p className="legacy_text mb-4">
-                  Since our inception, we have evolved into a centre of excellence, particularly known for laparoscopic surgery and cardiology. Our patient-centric approach ensures that every individual receives personalized attention in an environment that prioritizes safety, hygiene, and rapid recovery.
+                  Whether you are looking for a Gynecology Hospital, Maternity Hospital, Child Specialist Hospital, or a specialized Joint Replacement Hospital in Patna, our facility covers all major clinical areas. Since our inception, we have evolved into the best hospital in Bihar for laparoscopic surgery, neurosurgery, urology, nephrology, cancer treatments, and pediatric care.
                 </p>
                 {/* Stats row */}
                 <div className="legacy_stats_row">
@@ -123,7 +123,7 @@ export default function AboutPage() {
                   {/* Floating card */}
                   <div className="legacy_float_card">
                     <div className="legacy_float_icon">🛡️</div>
-                    <div className="legacy_float_text">Leading Multi-speciality Facility in Bihar</div>
+                    <div className="legacy_float_text">Leading Multispeciality Hospital in Bihar</div>
                   </div>
                 </div>
               </div>
@@ -182,7 +182,7 @@ export default function AboutPage() {
                     </div>
                     <div className="founder_h_body">
                       <span className="founder_h_tag" style={{ background: f.tagColor }}>{f.tag}</span>
-                      <h4 className="founder_h_name">{f.name}</h4>
+                      <h3 className="founder_h_name">{f.name}</h3>
                       <p className="founder_h_subtitle">{f.subtitle}</p>
                       <p className="founder_h_desc">{f.desc}</p>
                       <button onClick={handleOpenModal} className="founder_h_link">View Full Bio →</button>
@@ -211,7 +211,7 @@ export default function AboutPage() {
                   <div className="mgmt_card">
                     <div className="mgmt_icon_circle">{m.icon}</div>
                     <div className="section_header_tag mb-2">{m.title}</div>
-                    <h5 className="fw-bold text-dark mb-1" style={{ fontSize: "16px" }}>{m.name}</h5>
+                    <h3 className="fw-bold text-dark mb-1" style={{ fontSize: "16px" }}>{m.name}</h3>
                     <p className="text-muted mb-0" style={{ fontSize: "13px", lineHeight: 1.6 }}>{m.desc}</p>
                   </div>
                 </div>
@@ -251,7 +251,7 @@ export default function AboutPage() {
                       <span className="specialist_exp_badge">{doc.experience}</span>
                     </div>
                     <div className="specialist_body">
-                      <h5 className="fw-bold text-dark mb-1" style={{ fontSize: "15px" }}>{doc.name}</h5>
+                      <h3 className="fw-bold text-dark mb-1" style={{ fontSize: "15px" }}>{doc.name}</h3>
                       <p className="mb-2" style={{ fontSize: "12px", color: "#006D5B", fontWeight: 600 }}>{doc.role}</p>
                       {doc.education && <p className="text-muted mb-3" style={{ fontSize: "12px" }}>{doc.education}</p>}
                       <div className="d-flex align-items-center justify-content-between">
@@ -349,7 +349,7 @@ export default function AboutPage() {
                       </div>
                       <div className="value_bg_num">{item.num}</div>
                     </div>
-                    <h4 className="fw-bold text-dark mb-2" style={{ fontSize: "18px" }}>{item.title}</h4>
+                    <h3 className="fw-bold text-dark mb-2" style={{ fontSize: "18px" }}>{item.title}</h3>
                     <p className="text-muted mb-0" style={{ fontSize: "14px", lineHeight: 1.6 }}>{item.desc}</p>
                   </div>
                 </div>

@@ -17,11 +17,11 @@ function Hero({ openAppointmentModal }) {
   const typingSpeed = isDeleting ? 30 : 60;
 
   const bestPoints = React.useMemo(() => [
-    "Advanced Surgery & Compassionate Care",
-    "24/7 Emergency & Trauma Support",
-    "State-of-the-Art Modular OTs",
-    "Patna's Most Trusted Specialists",
-    "Patient-Centric Treatment Plans"
+    "Best Hospital for Surgery in Patna",
+    "24 Hour Hospital with Emergency & Trauma Support",
+    "Best Hospital for Pregnancy Care in Patna",
+    "Cardiology, Neurology & Orthopedic Care",
+    "Best Doctors in Patna & Specialized ICU Care"
   ], []);
 
   React.useEffect(() => {
@@ -58,7 +58,7 @@ function Hero({ openAppointmentModal }) {
       <div className="container hp_hero_inner">
         <div className="hp_hero_badge">
           <span className="hp_hero_badge_dot">✔</span>
-          25-Bedded Multi-Speciality Facility
+          Best Private Hospital in Patna
         </div>
         <h1 className="hp_hero_h1">
           Welcome to <span className="hp_hero_accent">Avni Hospital</span>
@@ -67,7 +67,7 @@ function Hero({ openAppointmentModal }) {
           <span>{text}<span className="hp_cursor">|</span></span>
         </div>
         <p className="hp_hero_sub">
-          Experience world-class healthcare in the heart of Patna. We provide sophisticated clinical solutions with human-centric warmth.
+          Experience world-class healthcare at the best hospital in Patna. If you are searching for a hospital near me in Patna, Avni Hospital is your premier choice, offering affordable hospital services, emergency care, and advanced treatments.
         </p>
         <div className="hp_hero_btns">
           <button onClick={openAppointmentModal} className="hp_btn_primary">
@@ -133,12 +133,12 @@ function About() {
           {/* Text */}
           <div className="col-lg-6">
             <span className="hp_section_eyebrow">Who We Are</span>
-            <h2 className="hp_section_h2">Clinical Excellence with a Human Touch</h2>
+            <h2 className="hp_section_h2">Best Private Hospital in Patna, Bihar</h2>
             <p className="hp_about_text">
-              Avni Hospital, situated in the heart of Patna, stands out as a premier 25-bedded multi-speciality hospital offering the most sophisticated and specialized medical services in the vicinity. Our patient-focused approach guarantees you receive the highest standard of individualized clinical care.
+              Avni Hospital, situated in the heart of Patna, stands out as a premier 25-bedded Multispeciality Hospital in Patna offering the most sophisticated and specialized medical services in the vicinity. As a highly recommended private hospital in Patna, our patient-focused approach guarantees you receive the highest standard of individualized clinical care.
             </p>
             <p className="hp_about_text">
-              Under the visionary leadership of Dr. Harish Prasad B.R., Avni Hospital has grown into a trusted healthcare hub. We combine highly experienced doctors and state-of-the-art diagnostic facilities to deliver seamless care to you and your family.
+              Under the visionary leadership of Dr. Harish Prasad B.R., Avni Hospital has grown into a trusted healthcare hub for anyone looking for an affordable hospital in Patna. We combine highly experienced doctors and state-of-the-art diagnostic facilities to deliver seamless care to you and your family.
             </p>
             <Link href="/about" className="hp_text_link">
               Read More About Our Mission <span>→</span>
@@ -185,7 +185,9 @@ function Departments() {
       <div className="container">
         <div className="text-center mb-5">
           <h2 className="hp_section_h2">Hospital Departments</h2>
-          <p className="hp_section_sub">Specialized clinical care across various disciplines, powered by advanced technology and expert surgeons.</p>
+          <p className="hp_section_sub">
+            Avni Hospital is a premier Multispeciality Hospital in Patna, functioning as a leading Cardiology Hospital, Heart Hospital, Neurology Hospital, Neurosurgery Hospital, Orthopedic Hospital, Urology Hospital, Nephrology Hospital, and Gynecology Hospital in Patna.
+          </p>
           <div className="hp_filter_tabs">
             {tabs.map((t) => (
               <button key={t.id} onClick={() => setFilter(t.id)}
@@ -217,25 +219,25 @@ function Emergency() {
       <div className="container">
         <div className="row align-items-center g-5">
           <div className="col-lg-6">
-            <div className="hp_emrg_badge">🚨 Critical Response Unit</div>
+            <div className="hp_emrg_badge">🚨 24x7 Emergency Hospital in Patna</div>
             <h2 className="hp_section_h2 mt-3">
-              Emergency &amp; <span className="hp_error_text">Ambulance</span> Services
+              Trauma Center &amp; <span className="hp_error_text">Critical Care</span> in Patna
             </h2>
             <p className="hp_about_text">
-              When every second counts, Avni Hospital provides rapid-response medical assistance. Our specialized ambulance fleet is equipped with advanced life-support systems to ensure patient stability during transit.
+              As a leading 24 Hour ICU Hospital in Patna, Avni Hospital provides rapid-response medical assistance. Our specialized trauma center in Patna is equipped with advanced life-support systems to ensure patient stability during transit.
             </p>
             <div className="hp_emrg_features">
               <div className="hp_emrg_feat">
                 <span className="hp_emrg_feat_icon">🕐</span>
                 <div>
-                  <h5 className="hp_emrg_feat_title">24/7 Availability</h5>
+                  <h3 className="hp_emrg_feat_title">24/7 Availability</h3>
                   <p className="hp_emrg_feat_desc">Round-the-clock dispatch for any medical emergency.</p>
                 </div>
               </div>
               <div className="hp_emrg_feat">
                 <span className="hp_emrg_feat_icon">👥</span>
                 <div>
-                  <h5 className="hp_emrg_feat_title">Rapid Response Team</h5>
+                  <h3 className="hp_emrg_feat_title">Rapid Response Team</h3>
                   <p className="hp_emrg_feat_desc">Highly trained paramedics and trauma specialists.</p>
                 </div>
               </div>
@@ -259,9 +261,9 @@ function Emergency() {
    ───────────────────────────────────────────────────────── */
 function Services({ openAppointmentModal }) {
   const services = [
-    { icon: "🏥", title: "Specialized Medical", desc: "Comprehensive care for chronic and acute illnesses, utilizing evidence-based treatment pathways and expert advice." },
-    { icon: "⚙️", title: "Surgical Specialties", desc: "Advanced minimally invasive, laparoscopic, and open procedures inside state-of-the-art sterile modular theatres." },
-    { icon: "💓", title: "24/7 Critical Care", desc: "Fully equipped Intensive Care Units (ICU) and round-the-clock emergency support managed by qualified practitioners." },
+    { icon: "🏥", title: "Best Hospital for Surgery in Patna", desc: "We are the best hospital for surgery in Patna, offering advanced minimally invasive, laparoscopic, and general surgical procedures." },
+    { icon: "💓", title: "Cardiology & Heart Hospital in Patna", desc: "Avni Hospital is a premier heart hospital in Patna, providing the best hospital for heart treatment in Patna with 24x7 ICU care." },
+    { icon: "🤰", title: "Pregnancy Care & Maternity Hospital", desc: "Known as the best hospital for pregnancy care in Patna, we offer comprehensive gynecology, pediatric, and child specialist care." },
   ];
   return (
     <section className="hp_services_section" id="services-blk">
@@ -316,7 +318,7 @@ function Doctors({ openAppointmentModal }) {
               </div>
               <div className="hp_doctor_body">
                 <span className="hp_doctor_dept">{doc.dept}</span>
-                <h4 className="hp_doctor_name">{doc.name}</h4>
+                <h3 className="hp_doctor_name">{doc.name}</h3>
                 <p className="hp_doctor_edu">{doc.edu}</p>
                 <button onClick={openAppointmentModal} className="hp_doctor_btn">Consult Doctor</button>
               </div>
@@ -333,9 +335,9 @@ function Doctors({ openAppointmentModal }) {
    ───────────────────────────────────────────────────────── */
 function WhyChooseUs({ openAppointmentModal }) {
   const features = [
-    { icon: "🩺", title: "Skilled Medical Professionals", desc: "A dedicated team of highly skilled professionals across various specialties dedicated to your care." },
-    { icon: "⏱️", title: "24x7 Emergency Support", desc: "Round-the-clock trauma centre, ICU, and rapid response emergency department for all critical cases." },
-    { icon: "🔬", title: "Advanced Medical Technology", desc: "Equipped with the latest in medical technology for accurate diagnosis and effective treatment." },
+    { icon: "🩺", title: "Best Doctors in Patna", desc: "A dedicated team of the best doctors in Patna across multiple specialties providing personalized care." },
+    { icon: "⏱️", title: "24 Hour Hospital & ICU in Patna", desc: "Round-the-clock trauma center in Patna, ICU, and rapid response emergency department for all critical cases." },
+    { icon: "🔬", title: "Affordable Private Hospital in Patna", desc: "Get top-tier medical facilities and advanced surgery treatments at affordable rates, making us the best hospital in Bihar." },
     { icon: "⚕️", title: "Advanced Diagnostics", desc: "Comprehensive imaging, pathology, and laboratory services for precise and accurate assessments." },
     { icon: "💜", title: "Personalized Care", desc: "Prioritizing personalized care and ensuring each patient receives the attention they deserve." },
     { icon: "🎗️", title: "Compassionate Care", desc: "A focus on compassionate service and a commitment to the overall well-being of every patient." },
@@ -352,7 +354,7 @@ function WhyChooseUs({ openAppointmentModal }) {
                 <div key={f.title} className="hp_why_feat">
                   <span className="hp_why_feat_icon">{f.icon}</span>
                   <div>
-                    <h5 className="hp_why_feat_title">{f.title}</h5>
+                    <h3 className="hp_why_feat_title">{f.title}</h3>
                     <p className="hp_why_feat_desc">{f.desc}</p>
                   </div>
                 </div>
@@ -445,7 +447,7 @@ function RecentNews() {
               </div>
               <div className="hp_news_body">
                 <p className="hp_news_date">{b.date}</p>
-                <h4 className="hp_news_title">{b.title}</h4>
+                <h3 className="hp_news_title">{b.title}</h3>
                 <p className="hp_news_desc">{b.desc}</p>
                 <a href="#" className="hp_news_read_link">Read Article...</a>
               </div>
