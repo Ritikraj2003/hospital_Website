@@ -2,6 +2,7 @@ import "./globals.css";
 import AmbulanceWidget from "./AmbulanceWidget";
 
 export const metadata = {
+  metadataBase: new URL("https://www.avnihospital.in"),
   title: "Avni Hospital - Best Multispeciality Hospital in Patna | Best Private Hospital in Bihar",
   description: "Avni Hospital is the best multispeciality hospital in Patna, Bihar. Offering 24/7 trauma care, best doctors in Patna, advanced surgery, heart treatment, ICU critical care, and pregnancy/maternity services.",
   verification: {

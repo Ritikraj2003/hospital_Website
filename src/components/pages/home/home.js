@@ -460,6 +460,108 @@ function RecentNews() {
 }
 
 /* ─────────────────────────────────────────────────────────
+   11. FAQ SECTION
+   ───────────────────────────────────────────────────────── */
+function FAQ() {
+  const faqs = [
+    {
+      q: "Why is Avni Hospital considered the best hospital in Patna?",
+      a: "Avni Hospital is recognized as the best multispeciality hospital in Patna because we offer 24/7 emergency trauma care, advanced laparoscopic surgeries, and a dedicated team of top doctors in Bihar specializing in cardiology, neurology, and orthopedics."
+    },
+    {
+      q: "Are there 24-hour emergency and ICU services available?",
+      a: "Yes, Avni Hospital operates a premier 24-hour emergency hospital in Patna. We feature a fully equipped critical care ICU, a modern trauma center, and a rapid response ambulance team ready at all times."
+    },
+    {
+      q: "What medical specialties does your private hospital offer?",
+      a: "As a leading private hospital in Patna, our core clinical specialties include Cardiology (Heart Treatment), Neurosurgery, Orthopedics, Urology, Maternity & Pregnancy Care, Pediatrics, and General Surgery."
+    },
+    {
+      q: "How can I book an appointment with the best doctors in Patna?",
+      a: "Booking an appointment is simple. You can schedule a consultation with our expert medical specialists by calling our 24/7 helpline, visiting our facility directly, or using the 'Book Appointment' button on this website."
+    }
+  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((f) => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.a
+      }
+    }))
+  };
+
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleFaq = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  return (
+    <section className="hp_faq_section" id="faq">
+      {/* Dynamic SEO FAQ Schema embedded directly in the component */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="container">
+        <div className="text-center mb-5">
+          <span className="hp_section_eyebrow">Got Questions?</span>
+          <h2 className="hp_section_h2">Frequently Asked Questions</h2>
+        </div>
+        <div className="hp_faq_list mx-auto" style={{ maxWidth: "800px" }}>
+          {faqs.map((faq, idx) => (
+            <div 
+              key={idx} 
+              className={`hp_faq_item ${activeIndex === idx ? "active" : ""}`}
+              style={{
+                marginBottom: "16px",
+                border: "1px solid #e0e0e0",
+                borderRadius: "8px",
+                overflow: "hidden",
+                background: "#fff"
+              }}
+            >
+              <button 
+                onClick={() => toggleFaq(idx)}
+                style={{
+                  width: "100%",
+                  padding: "16px 24px",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  background: "transparent",
+                  border: "none",
+                  fontWeight: "600",
+                  fontSize: "18px",
+                  color: "#006a60",
+                  cursor: "pointer",
+                  textAlign: "left"
+                }}
+              >
+                {faq.q}
+                <span style={{ fontSize: "24px" }}>
+                  {activeIndex === idx ? "-" : "+"}
+                </span>
+              </button>
+              {activeIndex === idx ? (
+                <div style={{ padding: "0 24px 20px", color: "#555", lineHeight: "1.6" }}>
+                  {faq.a}
+                </div>
+              ) : null}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────
    MAIN EXPORT
    ───────────────────────────────────────────────────────── */
 export default function Home() {
@@ -478,6 +580,7 @@ export default function Home() {
         <WhyChooseUs openAppointmentModal={() => setModalOpen(true)} />
         <Testimonials />
         <RecentNews />
+        <FAQ />
       </main>
       <Footer openAppointmentModal={() => setModalOpen(true)} />
       <AppointmentModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
