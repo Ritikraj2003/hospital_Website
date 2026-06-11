@@ -18,7 +18,7 @@ export default function ServiceHero({ service }) {
 
   return (
     <>
-      <section className="position-relative overflow-hidden" style={{ height: "70vh", minHeight: "500px", backgroundColor: "#000" }}>
+      <section className="position-relative overflow-hidden" style={{ minHeight: "max(500px, 70vh)", backgroundColor: "#000" }}>
         {images.map((img, idx) => (
           <div
             key={idx}
@@ -33,7 +33,7 @@ export default function ServiceHero({ service }) {
           ></div>
         ))}
 
-        <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
+        <div className="position-relative z-1 w-100 h-100 d-flex align-items-center" style={{ minHeight: "max(500px, 70vh)", padding: "100px 0" }}>
           <div className="container">
             <div className="row align-items-center g-5">
               {/* Left Text */}
@@ -57,7 +57,7 @@ export default function ServiceHero({ service }) {
               </div>
 
               {/* Right Insurance Card */}
-              <div className="col-lg-5 d-none d-lg-block">
+              <div className="col-lg-5 mt-5 mt-lg-0">
                 <div style={{ background: "rgba(255, 255, 255, 0.95)", backdropFilter: "blur(10px)", padding: "32px", borderRadius: "16px", boxShadow: "0 12px 40px rgba(0, 0, 0, 0.3)", maxWidth: "420px", marginLeft: "auto", borderTop: "5px solid #005344" }}>
                   <div className="d-flex align-items-center gap-2 mb-3">
                     <span style={{ fontSize: "28px" }}>🛡️</span>

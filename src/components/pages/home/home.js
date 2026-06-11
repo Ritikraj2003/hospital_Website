@@ -122,7 +122,7 @@ function Hero({ openAppointmentModal }) {
           </div>
           
           {/* Right Form */}
-          <div className="col-lg-5 d-none d-lg-block">
+          <div className="col-lg-5 mt-5 mt-lg-0">
             <div className="hp_hero_form_card">
               <h3 className="hp_form_title">Book an Appointment</h3>
               <p className="hp_form_sub">Get confirmed appointment with top doctors.</p>
