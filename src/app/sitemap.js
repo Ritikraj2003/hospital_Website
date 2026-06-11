@@ -7,31 +7,10 @@ export default function sitemap() {
     url: `${baseUrl}${route === "/" ? "" : route}`,
     lastModified: new Date(),
     changeFrequency: route === "/" ? "daily" : "weekly",
-    priority: route === "/" ? 1.0 : 0.8,
-  })); 
-
-  const serviceIds = [
-    "general-medicine", "cardiology", "neuro-medicine", "orthopedic", 
-    "pediatrics", "ent", "psychiatry", "dental", "plastic-surgery", "oncology"
-  ];
-
-  const servicesMainRoute = {
-    url: `${baseUrl}/services`,
-    lastModified: new Date(),
-    changeFrequency: "weekly",
-    priority: 0.9,
-  };
-
-  const serviceRoutes = serviceIds.map((id) => ({
-    url: `${baseUrl}/services/${id}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly",
-    priority: 0.8,
+    priority: route === "/" ? 1.0 : (route === "/services" || route === "/about" || route === "/contact" || route === "/insurance-cashless-facility" ? 0.9 : 0.8),
   }));
 
-  return [
-    ...routes,
-    servicesMainRoute,
-    ...serviceRoutes,
-  ];
+  // We no longer need to manually append services because they are already 
+  // explicitly defined in publicRoutes!
+  return routes;
 }
