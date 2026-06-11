@@ -133,6 +133,67 @@
 }
 .hp_btn_ghost:hover { background: #fff; color: #005344; border-color: #fff; }
 
+/* Hero Form */
+.hp_hero_form_card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  margin-left: auto;
+  max-width: 420px;
+}
+.hp_form_title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1A1C1B;
+  margin-bottom: 6px;
+}
+.hp_form_sub {
+  font-size: 14px;
+  color: #404947;
+  margin-bottom: 24px;
+}
+.hp_hero_form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.hp_form_input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #bec9c4;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1A1C1B;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+.hp_form_input:focus {
+  border-color: #005344;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 83, 68, 0.1);
+}
+.hp_form_submit {
+  background: #005344;
+  color: #fff;
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.hp_form_submit:hover {
+  background: #003d30;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 83, 68, 0.3);
+}
+
 /* ── 2. STATS BAR ── */
 .hp_stats_bar {
   background: #EBEFEC;
@@ -169,7 +230,99 @@
   letter-spacing: 0.1em;
 }
 
-/* ── 3. ABOUT ── */
+/* ── 3. INSURANCE BANNER ── */
+.hp_insurance_banner {
+  background: linear-gradient(135deg, #005344 0%, #003d30 100%);
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+.hp_insurance_banner::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(133, 246, 229, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hp_insurance_banner_inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 900px) {
+  .hp_insurance_banner_inner { flex-direction: column; text-align: center; }
+}
+.hp_insurance_eyebrow {
+  display: inline-block;
+  background: rgba(133, 246, 229, 0.2);
+  color: #85f6e5;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+.hp_insurance_h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.hp_insurance_p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+.hp_insurance_logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+@media (max-width: 900px) {
+  .hp_insurance_logos { justify-content: center; }
+}
+.hp_insurance_logo_badge {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+}
+.hp_insurance_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #85f6e5;
+  color: #003d30;
+  font-weight: 800;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.hp_insurance_btn:hover {
+  background: #fff;
+  color: #005344;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ── 4. ABOUT ── */
 .hp_about_section { padding: 100px 0; background: #fff; }
 .hp_about_img_grid {
   display: grid;

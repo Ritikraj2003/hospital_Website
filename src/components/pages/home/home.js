@@ -25,6 +25,41 @@ function Hero({ openAppointmentModal }) {
     "Best Doctors in Patna & Specialized ICU Care"
   ], []);
 
+  const handleHeroFormSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Collect form data
+    const formData = {
+      name: e.target[0].value,
+      phone: e.target[1].value,
+      email: e.target[2].value,
+      dept: e.target[3].value,
+      doctor: e.target[4].value,
+      date: e.target[5].value,
+      time: e.target[6].value,
+      message: "Booked directly from Homepage Hero section"
+    };
+
+    try {
+      const response = await fetch('/api/appointment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      if (response.ok) {
+        alert("Appointment request submitted successfully! Our team will contact you shortly to confirm your slot.");
+        e.target.reset();
+      } else {
+        const data = await response.json();
+        alert(data.error || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Booking error:", error);
+      alert("Error submitting request. Please try again later.");
+    }
+  };
+
   React.useEffect(() => {
     let timer;
     const currentPhrase = bestPoints[loopNum % bestPoints.length];
@@ -57,29 +92,78 @@ function Hero({ openAppointmentModal }) {
       <img src="/images/image(3).svg" alt="Avni Hospital" className="hp_hero_bg" />
       <div className="hp_hero_overlay" />
       <div className="container hp_hero_inner">
-        <div className="hp_hero_badge">
-          <span className="hp_hero_badge_dot">✔</span>
-          Best Private Hospital in Patna, Bihar
-        </div>
-        <h1 className="hp_hero_h1">
-          Welcome to <span className="hp_hero_accent">Avni Hospital</span>
-        </h1>
-        <div style={{ fontSize: "22px", fontWeight: "600", color: "#85f6e5", marginBottom: "16px", minHeight: "33px", display: "flex", alignItems: "center" }}>
-          <span>{text}<span className="hp_cursor">|</span></span>
-        </div>
-        <p className="hp_hero_sub">
-          Experience world-class healthcare at the <strong>best hospital in Patna, Bihar</strong>. Consistently recognized as a <strong>top 10 hospital in Patna</strong>, Avni Hospital is your premier choice. As the <strong>top service provider hospital in Patna</strong>, we offer 24/7 emergency trauma care, advanced treatments, and affordable services.
-        </p>
-        <div className="hp_hero_btns">
-          <button onClick={openAppointmentModal} className="hp_btn_primary">
-            Book Appointment Now <span>📅</span>
-          </button>
-          <button
-            onClick={() => window.open("https://maps.google.com/?q=Avni+Hospital+Patna", "_blank")}
-            className="hp_btn_ghost"
-          >
-            Get Location <span>📍</span>
-          </button>
+        <div className="row align-items-center g-5">
+          {/* Left Text */}
+          <div className="col-lg-7">
+            <div className="hp_hero_badge">
+              <span className="hp_hero_badge_dot">✔</span>
+              Best Private Hospital in Patna, Bihar
+            </div>
+            <h1 className="hp_hero_h1">
+              Welcome to <span className="hp_hero_accent">Avni Hospital</span>
+            </h1>
+            <div style={{ fontSize: "22px", fontWeight: "600", color: "#85f6e5", marginBottom: "16px", minHeight: "33px", display: "flex", alignItems: "center" }}>
+              <span>{text}<span className="hp_cursor">|</span></span>
+            </div>
+            <p className="hp_hero_sub">
+              Experience world-class healthcare at the <strong>best hospital in Patna, Bihar</strong>. Consistently recognized as a <strong>top 10 hospital in Patna</strong>, Avni Hospital is your premier choice. As the <strong>top service provider hospital in Patna</strong>, we offer 24/7 emergency trauma care, advanced treatments, and affordable services.
+            </p>
+            <div className="hp_hero_btns">
+              <button onClick={openAppointmentModal} className="hp_btn_primary">
+                Book Appointment Now <span>📅</span>
+              </button>
+              <button
+                onClick={() => window.open("https://maps.google.com/?q=Avni+Hospital+Patna", "_blank")}
+                className="hp_btn_ghost"
+              >
+                Get Location <span>📍</span>
+              </button>
+            </div>
+          </div>
+          
+          {/* Right Form */}
+          <div className="col-lg-5 d-none d-lg-block">
+            <div className="hp_hero_form_card">
+              <h3 className="hp_form_title">Book an Appointment</h3>
+              <p className="hp_form_sub">Get confirmed appointment with top doctors.</p>
+              <form className="hp_hero_form" onSubmit={handleHeroFormSubmit}>
+                <input type="text" placeholder="Patient Name" className="hp_form_input" required />
+                <div className="d-flex gap-2">
+                  <input type="tel" placeholder="Phone Number" className="hp_form_input" style={{flex: 1}} required />
+                  <input type="email" placeholder="Email Address" className="hp_form_input" style={{flex: 1}} required />
+                </div>
+                <div className="d-flex gap-2">
+                  <select className="hp_form_input" style={{flex: 1}} required>
+                    <option value="">Select Department</option>
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="Neurology">Neurology</option>
+                    <option value="Orthopaedics">Orthopaedics</option>
+                    <option value="Gynecology">Gynecology</option>
+                    <option value="General Surgery">General Surgery</option>
+                  </select>
+                  <select className="hp_form_input" style={{flex: 1}} required>
+                    <option value="">Select Doctor</option>
+                    <option value="Any Available">Any Available Doctor</option>
+                    <option value="Dr. Harish Prasad B.R.">Dr. Harish Prasad B.R.</option>
+                    <option value="Dr. Manohar CV">Dr. Manohar CV</option>
+                    <option value="Dr. Anika Parrikar">Dr. Anika Parrikar</option>
+                    <option value="Dr. Prashanth A">Dr. Prashanth A</option>
+                    <option value="Dr. Rakshith M">Dr. Rakshith M</option>
+                  </select>
+                </div>
+                <div className="d-flex gap-2">
+                  <input type="date" className="hp_form_input" style={{flex: 1}} required />
+                  <select className="hp_form_input" style={{flex: 1}} required>
+                    <option value="">Select Slot</option>
+                    <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
+                    <option value="Afternoon (12 PM - 4 PM)">Afternoon (12 PM - 4 PM)</option>
+                    <option value="Evening (4 PM - 8 PM)">Evening (4 PM - 8 PM)</option>
+                  </select>
+                </div>
+                <button type="submit" className="hp_form_submit">Confirm Booking</button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -106,6 +190,38 @@ function StatsBar() {
               <div className="hp_stat_label">{s.label}</div>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────
+   X. INSURANCE BANNER
+   ───────────────────────────────────────────────────────── */
+function InsuranceBanner() {
+  return (
+    <section className="hp_insurance_banner">
+      <div className="container">
+        <div className="hp_insurance_banner_inner">
+          <div className="hp_insurance_banner_content">
+            <span className="hp_insurance_eyebrow">Hassle-Free Care</span>
+            <h2 className="hp_insurance_h2">100% Cashless Hospitalization Facility</h2>
+            <p className="hp_insurance_p">
+              Recognized as the <strong>best insurance hospital in Patna</strong>, Avni Hospital offers a seamless, transparent, and hassle-free cashless hospitalization experience. We partner with all leading health insurance providers and TPAs.
+            </p>
+            <div className="hp_insurance_logos">
+              <span className="hp_insurance_logo_badge">Star Health</span>
+              <span className="hp_insurance_logo_badge">HDFC ERGO</span>
+              <span className="hp_insurance_logo_badge">ICICI Lombard</span>
+              <span className="hp_insurance_logo_badge">+ 20 More TPAs</span>
+            </div>
+          </div>
+          <div className="hp_insurance_banner_action">
+            <Link href="/insurance-cashless-facility" className="hp_insurance_btn">
+              Check Supported Insurance <span>→</span>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
@@ -573,6 +689,7 @@ export default function Home() {
       <main className="flex-grow">
         <Hero openAppointmentModal={() => setModalOpen(true)} />
         <StatsBar />
+        <InsuranceBanner />
         <About />
         <Departments />
         <Emergency />
