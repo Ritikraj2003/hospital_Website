@@ -8,6 +8,23 @@ export const metadata = {
   verification: {
     google: "wzySxLaO-8yM6ZZfRqgYzIJ6eKVQoq_gcZho-qEvyas",
   },
+  icons: {
+    icon: [
+      { url: '/images/logo_fev.png', sizes: 'any' },
+      { url: '/images/logo_fev.png', sizes: '48x48', type: 'image/png' },
+      { url: '/images/logo_fev.png', sizes: '96x96', type: 'image/png' },
+      { url: '/images/logo_fev.png', sizes: '144x144', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/images/logo_fev.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      {
+        rel: 'apple-touch-icon',
+        url: '/images/logo_fev.png',
+      },
+    ],
+  },
   keywords: [
     "Avni Hospital Patna",
     "Best Hospital for Heart Treatment in Patna",

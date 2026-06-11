@@ -78,7 +78,7 @@ export default function AboutPage() {
               Clinical Excellence with a Human Touch
             </h1>
             <p className="text-white mb-5" style={{ opacity: 0.85, fontSize: "16px", lineHeight: 1.75, maxWidth: "540px" }}>
-              Providing Patna with world-class healthcare through advanced surgical technology and compassionate clinical care.
+              Providing Patna with world-class healthcare. Consistently ranked as a <strong>top 10 hospital in Patna</strong>, we deliver advanced surgical technology and compassionate clinical care.
             </p>
             <div className="d-flex flex-wrap gap-3">
               <Link href="#founders-section" className="hero_btn_solid">Meet Our Founders</Link>
@@ -93,9 +93,9 @@ export default function AboutPage() {
             <div className="row align-items-center g-5">
               {/* Left: text */}
               <div className="col-lg-6">
-                <h2 className="legacy_heading mb-3">Best Private Hospital in Patna, Bihar</h2>
+                <h2 className="legacy_heading mb-3">Best Hospital in Patna, Bihar</h2>
                 <p className="legacy_text mb-3">
-                  Avni Hospital is a premier 25-bedded Multispeciality Hospital in Patna, Bihar. Led by the visionary Dr. Harish Prasad B.R., our institution was founded on the principle of providing high-end clinical services with deep human compassion, establishing us as a top affordable hospital in Patna.
+                  Avni Hospital is a premier 25-bedded Multispeciality Hospital in Patna, Bihar. Recognized as a <strong>top 10 private hospital in Patna</strong> and led by the visionary Dr. Harish Prasad B.R., our institution was founded on the principle of providing high-end clinical services with deep human compassion. We take pride in being the <strong>top service provider hospital in Patna</strong> for affordable and ethical healthcare.
                 </p>
                 <p className="legacy_text mb-4">
                   Whether you are looking for a Gynecology Hospital, Maternity Hospital, Child Specialist Hospital, or a specialized Joint Replacement Hospital in Patna, our facility covers all major clinical areas. Since our inception, we have evolved into the best hospital in Bihar for laparoscopic surgery, neurosurgery, urology, nephrology, cancer treatments, and pediatric care.

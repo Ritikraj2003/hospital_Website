@@ -17,10 +17,11 @@ function Hero({ openAppointmentModal }) {
   const typingSpeed = isDeleting ? 30 : 60;
 
   const bestPoints = React.useMemo(() => [
+    "Best Hospital in Patna, Bihar",
+    "Top 10 Private Hospital in Patna",
+    "Top Service Provider Hospital in Patna",
     "Best Hospital for Surgery in Patna",
     "24 Hour Hospital with Emergency & Trauma Support",
-    "Best Hospital for Pregnancy Care in Patna",
-    "Cardiology, Neurology & Orthopedic Care",
     "Best Doctors in Patna & Specialized ICU Care"
   ], []);
 
@@ -58,7 +59,7 @@ function Hero({ openAppointmentModal }) {
       <div className="container hp_hero_inner">
         <div className="hp_hero_badge">
           <span className="hp_hero_badge_dot">✔</span>
-          Best Private Hospital in Patna
+          Best Private Hospital in Patna, Bihar
         </div>
         <h1 className="hp_hero_h1">
           Welcome to <span className="hp_hero_accent">Avni Hospital</span>
@@ -67,7 +68,7 @@ function Hero({ openAppointmentModal }) {
           <span>{text}<span className="hp_cursor">|</span></span>
         </div>
         <p className="hp_hero_sub">
-          Experience world-class healthcare at the best hospital in Patna. If you are searching for a hospital near me in Patna, Avni Hospital is your premier choice, offering affordable hospital services, emergency care, and advanced treatments.
+          Experience world-class healthcare at the <strong>best hospital in Patna, Bihar</strong>. Consistently recognized as a <strong>top 10 hospital in Patna</strong>, Avni Hospital is your premier choice. As the <strong>top service provider hospital in Patna</strong>, we offer 24/7 emergency trauma care, advanced treatments, and affordable services.
         </p>
         <div className="hp_hero_btns">
           <button onClick={openAppointmentModal} className="hp_btn_primary">

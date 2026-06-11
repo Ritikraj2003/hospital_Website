@@ -1,0 +1,352 @@
+/* ============================================================
+   Insurance Page Custom Styles (Matching Design)
+   ============================================================ */
+
+/* ---- Color Palette ---- */
+:root {
+  --ins-primary: #006D5B; /* Dark green */
+  --ins-light-green: #E4F1EF; /* Very light green background */
+  --ins-text-dark: #1a2e2b;
+  --ins-text-light: #6c757d;
+  --ins-bg-gray: #F8F9FA;
+}
+
+/* ---- Hero Section ---- */
+.ins_hero_section {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #fdfdfd;
+}
+.ins_hero_bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+  z-index: 0;
+}
+.ins_hero_overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.2) 100%);
+  z-index: 1;
+}
+.ins_hero_content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 0;
+  max-width: 600px;
+}
+.ins_hero_badge {
+  display: inline-block;
+  background: #E4F1EF;
+  color: #006D5B;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.ins_hero_h1 {
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 800;
+  color: #006D5B;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.ins_hero_sub {
+  font-size: 16px;
+  color: #4a5568;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+.ins_hero_btns {
+  display: flex;
+  gap: 16px;
+}
+.ins_btn_solid {
+  background: #006D5B;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  border: 2px solid #006D5B;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.ins_btn_solid:hover {
+  background: #004D40;
+  color: #fff;
+}
+.ins_btn_outline {
+  background: transparent;
+  color: #006D5B;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  border: 2px solid #006D5B;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.ins_btn_outline:hover {
+  background: #006D5B;
+  color: #fff;
+}
+
+/* ---- Shared Section ---- */
+.ins_section {
+  padding: 90px 0;
+  background: #F8FBFB;
+}
+.ins_section_white {
+  padding: 90px 0;
+  background: #fff;
+}
+.ins_section_title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #006D5B;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.ins_section_sub {
+  font-size: 14px;
+  color: #6c757d;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 50px;
+}
+
+/* ---- Journey Steps ---- */
+.ins_journey_card {
+  text-align: center;
+  padding: 0 10px;
+}
+.ins_journey_icon_wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #006D5B;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 24px;
+  box-shadow: 0 8px 20px rgba(0,109,91,0.2);
+}
+.ins_journey_title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #006D5B;
+  margin-bottom: 12px;
+}
+.ins_journey_desc {
+  font-size: 13px;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+/* ---- Partners Grid ---- */
+.ins_partners_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+.ins_partners_header .ins_section_title {
+  text-align: left;
+  margin-bottom: 8px;
+}
+.ins_partners_header .ins_section_sub {
+  text-align: left;
+  margin: 0;
+  max-width: 500px;
+}
+.ins_partner_card {
+  background: #fff;
+  border: 1px solid #E4F1EF;
+  border-radius: 8px;
+  padding: 24px 10px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #006D5B;
+  transition: all 0.3s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ins_partner_card:hover {
+  box-shadow: 0 8px 20px rgba(0,109,91,0.08);
+  transform: translateY(-2px);
+}
+
+/* ---- Checklist & Helpdesk ---- */
+.ins_checklist_card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+  height: 100%;
+}
+.ins_checklist_title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1a2e2b;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ins_checklist_sub {
+  font-size: 13px;
+  color: #6c757d;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+.ins_doc_item {
+  background: #F8FBFB;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid #E4F1EF;
+}
+.ins_doc_icon {
+  color: #006D5B;
+  font-size: 20px;
+}
+.ins_doc_title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a2e2b;
+  margin-bottom: 4px;
+}
+.ins_doc_desc {
+  font-size: 11px;
+  color: #888;
+  line-height: 1.4;
+}
+
+.ins_helpdesk_card {
+  background: #006D5B;
+  border-radius: 16px;
+  padding: 40px;
+  color: #fff;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.ins_helpdesk_card::after {
+  content: "headset_mic";
+  font-family: "Material Symbols Outlined";
+  position: absolute;
+  right: -20px;
+  top: 20px;
+  font-size: 160px;
+  opacity: 0.1;
+  color: #fff;
+}
+.ins_helpdesk_title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+.ins_helpdesk_desc {
+  font-size: 14px;
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+.ins_contact_row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+.ins_contact_icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.ins_contact_label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+.ins_contact_value {
+  font-size: 16px;
+  font-weight: 700;
+}
+.ins_location_strip {
+  background: rgba(255,255,255,0.15);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- FAQ ---- */
+.ins_faq_container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.ins_faq_item {
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  overflow: hidden;
+}
+.ins_faq_btn {
+  width: 100%;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  border: none;
+  font-weight: 700;
+  font-size: 15px;
+  color: #006D5B;
+  cursor: pointer;
+  text-align: left;
+}
+.ins_faq_content {
+  padding: 0 24px 20px;
+  color: #6c757d;
+  font-size: 14px;
+  line-height: 1.6;
+}
