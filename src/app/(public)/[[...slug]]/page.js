@@ -47,11 +47,11 @@ export async function generateMetadata({ params }) {
       title: service.seoTitle,
       description: service.description,
       keywords: service.keywords,
-      alternates: { canonical: `https://www.avnihospital.in/${serviceId}` },
+      alternates: { canonical: `https://www.avnihospital.in/services/${serviceId}` },
       openGraph: { 
         title: service.seoTitle, 
         description: service.description,
-        url: `https://www.avnihospital.in/${serviceId}`,
+        url: `https://www.avnihospital.in/services/${serviceId}`,
         type: 'website',
         siteName: 'Avni Hospital'
       },
