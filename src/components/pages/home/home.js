@@ -390,7 +390,7 @@ function Services({ openAppointmentModal }) {
             <span className="hp_section_eyebrow">Services &amp; Treatment</span>
             <h2 className="hp_section_h2">Clinical Care Offerings</h2>
           </div>
-          <button className="hp_view_all_btn">View All Services</button>
+          <Link href="/services" className="hp_view_all_btn text-decoration-none" style={{ display: 'inline-block', textAlign: 'center' }}>View All Services</Link>
         </div>
         <div className="hp_services_grid">
           {services.map((s) => (

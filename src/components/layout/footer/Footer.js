@@ -44,7 +44,7 @@ export default function Footer({ openAppointmentModal }) {
               <h6 className="color_wt fw_700 fs_14 lh_16 mb_13 text-white">Other Links</h6>
               <ul className="list-unstyled d-flex flex-column gap-2 mb-0">
                 <li><Link href="/#our-doctor" className="color_wt fw_400 fs_12 text-decoration text-white opacity-80 hover-opacity-100">Doctor Profiles</Link></li>
-                <li><Link href="/#department-blk" className="color_wt fw_400 fs_12 text-decoration text-white opacity-80 hover-opacity-100">Departments</Link></li>
+                <li><Link href="/services" className="color_wt fw_400 fs_12 text-decoration text-white opacity-80 hover-opacity-100">Treatments & Services</Link></li>
                 <li>
                   <span 
                     onClick={openAppointmentModal} 
