@@ -1,11 +1,15 @@
-import React from "react";
-import ServiceLayout from "./ServiceLayout";
+"use client";
+import React, { useState } from "react";
+import Header from "@/components/layout/header/Header";
+import Footer from "@/components/layout/footer/Footer";
+import AppointmentModal from "@/components/AppointmentModal";
 import ServiceHero from "./ServiceHero";
 import ServiceSidebar from "./ServiceSidebar";
 import { servicesData } from "@/lib/servicesData";
 import { notFound } from "next/navigation";
 
 export default function ServicesPage({ serviceId }) {
+  const [modalOpen, setModalOpen] = useState(false);
   const service = servicesData[serviceId];
 
   if (!service) {
@@ -13,8 +17,10 @@ export default function ServicesPage({ serviceId }) {
   }
 
   return (
-    <ServiceLayout>
-      <ServiceHero service={service} />
+    <div className="d-flex flex-column min-h-screen bg-light">
+      <Header openAppointmentModal={() => setModalOpen(true)} />
+      <main className="flex-grow pb-5">
+        <ServiceHero service={service} />
       
       {/* CONTENT SECTION (SEO OPTIMIZED) */}
       <section className="container mt-5">
@@ -190,6 +196,9 @@ export default function ServicesPage({ serviceId }) {
         </div>
       </section>
 
-    </ServiceLayout>
+    </main>
+      <Footer openAppointmentModal={() => setModalOpen(true)} />
+      <AppointmentModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+    </div>
   );
 }
