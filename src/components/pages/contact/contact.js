@@ -38,7 +38,7 @@ export default function ContactPage() {
   const infoCards = [
     { icon: "📍", title: "Our Address",  lines: ["Amaranth mandir rode near", "bhoothnath metro station,", "Patna, Bihar, 800026"] },
     { icon: "📞", title: "Phone",        lines: ["General: +91 99312 12664", "Emergency: 1066"] },
-    { icon: "✉️", title: "Email",        lines: ["info@avnihospital.com"] },
+    { icon: "✉️", title: "Email",        lines: ["avnihospital26@gmail.com"] },
     { icon: "🕐", title: "Hours",        lines: ["Emergency: 24/7", "OPD: 9:00 AM – 8:00 PM"] },
   ];
 
@@ -171,7 +171,7 @@ export default function ContactPage() {
                 {/* Map */}
                 <div className="map_outer">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.4!2d85.1355!3d25.5941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed590d5c379573%3A0x1f7bbd4b5c534a92!2sBhoothnath+Metro+Station%2C+Patna!5e0!3m2!1sen!2sin!4v1686000000000"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.568553637405!2d85.17227087517696!3d25.586017077462728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed5900547d30c7%3A0x97584a6433701c1f!2sAvni%20Hospital!5e0!3m2!1sen!2sin!4v1783562438341!5m2!1sen!2sin"
                     title="Avni Hospital Location"
                     allowFullScreen=""
                     loading="lazy"

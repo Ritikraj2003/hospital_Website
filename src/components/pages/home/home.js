@@ -252,7 +252,7 @@ function About() {
             <span className="hp_section_eyebrow">Who We Are</span>
             <h2 className="hp_section_h2">Best Private Hospital in Patna, Bihar</h2>
             <p className="hp_about_text">
-              Avni Hospital, situated in the heart of Patna, stands out as a premier 25-bedded Multispeciality Hospital in Patna offering the most sophisticated and specialized medical services in the vicinity. As a highly recommended private hospital in Patna, our patient-focused approach guarantees you receive the highest standard of individualized clinical care.
+              Avni Hospital, situated in the heart of Patna, stands out as a premier 60-bedded Multispeciality Hospital in Patna offering the most sophisticated and specialized medical services in the vicinity. As a highly recommended private hospital in Patna, our patient-focused approach guarantees you receive the highest standard of individualized clinical care.
             </p>
             <p className="hp_about_text">
               Under the visionary leadership of Dr. Harish Prasad B.R., Avni Hospital has grown into a trusted healthcare hub for anyone looking for an affordable hospital in Patna. We combine highly experienced doctors and state-of-the-art diagnostic facilities to deliver seamless care to you and your family.

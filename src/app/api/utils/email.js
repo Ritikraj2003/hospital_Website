@@ -17,7 +17,7 @@ export async function sendAppointmentEmail(appointment) {
   // 1. Email for Admin
   const adminMailOptions = {
     from: `"Avni Hospital Booking" <${process.env.EMAIL_USER}>`,
-    to: "avnihospital2026@gmail.com",
+    to: "avnihospital26@gmail.com",
     subject: `New Appointment Booking - ${name}`,
     html: `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
