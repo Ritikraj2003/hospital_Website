@@ -1,20 +1,35 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
 import AppointmentModal from "@/components/AppointmentModal";
 import Link from "next/link";
+import { allDoctors } from "@/lib/doctorsData";
 import "./home.css";
 
 /* ─────────────────────────────────────────────────────────
    1. HERO
    ───────────────────────────────────────────────────────── */
 function Hero({ openAppointmentModal }) {
-  const [text, setText] = React.useState("");
-  const [isDeleting, setIsDeleting] = React.useState(false);
-  const [loopNum, setLoopNum] = React.useState(0);
-  const typingSpeed = isDeleting ? 30 : 60;
+  const [loopNum, setLoopNum] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [text, setText] = useState("");
+  const typingSpeed = isDeleting ? 30 : 50;
+
+  // Hero Slider State
+  const heroImages = [
+    "/images/Avni_hospital_patna.png",
+    "/images/Avni_hospital_recipetion.png"
+  ];
+  const [currentHeroImage, setCurrentHeroImage] = useState(0);
+
+  useEffect(() => {
+    const heroInterval = setInterval(() => {
+      setCurrentHeroImage((prev) => (prev + 1) % heroImages.length);
+    }, 4000);
+    return () => clearInterval(heroInterval);
+  }, []);
 
   const bestPoints = React.useMemo(() => [
     "Best Hospital in Patna, Bihar",
@@ -27,7 +42,7 @@ function Hero({ openAppointmentModal }) {
 
   const handleHeroFormSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Collect form data
     const formData = {
       name: e.target[0].value,
@@ -46,7 +61,7 @@ function Hero({ openAppointmentModal }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-      
+
       if (response.ok) {
         alert("Appointment request submitted successfully! Our team will contact you shortly to confirm your slot.");
         e.target.reset();
@@ -89,7 +104,18 @@ function Hero({ openAppointmentModal }) {
 
   return (
     <section className="hp_hero" id="home-page">
-      <img src="/images/image(3).svg" alt="Avni Hospital" className="hp_hero_bg" />
+      {heroImages.map((src, index) => (
+        <img
+          key={index}
+          src={src}
+          alt="Avni Hospital"
+          className="hp_hero_bg"
+          style={{
+            opacity: index === currentHeroImage ? 1 : 0,
+            transition: "opacity 1.5s ease-in-out"
+          }}
+        />
+      ))}
       <div className="hp_hero_overlay" />
       <div className="container hp_hero_inner">
         <div className="row align-items-center g-5">
@@ -102,13 +128,10 @@ function Hero({ openAppointmentModal }) {
             <h1 className="hp_hero_h1">
               Welcome to <span className="hp_hero_accent">Avni Hospital</span>
             </h1>
-            <div style={{ fontSize: "22px", fontWeight: "600", color: "#85f6e5", marginBottom: "16px", minHeight: "33px", display: "flex", alignItems: "center" }}>
+            <div className="hp_typing_text mb-4">
               <span>{text}<span className="hp_cursor">|</span></span>
             </div>
-            <p className="hp_hero_sub">
-              Experience world-class healthcare at the <strong>best hospital in Patna, Bihar</strong>. Consistently recognized as a <strong>top 10 hospital in Patna</strong>, Avni Hospital is your premier choice. As the <strong>top service provider hospital in Patna</strong>, we offer 24/7 emergency trauma care, advanced treatments, and affordable services.
-            </p>
-            <div className="hp_hero_btns">
+            <div className="hp_hero_btns mt-5">
               <button onClick={openAppointmentModal} className="hp_btn_primary">
                 Book Appointment Now <span>📅</span>
               </button>
@@ -120,20 +143,20 @@ function Hero({ openAppointmentModal }) {
               </button>
             </div>
           </div>
-          
-          {/* Right Form */}
-          <div className="col-lg-5 mt-5 mt-lg-0">
+
+          {/* Right Form - Hidden on Mobile */}
+          <div className="col-lg-5 mt-5 mt-lg-0 d-none d-lg-block">
             <div className="hp_hero_form_card">
               <h3 className="hp_form_title">Book an Appointment</h3>
               <p className="hp_form_sub">Get confirmed appointment with top doctors.</p>
               <form className="hp_hero_form" onSubmit={handleHeroFormSubmit}>
                 <input type="text" placeholder="Patient Name" className="hp_form_input" required />
                 <div className="d-flex gap-2">
-                  <input type="tel" placeholder="Phone Number" className="hp_form_input" style={{flex: 1}} required />
-                  <input type="email" placeholder="Email Address" className="hp_form_input" style={{flex: 1}} required />
+                  <input type="tel" placeholder="Phone Number" className="hp_form_input" style={{ flex: 1 }} required />
+                  <input type="email" placeholder="Email Address" className="hp_form_input" style={{ flex: 1 }} required />
                 </div>
                 <div className="d-flex gap-2">
-                  <select className="hp_form_input" style={{flex: 1}} required>
+                  <select className="hp_form_input" style={{ flex: 1 }} required>
                     <option value="">Select Department</option>
                     <option value="Cardiology">Cardiology</option>
                     <option value="Neurology">Neurology</option>
@@ -141,7 +164,7 @@ function Hero({ openAppointmentModal }) {
                     <option value="Gynecology">Gynecology</option>
                     <option value="General Surgery">General Surgery</option>
                   </select>
-                  <select className="hp_form_input" style={{flex: 1}} required>
+                  <select className="hp_form_input" style={{ flex: 1 }} required>
                     <option value="">Select Doctor</option>
                     <option value="Any Available">Any Available Doctor</option>
                     <option value="Dr. Harish Prasad B.R.">Dr. Harish Prasad B.R.</option>
@@ -152,8 +175,8 @@ function Hero({ openAppointmentModal }) {
                   </select>
                 </div>
                 <div className="d-flex gap-2">
-                  <input type="date" className="hp_form_input" style={{flex: 1}} required />
-                  <select className="hp_form_input" style={{flex: 1}} required>
+                  <input type="date" className="hp_form_input" style={{ flex: 1 }} required />
+                  <select className="hp_form_input" style={{ flex: 1 }} required>
                     <option value="">Select Slot</option>
                     <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
                     <option value="Afternoon (12 PM - 4 PM)">Afternoon (12 PM - 4 PM)</option>
@@ -239,7 +262,7 @@ function About() {
           {/* Images */}
           <div className="col-lg-6">
             <div className="hp_about_img_grid">
-              <img src="/images/image(3).svg" alt="Medical equipment" className="hp_about_img hp_about_img_top" />
+              <img src="/images/Avni_hospital_ICU.png" alt="Avni Hospital ICU" className="hp_about_img hp_about_img_top" />
               <img src="/images/image(12).svg" alt="Patient care" className="hp_about_img hp_about_img_btm" />
               <div className="hp_about_badge_box">
                 <p className="hp_about_badge_title">Healing with Compassion</p>
@@ -256,6 +279,9 @@ function About() {
             </p>
             <p className="hp_about_text">
               Under the visionary leadership of Dr. Harish Prasad B.R., Avni Hospital has grown into a trusted healthcare hub for anyone looking for an affordable hospital in Patna. We combine highly experienced doctors and state-of-the-art diagnostic facilities to deliver seamless care to you and your family.
+            </p>
+            <p className="hp_about_text" style={{ fontSize: "15px", color: "#6e7975" }}>
+              Experience world-class healthcare at the <strong>best hospital in Patna, Bihar</strong>. Consistently recognized as a <strong>top 10 hospital in Patna</strong>, Avni Hospital is your premier choice. As the <strong>top service provider hospital in Patna</strong>, we offer 24/7 emergency trauma care, advanced treatments, and affordable services.
             </p>
             <Link href="/about" className="hp_text_link">
               Read More About Our Mission <span>→</span>
@@ -274,18 +300,28 @@ function Departments() {
   const [filter, setFilter] = useState("all");
 
   const depts = [
-    { name: "Laparoscopic", icon: "🔬", category: "surgery" },
-    { name: "Laparotomy", icon: "🏥", category: "surgery" },
-    { name: "General Medicine", icon: "🩺", category: "general" },
-    { name: "Diabetology", icon: "🩸", category: "specialty" },
-    { name: "Obstetrics", icon: "🤰", category: "general" },
-    { name: "Gynaecology", icon: "👩‍⚕️", category: "general" },
-    { name: "Fertility (IVF)", icon: "🧬", category: "specialty" },
-    { name: "Pediatrics", icon: "👶", category: "general" },
-    { name: "Orthopaedics", icon: "🦴", category: "surgery" },
+    { name: "General Physician", icon: "🩺", category: "general" },
     { name: "Neurology", icon: "🧠", category: "specialty" },
+    { name: "Urology", icon: "💧", category: "specialty" },
+    { name: "Gynecology", icon: "👩‍⚕️", category: "specialty" },
     { name: "Cardiology", icon: "❤️", category: "specialty" },
+    { name: "Orthopaedics", icon: "🦴", category: "surgery" },
+    { name: "General Surgery", icon: "🏥", category: "surgery" },
+    { name: "Paediatric Surgery", icon: "👶", category: "surgery" },
+    { name: "Anaesthesia", icon: "💉", category: "general" },
+    { name: "Dermatology", icon: "✨", category: "specialty" },
+    { name: "Cosmetic Surgery", icon: "✂️", category: "surgery" },
+    { name: "General Medicine", icon: "💊", category: "general" },
+    { name: "Paediatrics", icon: "🍼", category: "general" },
+    { name: "Plastic Surgery", icon: "🎭", category: "surgery" },
+    { name: "Psychiatry", icon: "🗣️", category: "specialty" },
+    { name: "Pulmonology", icon: "🫁", category: "specialty" },
+    { name: "Gastrology", icon: "🍽️", category: "specialty" },
+    { name: "Neuro Surgery", icon: "🔪", category: "surgery" },
+    { name: "Oncology Surgery", icon: "🎗️", category: "surgery" },
     { name: "Oncology", icon: "🔬", category: "specialty" },
+    { name: "Nephrology", icon: "🩸", category: "specialty" },
+    { name: "ENT", icon: "👂", category: "specialty" }
   ];
 
   const tabs = [
@@ -364,7 +400,7 @@ function Emergency() {
           <div className="col-lg-6">
             <div className="hp_emrg_img_wrap">
               <div className="hp_emrg_glow" />
-              <img src="/images/image(3).svg" alt="Emergency ambulance" className="hp_emrg_img" />
+              <img src="/images/Avni_Hospital_patna_night.png" alt="Emergency ambulance" className="hp_emrg_img" />
             </div>
           </div>
         </div>
@@ -413,12 +449,8 @@ function Services({ openAppointmentModal }) {
    7. DOCTORS
    ───────────────────────────────────────────────────────── */
 function Doctors({ openAppointmentModal }) {
-  const doctors = [
-    { name: "Dr. Manohar CV",    dept: "Cardiology",    exp: "15+ Years", edu: "MD, DM (Cardiology)",    img: "/images/doctor-preparing-consult1.svg" },
-    { name: "Dr. Anika Parrikar", dept: "Gynaecology",  exp: "12+ Years", edu: "MS (OBG), IVF Specialist", img: "/images/front-view-laughing-female-doctor-holding-stethoscope-her-hands-standing-yellow-background1.svg" },
-    { name: "Dr. Prashanth A",   dept: "Neurology",     exp: "14+ Years", edu: "MD, DM (Neurology)",      img: "/images/smiling-young-male-doctor-wearing-stethoscope-medical-gown-isolated-white-wall1.svg" },
-    { name: "Dr. Rakshith M",    dept: "Orthopaedics",  exp: "10+ Years", edu: "MS (Orthopaedics), MCh",  img: "/images/doctor-preparing-consult1.svg" },
-  ];
+  const displayedDoctors = allDoctors.slice(0, 4);
+
   return (
     <section className="hp_doctors_section" id="our-doctor">
       <div className="container">
@@ -427,11 +459,11 @@ function Doctors({ openAppointmentModal }) {
           <p className="hp_section_sub">Avni Hospital is supported by a multidisciplinary team of highly experienced specialist doctors, delivering advanced diagnostics and surgical expertise.</p>
         </div>
         <div className="hp_doctors_grid">
-          {doctors.map((doc) => (
-            <div key={doc.name} className="hp_doctor_card">
+          {displayedDoctors.map((doc, idx) => (
+            <div key={idx} className="hp_doctor_card">
               <div className="hp_doctor_img_wrap">
                 <img src={doc.img} alt={doc.name} className="hp_doctor_img" />
-                <div className="hp_doctor_exp_badge">{doc.exp} Exp</div>
+                {doc.exp && <div className="hp_doctor_exp_badge">{doc.exp} Exp</div>}
               </div>
               <div className="hp_doctor_body">
                 <span className="hp_doctor_dept">{doc.dept}</span>
@@ -441,6 +473,15 @@ function Doctors({ openAppointmentModal }) {
               </div>
             </div>
           ))}
+        </div>
+        <div className="text-center mt-5">
+          <Link
+            href="/doctors"
+            className="hp_btn_ghost text-decoration-none"
+            style={{ borderColor: "#0A3D91", color: "#0A3D91", display: "inline-block" }}
+          >
+            View All 60+ Doctors
+          </Link>
         </div>
       </div>
     </section>
@@ -482,7 +523,7 @@ function WhyChooseUs({ openAppointmentModal }) {
           <div className="col-lg-6 d-none d-lg-block">
             <div className="hp_why_img_wrap">
               <div className="hp_why_glow" />
-              <img src="/images/image(13).svg" alt="Modern hospital exterior" className="hp_why_img" />
+              <img src="/images/Avni_hospital_operation_room.png" alt="Modern hospital exterior" className="hp_why_img" />
             </div>
           </div>
         </div>
@@ -541,9 +582,9 @@ function Testimonials() {
    ───────────────────────────────────────────────────────── */
 function RecentNews() {
   const blogs = [
-    { date: "17 Sep, 2025", category: "Immunology",    title: "How to Improve Immunity Naturally",        desc: "Our leading dieticians share proven nutritional methods and lifestyle routines to safely double your defenses.",            img: "/images/image(11).svg" },
-    { date: "16 Sep, 2025", category: "General Health", title: "Build Strong Immunity Naturally",          desc: "An informative guide detailing the impact of hydration and regular physical activity on organic resilience.",              img: "/images/image(12).svg" },
-    { date: "11 Sep, 2024", category: "Surgery",        title: "Surgical Specialties & Laparoscopy",       desc: "Understanding the safety and recovery benefits of modern minimally invasive keyhole procedures at Avni Hospital.",         img: "/images/image(13).svg" },
+    { date: "17 Sep, 2025", category: "Immunology", title: "How to Improve Immunity Naturally", desc: "Our leading dieticians share proven nutritional methods and lifestyle routines to safely double your defenses.", img: "/images/image(11).svg" },
+    { date: "16 Sep, 2025", category: "General Health", title: "Build Strong Immunity Naturally", desc: "An informative guide detailing the impact of hydration and regular physical activity on organic resilience.", img: "/images/image(12).svg" },
+    { date: "11 Sep, 2024", category: "Surgery", title: "Surgical Specialties & Laparoscopy", desc: "Understanding the safety and recovery benefits of modern minimally invasive keyhole procedures at Avni Hospital.", img: "/images/image(13).svg" },
   ];
   return (
     <section className="hp_news_section" id="recent-news">
@@ -632,8 +673,8 @@ function FAQ() {
         </div>
         <div className="hp_faq_list mx-auto" style={{ maxWidth: "800px" }}>
           {faqs.map((faq, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className={`hp_faq_item ${activeIndex === idx ? "active" : ""}`}
               style={{
                 marginBottom: "16px",
@@ -643,7 +684,7 @@ function FAQ() {
                 background: "#fff"
               }}
             >
-              <button 
+              <button
                 onClick={() => toggleFaq(idx)}
                 style={{
                   width: "100%",

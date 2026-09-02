@@ -15,8 +15,8 @@ export default function Dashboard({ bookings, setActiveTab, handleDeleteBooking 
         
         {/* Metric Card 1 */}
         <div className="col-md-4">
-          <div className="metric-card" style={{ borderLeft: "5px solid #006D5B" }}>
-            <div className="metric-icon-wrapper" style={{ backgroundColor: "#E4F1EF", color: "#006D5B" }}>
+          <div className="metric-card" style={{ borderLeft: "5px solid #09347A" }}>
+            <div className="metric-icon-wrapper" style={{ backgroundColor: "#E4F1EF", color: "#09347A" }}>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                 <circle cx="9" cy="7" r="4" />
@@ -68,7 +68,7 @@ export default function Dashboard({ bookings, setActiveTab, handleDeleteBooking 
       <div className="card border-0 shadow-sm rounded-lg overflow-hidden">
         <div className="card-header bg-white py-3 border-bottom d-flex justify-content-between align-items-center">
           <h6 className="m-0 fw-bold text-dark">📅 Recent Bookings</h6>
-          <button onClick={() => setActiveTab("appointments")} className="btn btn-link text-decoration-none p-0 fw-bold small" style={{ color: "#006D5B" }}>
+          <button onClick={() => setActiveTab("appointments")} className="btn btn-link text-decoration-none p-0 fw-bold small" style={{ color: "#09347A" }}>
             View All →
           </button>
         </div>

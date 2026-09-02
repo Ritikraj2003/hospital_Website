@@ -1,4 +1,7 @@
+import { additionalServicesData } from './additionalServicesData';
+
 export const servicesData = {
+  ...additionalServicesData,
   "general-medicine": {
     id: "general-medicine",
     title: "General Medicine",
@@ -653,8 +656,8 @@ export const servicesData = {
     cta: "Consult our Expert Plastic Surgeons Today.",
     images: ["/images/plastic-surgery.png"]
   },
-  "oncology": {
-    id: "oncology",
+  "oncologist": {
+    id: "oncologist",
     title: "Oncology",
     h1: "Best Cancer Hospital in Patna | Top Oncology Specialists",
     seoTitle: "Best Oncologist in Patna | Cancer Treatment Hospital | Avni Hospital",

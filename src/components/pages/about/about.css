@@ -48,9 +48,9 @@
 .hero_btn_solid {
   display: inline-flex;
   align-items: center;
-  background: #006D5B;
+  background: #09347A;
   color: #fff;
-  border: 2px solid #006D5B;
+  border: 2px solid #09347A;
   border-radius: 8px;
   padding: 12px 28px;
   font-size: 14px;
@@ -88,7 +88,7 @@
 .section_header_tag {
   display: inline-block;
   background: #E4F1EF;
-  color: #006D5B;
+  color: #09347A;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -100,7 +100,7 @@
 .section_divider {
   width: 56px;
   height: 4px;
-  background: linear-gradient(90deg, #006D5B, #009688);
+  background: linear-gradient(90deg, #09347A, #F57C00);
   border-radius: 2px;
   margin: 12px auto 0;
 }
@@ -120,7 +120,7 @@
 .legacy_text {
   font-size: 14px;
   line-height: 1.85;
-  color: #006D5B;
+  color: #09347A;
 }
 .legacy_stats_row {
   display: flex;
@@ -136,7 +136,7 @@
 .legacy_stat_num {
   font-size: 32px;
   font-weight: 800;
-  color: #006D5B;
+  color: #09347A;
   line-height: 1;
 }
 .legacy_stat_lbl {
@@ -256,14 +256,14 @@
   width: 32px;
   height: 32px;
   background: #E4F1EF;
-  color: #006D5B;
+  color: #09347A;
   border-radius: 50%;
   font-size: 14px;
   font-weight: 700;
   transition: all 0.3s ease;
 }
 .mv_card_new:hover .mv_arrow {
-  background: #006D5B;
+  background: #09347A;
   color: #fff;
 }
 
@@ -325,7 +325,7 @@
 .founder_h_subtitle {
   font-size: 12px;
   font-weight: 700;
-  color: #006D5B;
+  color: #09347A;
   margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -339,7 +339,7 @@
 .founder_h_link {
   font-size: 13px;
   font-weight: 700;
-  color: #006D5B;
+  color: #09347A;
   background: none;
   border: none;
   padding: 0;
@@ -375,7 +375,7 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #006D5B, #009688);
+  background: linear-gradient(135deg, #09347A, #F57C00);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -423,7 +423,7 @@
   top: 12px;
   left: 12px;
   background: #fff;
-  color: #006D5B;
+  color: #09347A;
   font-size: 10px;
   font-weight: 700;
   padding: 4px 10px;
@@ -434,7 +434,7 @@
   position: absolute;
   top: 12px;
   right: 12px;
-  background: linear-gradient(135deg, #006D5B, #009688);
+  background: linear-gradient(135deg, #09347A, #F57C00);
   color: #fff;
   font-size: 10px;
   font-weight: 700;
@@ -446,7 +446,7 @@
 }
 .specialist_body .read_more_link {
   font-size: 12px;
-  color: #006D5B;
+  color: #09347A;
   font-weight: 700;
   text-decoration: none;
   display: inline-flex;
@@ -462,7 +462,7 @@
 
 /* ---- Nursing Section ---- */
 .nursing_section {
-  background: linear-gradient(135deg, #004D40 0%, #006D5B 100%);
+  background: linear-gradient(135deg, #004D40 0%, #09347A 100%);
   padding: 80px 0;
   position: relative;
   overflow: hidden;
@@ -537,7 +537,7 @@
   transition: all 0.3s ease;
 }
 .family_card:hover .family_icon {
-  background: linear-gradient(135deg, #006D5B, #009688);
+  background: linear-gradient(135deg, #09347A, #F57C00);
   color: #fff;
 }
 
@@ -721,15 +721,15 @@
 }
 .staff_tab_btn.active,
 .staff_tab_btn:hover {
-  background: #006D5B;
+  background: #09347A;
   color: #fff;
-  border-color: #006D5B;
+  border-color: #09347A;
   box-shadow: 0 4px 14px rgba(0,109,91,0.2);
 }
 
 /* ---- Misc ---- */
 .green_tag {
-  color: #006D5B;
+  color: #09347A;
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;

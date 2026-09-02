@@ -4,7 +4,7 @@
 
 /* ---- Color Palette ---- */
 :root {
-  --ins-primary: #006D5B; /* Dark green */
+  --ins-primary: #09347A; /* Dark green */
   --ins-light-green: #E4F1EF; /* Very light green background */
   --ins-text-dark: #1a2e2b;
   --ins-text-light: #6c757d;
@@ -44,7 +44,7 @@
 .ins_hero_badge {
   display: inline-block;
   background: #E4F1EF;
-  color: #006D5B;
+  color: #09347A;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -56,7 +56,7 @@
 .ins_hero_h1 {
   font-size: clamp(36px, 4vw, 52px);
   font-weight: 800;
-  color: #006D5B;
+  color: #09347A;
   line-height: 1.15;
   margin-bottom: 20px;
 }
@@ -71,13 +71,13 @@
   gap: 16px;
 }
 .ins_btn_solid {
-  background: #006D5B;
+  background: #09347A;
   color: #fff;
   padding: 12px 28px;
   border-radius: 30px;
   font-weight: 700;
   font-size: 14px;
-  border: 2px solid #006D5B;
+  border: 2px solid #09347A;
   transition: all 0.3s;
   cursor: pointer;
 }
@@ -87,17 +87,17 @@
 }
 .ins_btn_outline {
   background: transparent;
-  color: #006D5B;
+  color: #09347A;
   padding: 12px 28px;
   border-radius: 30px;
   font-weight: 700;
   font-size: 14px;
-  border: 2px solid #006D5B;
+  border: 2px solid #09347A;
   transition: all 0.3s;
   cursor: pointer;
 }
 .ins_btn_outline:hover {
-  background: #006D5B;
+  background: #09347A;
   color: #fff;
 }
 
@@ -113,7 +113,7 @@
 .ins_section_title {
   font-size: 28px;
   font-weight: 800;
-  color: #006D5B;
+  color: #09347A;
   margin-bottom: 10px;
   text-align: center;
 }
@@ -134,7 +134,7 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: #006D5B;
+  background: #09347A;
   color: #fff;
   display: flex;
   align-items: center;
@@ -146,7 +146,7 @@
 .ins_journey_title {
   font-size: 16px;
   font-weight: 700;
-  color: #006D5B;
+  color: #09347A;
   margin-bottom: 12px;
 }
 .ins_journey_desc {
@@ -179,7 +179,7 @@
   text-align: center;
   font-size: 13px;
   font-weight: 700;
-  color: #006D5B;
+  color: #09347A;
   transition: all 0.3s;
   box-shadow: 0 2px 10px rgba(0,0,0,0.02);
   height: 100%;
@@ -225,7 +225,7 @@
   border: 1px solid #E4F1EF;
 }
 .ins_doc_icon {
-  color: #006D5B;
+  color: #09347A;
   font-size: 20px;
 }
 .ins_doc_title {
@@ -241,7 +241,7 @@
 }
 
 .ins_helpdesk_card {
-  background: #006D5B;
+  background: #09347A;
   border-radius: 16px;
   padding: 40px;
   color: #fff;
@@ -340,7 +340,7 @@
   border: none;
   font-weight: 700;
   font-size: 15px;
-  color: #006D5B;
+  color: #09347A;
   cursor: pointer;
   text-align: left;
 }

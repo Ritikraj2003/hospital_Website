@@ -106,7 +106,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
         {/* Header bar */}
         <div 
           className="p-3 text-white d-flex justify-content-between align-items-center"
-          style={{ backgroundColor: "#006D5B" }}
+          style={{ backgroundColor: "#09347A" }}
         >
           <h5 className="m-0 fw-bold">📅 Schedule Appointment</h5>
           <button 
@@ -241,8 +241,8 @@ export default function AppointmentModal({ isOpen, onClose }) {
                 disabled={loading}
                 className="btn btn-primary w-100 py-3 text-white fw-bold shadow-sm mt-3"
                 style={{ 
-                  backgroundColor: "#006D5B", 
-                  borderColor: "#006D5B",
+                  backgroundColor: "#09347A", 
+                  borderColor: "#09347A",
                   opacity: loading ? 0.75 : 1,
                   cursor: loading ? "not-allowed" : "pointer"
                 }}
@@ -254,7 +254,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
             <div className="text-center py-4">
               <div 
                 className="d-inline-flex align-items-center justify-content-center rounded-circle text-white mb-3"
-                style={{ backgroundColor: "#006D5B", width: "70px", height: "70px", fontSize: "36px" }}
+                style={{ backgroundColor: "#09347A", width: "70px", height: "70px", fontSize: "36px" }}
               >
                 ✓
               </div>
@@ -276,7 +276,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
               <button 
                 onClick={() => { setSubmitted(false); onClose(); }} 
                 className="btn btn-primary px-4 py-2 text-white fw-bold"
-                style={{ backgroundColor: "#006D5B", borderColor: "#006D5B" }}
+                style={{ backgroundColor: "#09347A", borderColor: "#09347A" }}
               >
                 Close Window
               </button>

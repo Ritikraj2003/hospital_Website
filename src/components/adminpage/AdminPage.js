@@ -222,7 +222,7 @@ export default function AdminPage() {
             >
               🔄 Refresh
             </button>
-            <Link href="/" className="btn btn-outline-primary py-2 shadow-sm text-decoration-none" style={{ color: "#006D5B", borderColor: "#006D5B" }}>
+            <Link href="/" className="btn btn-outline-primary py-2 shadow-sm text-decoration-none" style={{ color: "#09347A", borderColor: "#09347A" }}>
               🌐 View Live Site
             </Link>
           </div>
@@ -232,7 +232,7 @@ export default function AdminPage() {
         <div className="p-4 overflow-auto flex-grow-1">
           {loading ? (
             <div className="d-flex flex-column align-items-center justify-content-center py-5">
-              <div className="spinner-border text-teal mb-3" role="status" style={{ color: "#006D5B" }}></div>
+              <div className="spinner-border text-teal mb-3" role="status" style={{ color: "#09347A" }}></div>
               <span className="text-muted">Loading data...</span>
             </div>
           ) : (() => {

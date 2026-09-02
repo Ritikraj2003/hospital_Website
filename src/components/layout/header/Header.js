@@ -74,7 +74,7 @@ export default function Header({ openAppointmentModal }) {
             <button
               onClick={openAppointmentModal}
               className="btn btn-sm btn-light text-primary-color ms-2 fw-bold shadow-sm"
-              style={{ fontSize: "12px", border: "1px solid #006D5B", borderRadius: "4px", padding: "4px 10px" }}
+              style={{ fontSize: "12px", border: "1px solid #09347A", borderRadius: "4px", padding: "4px 10px" }}
             >
               Book Appointment
             </button>
@@ -86,7 +86,7 @@ export default function Header({ openAppointmentModal }) {
       <div className="header_below_blk d-none d-lg-block hidden lg:block shadow-sm">
         <div className="container d-flex justify-content-between align-items-center py-2">
           <a href="#home-page" className="d-flex align-items-center">
-            <img src="/images/logo.png" alt="Avni Hospital Logo" className="soflo-logo-image" style={{ height: "45px" }} />
+            <img src="/images/Avni_Hospital_Logo.png" alt="Avni Hospital Logo" className="soflo-logo-image" style={{ height: "45px", transform: "scale(1.5)", transformOrigin: "left center" }} />
           </a>
           <div>
             <Nav />
@@ -97,11 +97,11 @@ export default function Header({ openAppointmentModal }) {
       {/* Mobile Header (Brand Bar) */}
       <div className="header_below_blk d-lg-none lg:hidden border-bottom">
         <div className="container d-flex justify-content-between align-items-center py-2">
-          <img src="/images/logo.png" alt="Avni Hospital Logo" style={{ height: "35px" }} />
+          <img src="/images/Avni_Hospital_Logo.png" alt="Avni Hospital Logo" style={{ height: "30px", transform: "scale(1.4)", transformOrigin: "left center" }} />
           <button
             onClick={() => setSidebarOpen(true)}
             className="btn btn-outline-primary border-0"
-            style={{ color: "#006D5B" }}
+            style={{ color: "#09347A" }}
           >
             ☰ Menu
           </button>
@@ -121,7 +121,7 @@ export default function Header({ openAppointmentModal }) {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
-              <img src="/images/logo.png" alt="Avni Hospital Logo" style={{ height: "30px" }} />
+              <img src="/images/Avni_Hospital_Logo.png" alt="Avni Hospital Logo" style={{ height: "30px", transform: "scale(1.4)", transformOrigin: "left center" }} />
               <button
                 onClick={() => setSidebarOpen(false)}
                 className="btn btn-close"
@@ -135,7 +135,7 @@ export default function Header({ openAppointmentModal }) {
               <button
                 onClick={() => { setSidebarOpen(false); openAppointmentModal(); }}
                 className="btn btn-primary w-100 py-2 text-white fw-bold"
-                style={{ backgroundColor: "#006D5B", borderColor: "#006D5B" }}
+                style={{ backgroundColor: "#09347A", borderColor: "#09347A" }}
               >
                 Book Appointment
               </button>

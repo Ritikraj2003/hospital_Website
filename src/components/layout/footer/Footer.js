@@ -12,8 +12,8 @@ export default function Footer({ openAppointmentModal }) {
           <div className="col-lg-4 col-md-6 mb-4">
             <div className="d-flex flex-column text-md-start text-center align-items-center align-items-md-start">
               <img 
-                src="/images/logo.png" 
-                alt="Avni Hospital Logo White" 
+                src="/images/Avni_Hospital_Logo.png" 
+                alt="Avni Hospital Logo" 
                 className="mb_18 img_wd_ht" 
                 style={{ width: "120px", height: "auto" }}
               />

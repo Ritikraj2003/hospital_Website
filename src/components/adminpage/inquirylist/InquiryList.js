@@ -88,7 +88,7 @@ export default function InquiryList({ bookings, handleDeleteBooking }) {
                       <div className="text-muted small" style={{ fontSize: "11px" }}>{inq.email}</div>
                     </td>
                     <td>
-                      <span className="badge px-2.5 py-1.5 rounded-pill text-xs fw-bold" style={{ backgroundColor: "#006D5B", color: "#fff" }}>
+                      <span className="badge px-2.5 py-1.5 rounded-pill text-xs fw-bold" style={{ backgroundColor: "#09347A", color: "#fff" }}>
                         {inq.department}
                       </span>
                     </td>

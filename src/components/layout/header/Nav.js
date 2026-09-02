@@ -7,16 +7,29 @@ export default function Nav({ onItemClick, isMobile = false }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const treatments = [
-    { id: "general-medicine", title: "General Medicine" },
-    { id: "cardiology", title: "Cardiology" },
-    { id: "neuro-medicine", title: "Neuro Medicine" },
-    { id: "orthopedic", title: "Orthopedic" },
-    { id: "pediatrics", title: "Pediatrics" },
-    { id: "ent", title: "ENT" },
-    { id: "psychiatry", title: "Psychiatry" },
-    { id: "dental", title: "Dental" },
-    { id: "plastic-surgery", title: "Plastic Surgery" },
-    { id: "oncology", title: "Oncology" }
+    { id: "general-physician", title: "General Physician", icon: "🩺" },
+    { id: "neurologist-physician", title: "Neurologist", icon: "🧠" },
+    { id: "urologist", title: "Urologist", icon: "💧" },
+    { id: "gynecologist", title: "Gynecologist", icon: "👩‍⚕️" },
+    { id: "cardiologist", title: "Cardiologist", icon: "❤️" },
+    { id: "orthopaedics", title: "Orthopaedics", icon: "🦴" },
+    { id: "general-surgeon", title: "General Surgeon", icon: "⚕️" },
+    { id: "paediatric-surgeon", title: "Paediatric Surgeon", icon: "🧸" },
+    { id: "anaesthesia", title: "Anaesthesia", icon: "💉" },
+    { id: "dermatologist", title: "Skin & VD", icon: "🧴" },
+    { id: "cosmetic-surgery", title: "Cosmetic Surg.", icon: "✨" },
+    { id: "general-medicine", title: "General Medicine", icon: "💊" },
+    { id: "paediatrician", title: "Paediatrician", icon: "👶" },
+    { id: "plastic-surgeon", title: "Plastic Surgeon", icon: "🎭" },
+    { id: "psychiatrist", title: "Psychiatrist", icon: "🛋️" },
+    { id: "pulmonologist", title: "Pulmonologist", icon: "🫁" },
+    { id: "gastrologist", title: "Gastrologist", icon: "🔬" },
+    { id: "neuro-surgeon", title: "Neuro Surgeon", icon: "⚕️" },
+    { id: "oncologist-surgeon", title: "Oncologist Surg.", icon: "🎗️" },
+    { id: "oncologist", title: "Oncologist", icon: "🎗️" },
+    { id: "nephrologist", title: "Nephrologist", icon: "🧪" },
+    { id: "ent", title: "ENT", icon: "👂" },
+    { id: "junior-resident", title: "Junior Resident", icon: "🎓" }
   ];
 
   const navItems = [
@@ -45,7 +58,10 @@ export default function Nav({ onItemClick, isMobile = false }) {
                   <span>{dropdownOpen ? "▲" : "▼"}</span>
                 </div>
                 {dropdownOpen && (
-                  <ul className="list-unstyled ms-3 mt-2 d-flex flex-column gap-2">
+                  <ul 
+                    className="list-unstyled ms-3 mt-2 d-flex flex-column gap-2"
+                    style={{ maxHeight: "300px", overflowY: "auto", paddingRight: "10px" }}
+                  >
                     {treatments.map((t) => (
                       <li key={t.id}>
                         <Link
@@ -118,32 +134,39 @@ export default function Nav({ onItemClick, isMobile = false }) {
                     top: "100%", 
                     left: "50%", 
                     transform: "translateX(-50%)", 
-                    width: "800px", 
+                    width: "1000px", 
+                    maxWidth: "95vw",
                     zIndex: 1000,
                     border: "1px solid #eee"
                   }}
                 >
-                  <div className="row g-4">
+                  <div className="row g-3">
                     {treatments.map((t) => (
-                      <div className="col-4" key={t.id}>
+                      <div className="col-lg-3 col-md-4 col-6" key={t.id}>
                         <Link 
                           href={`/services/${t.id}`}
-                          className="d-flex align-items-center gap-2 text-decoration-none text-dark hover-primary"
+                          className="d-flex align-items-center gap-3 text-decoration-none text-dark"
                           onClick={() => setDropdownOpen(false)}
+                          style={{ transition: "color 0.2s" }}
+                          onMouseOver={(e) => e.currentTarget.style.color = "#F57C00"}
+                          onMouseOut={(e) => e.currentTarget.style.color = "#212529"}
                         >
-                          <span className="text-primary-color bg-light rounded-circle p-2 d-flex align-items-center justify-content-center" style={{ width: "32px", height: "32px" }}>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                          <span className="rounded-circle d-flex align-items-center justify-content-center shadow-sm" style={{ width: "32px", height: "32px", background: "#f8f9fa", fontSize: "14px", border: "1px solid #e9ecef" }}>
+                            {t.icon}
                           </span>
-                          <span className="fs_14 fw_med">{t.title}</span>
+                          <span className="fs_13 fw_med">{t.title}</span>
                         </Link>
                       </div>
                     ))}
                   </div>
-                  <div className="text-center mt-4 pt-3 border-top">
+                  <div className="text-center mt-4 pt-4 border-top">
                     <Link 
                       href="/services" 
-                      className="btn btn-sm btn-light text-primary-color fw-bold px-4 rounded-pill"
+                      className="btn btn-sm text-white fw-bold px-4 rounded-pill shadow-sm"
                       onClick={() => setDropdownOpen(false)}
+                      style={{ background: "#F57C00", border: "1px solid #F57C00", fontSize: "14px", padding: "8px 24px", transition: "all 0.3s" }}
+                      onMouseOver={(e) => { e.target.style.background = "#d66c00"; e.target.style.borderColor = "#d66c00"; }}
+                      onMouseOut={(e) => { e.target.style.background = "#F57C00"; e.target.style.borderColor = "#F57C00"; }}
                     >
                       VIEW ALL TREATMENTS →
                     </Link>

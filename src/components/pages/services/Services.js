@@ -30,7 +30,7 @@ export default function ServicesPage({ serviceId }) {
             <div className="bg-white p-4 p-md-5 rounded-4 shadow-sm border h-100">
               
               {/* H1 Title */}
-              <h1 className="fw-bold text-dark mb-4 border-bottom pb-3" style={{ color: "#006D5B", fontSize: "2rem" }}>
+              <h1 className="fw-bold text-dark mb-4 border-bottom pb-3" style={{ color: "#09347A", fontSize: "2rem" }}>
                 {service.h1}
               </h1>
               
@@ -75,7 +75,7 @@ export default function ServicesPage({ serviceId }) {
                 {service.treatments.map((treatment, idx) => (
                   <div className="col-md-6" key={idx}>
                     <div className="p-4 bg-light rounded-3 h-100 border">
-                      <h3 className="fw-bold fs_18 mb-3" style={{ color: "#006D5B" }}>{treatment.title}</h3>
+                      <h3 className="fw-bold fs_18 mb-3" style={{ color: "#09347A" }}>{treatment.title}</h3>
                       <p className="text-muted mb-0">{treatment.desc}</p>
                     </div>
                   </div>
@@ -87,7 +87,7 @@ export default function ServicesPage({ serviceId }) {
               <ul className="list-unstyled mb-5">
                 {service.technologies.map((tech, i) => (
                   <li key={i} className="mb-3 d-flex align-items-center gap-3 p-3 bg-light rounded-3 border">
-                    <div className="bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm" style={{ width: "35px", height: "35px", minWidth: "35px", color: "#006D5B" }}>
+                    <div className="bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm" style={{ width: "35px", height: "35px", minWidth: "35px", color: "#09347A" }}>
                       ✦
                     </div>
                     <span className="fw-medium text-dark">{tech}</span>
@@ -171,14 +171,14 @@ export default function ServicesPage({ serviceId }) {
               </div>
 
               {/* Conclusion Paragraph */}
-              <div className="p-4 bg-light border-start border-4 rounded-end mb-4" style={{ borderColor: "#006D5B" }}>
+              <div className="p-4 bg-light border-start border-4 rounded-end mb-4" style={{ borderColor: "#09347A" }}>
                 <p className="mb-0 fw-medium text-dark fst-italic">
                   {service.conclusion}
                 </p>
               </div>
 
               {/* CTA */}
-              <div className="text-center mt-5 p-4 rounded-4 text-white shadow-sm" style={{ backgroundColor: "#006D5B" }}>
+              <div className="text-center mt-5 p-4 rounded-4 text-white shadow-sm" style={{ backgroundColor: "#09347A" }}>
                 <h3 className="fw-bold mb-3 fs_24">{service.cta}</h3>
                 <p className="mb-4 text-white-50">Don't wait. Experience world-class healthcare at the <strong>best hospital in Patna, Bihar</strong>. We are proud to be the <strong>top service provider hospital in Patna</strong>.</p>
                 <a href="tel:1066" className="btn btn-warning btn-lg fw-bold px-5 py-3 rounded-pill shadow text-dark">

@@ -172,8 +172,8 @@ export default function AboutPage() {
             </div>
             <div className="row g-4 justify-content-center">
               {[
-                { name: "Dr. Harish Prasad B.R.", subtitle: "Chief Laparoscopic Surgeon", tag: "Director", tagColor: "#006D5B", img: "/images/smiling-young-male-doctor-wearing-stethoscope-medical-gown-isolated-white-wall1.svg", desc: "A visionary leader with decades of experience in minimally invasive surgeries, committed to bringing global medical standards to Patna." },
-                { name: "Dr. Manohar CV", subtitle: "Chief of Cardiology", tag: "Co-Founder", tagColor: "#009688", img: "/images/doctor-preparing-consult1.svg", desc: "Leading our cardiac care unit with a focus on preventive cardiology and advanced interventional techniques for heart health." }
+                { name: "Dr. Harish Prasad B.R.", subtitle: "Chief Laparoscopic Surgeon", tag: "Director", tagColor: "#09347A", img: "/images/smiling-young-male-doctor-wearing-stethoscope-medical-gown-isolated-white-wall1.svg", desc: "A visionary leader with decades of experience in minimally invasive surgeries, committed to bringing global medical standards to Patna." },
+                { name: "Dr. Manohar CV", subtitle: "Chief of Cardiology", tag: "Co-Founder", tagColor: "#F57C00", img: "/images/doctor-preparing-consult1.svg", desc: "Leading our cardiac care unit with a focus on preventive cardiology and advanced interventional techniques for heart health." }
               ].map((f) => (
                 <div key={f.name} className="col-lg-5 col-md-6">
                   <div className="founder_h_card">
@@ -252,7 +252,7 @@ export default function AboutPage() {
                     </div>
                     <div className="specialist_body">
                       <h3 className="fw-bold text-dark mb-1" style={{ fontSize: "15px" }}>{doc.name}</h3>
-                      <p className="mb-2" style={{ fontSize: "12px", color: "#006D5B", fontWeight: 600 }}>{doc.role}</p>
+                      <p className="mb-2" style={{ fontSize: "12px", color: "#09347A", fontWeight: 600 }}>{doc.role}</p>
                       {doc.education && <p className="text-muted mb-3" style={{ fontSize: "12px" }}>{doc.education}</p>}
                       <div className="d-flex align-items-center justify-content-between">
                         <button onClick={handleOpenModal} className="read_more_link">Book Consult →</button>
@@ -333,7 +333,7 @@ export default function AboutPage() {
                 OUR VALUES
               </span>
               <h2 className="fw-bold text-dark mt-2" style={{ fontSize: "clamp(28px, 3.5vw, 42px)" }}>
-                What We <span style={{ color: "#006D5B" }}>Stand For</span>
+                What We <span style={{ color: "#09347A" }}>Stand For</span>
               </h2>
               <p className="text-muted mt-3 mx-auto" style={{ maxWidth: "600px", fontSize: "15px", lineHeight: "1.7" }}>
                 Our core values define who we are, how we care, and the standard we hold ourselves to every single day.

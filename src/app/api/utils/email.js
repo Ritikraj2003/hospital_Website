@@ -21,12 +21,12 @@ export async function sendAppointmentEmail(appointment) {
     subject: `New Appointment Booking - ${name}`,
     html: `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-        <div style="background-color: #006D5B; color: white; padding: 20px; text-align: center;">
+        <div style="background-color: #09347A; color: white; padding: 20px; text-align: center;">
           <h2 style="margin: 0; font-size: 24px; font-weight: bold;">New Appointment</h2>
           <p style="margin: 5px 0 0 0; opacity: 0.9;">Avni Hospital Booking System</p>
         </div>
         <div style="padding: 24px; background-color: #ffffff;">
-          <h3 style="color: #333333; margin-top: 0; border-bottom: 2px solid #006D5B; padding-bottom: 8px;">Booking Details</h3>
+          <h3 style="color: #333333; margin-top: 0; border-bottom: 2px solid #09347A; padding-bottom: 8px;">Booking Details</h3>
           <table cellpadding="8" style="width: 100%; border-collapse: collapse; text-align: left;">
             <tr>
               <td style="width: 35%; font-weight: bold; color: #555555; border-bottom: 1px solid #f0f0f0; padding: 10px 0;">Patient Name:</td>
@@ -82,7 +82,7 @@ export async function sendAppointmentEmail(appointment) {
         subject: `Appointment Confirmed - Avni Hospital`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-            <div style="background-color: #006D5B; color: white; padding: 25px; text-align: center;">
+            <div style="background-color: #09347A; color: white; padding: 25px; text-align: center;">
               <h1 style="margin: 0; font-size: 26px; font-weight: bold;">Booking Confirmed!</h1>
               <p style="margin: 5px 0 0 0; opacity: 0.9;">Thank you for choosing Avni Hospital</p>
             </div>
@@ -94,7 +94,7 @@ export async function sendAppointmentEmail(appointment) {
                 We are pleased to inform you that your appointment at Avni Hospital has been successfully scheduled. Below are the details of your visit:
               </p>
               
-              <div style="background-color: #f6faf9; border-left: 4px solid #006D5B; padding: 15px; margin: 20px 0; border-radius: 4px;">
+              <div style="background-color: #f6faf9; border-left: 4px solid #09347A; padding: 15px; margin: 20px 0; border-radius: 4px;">
                 <table cellpadding="6" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;">
                   <tr>
                     <td style="width: 35%; font-weight: bold; color: #555555; padding: 6px 0;">Doctor:</td>
@@ -123,7 +123,7 @@ export async function sendAppointmentEmail(appointment) {
               </ul>
 
               <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #eeeeee; text-align: center;">
-                <p style="margin: 0; font-weight: bold; color: #006D5B; font-size: 14px;">Avni Hospital, Patna</p>
+                <p style="margin: 0; font-weight: bold; color: #09347A; font-size: 14px;">Avni Hospital, Patna</p>
                 <p style="margin: 5px 0 0 0; color: #777777; font-size: 12px;">📞 For support or queries, call us directly.</p>
               </div>
             </div>

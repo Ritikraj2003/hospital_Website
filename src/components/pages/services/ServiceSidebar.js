@@ -10,12 +10,12 @@ export default function ServiceSidebar() {
 
   return (
     <>
-      <div className="rounded-4 p-4 text-white shadow-lg sticky-top mb-4" style={{ top: "100px", backgroundColor: "#006D5B" }}>
+      <div className="rounded-4 p-4 text-white shadow-lg sticky-top mb-4" style={{ top: "100px", backgroundColor: "#09347A" }}>
         <h3 className="fw-bold mb-3 border-bottom border-light pb-2">Emergency Care</h3>
         <p className="mb-4 text-white-50 fs_14">
           For severe medical emergencies in Patna, Avni Hospital provides 24/7 ambulance and trauma care services.
         </p>
-        <a href="tel:1066" className="btn btn-light w-100 fw-bold py-3 mb-3 rounded-3 shadow-sm d-flex align-items-center justify-content-center gap-2 fs_18" style={{ color: "#006D5B" }}>
+        <a href="tel:1066" className="btn btn-light w-100 fw-bold py-3 mb-3 rounded-3 shadow-sm d-flex align-items-center justify-content-center gap-2 fs_18" style={{ color: "#09347A" }}>
           <span>📞</span> Call 1066
         </a>
         <a href="tel:+919931212664" className="btn btn-outline-light w-100 fw-bold py-2 rounded-3 d-flex align-items-center justify-content-center gap-2">
@@ -56,7 +56,7 @@ export default function ServiceSidebar() {
                   href={`/services/${srv.id}`} 
                   className={`d-block p-2 rounded-3 text-decoration-none fw-medium transition-all ${isActive ? 'bg-primary-color text-white' : 'text-muted bg-light'}`}
                   style={{
-                    backgroundColor: isActive ? '#006D5B' : '',
+                    backgroundColor: isActive ? '#09347A' : '',
                   }}
                 >
                   {isActive ? '➔ ' : ''}{srv.title}

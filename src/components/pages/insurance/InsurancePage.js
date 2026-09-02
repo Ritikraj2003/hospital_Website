@@ -147,7 +147,7 @@ export default function InsurancePage() {
                       />
                     ) : null}
                     {/* Fallback icon if image doesn't load or doesn't exist */}
-                    <div className="ins_partner_fallback" style={{ display: partner.logo ? 'none' : 'flex', width: '48px', height: '48px', alignItems: 'center', justifyContent: 'center', background: '#E4F1EF', borderRadius: '50%', color: '#006D5B', marginBottom: '8px' }}>
+                    <div className="ins_partner_fallback" style={{ display: partner.logo ? 'none' : 'flex', width: '48px', height: '48px', alignItems: 'center', justifyContent: 'center', background: '#E4F1EF', borderRadius: '50%', color: '#09347A', marginBottom: '8px' }}>
                       <span className="material-symbols-outlined" style={{ fontSize: '24px' }}>
                         {partner.name === "+ 20 More" ? "add" : "domain"}
                       </span>
@@ -169,7 +169,7 @@ export default function InsurancePage() {
               <div className="col-lg-7">
                 <div className="ins_checklist_card">
                   <h3 className="ins_checklist_title">
-                    <span className="material-symbols-outlined" style={{ color: '#006D5B' }}>description</span>
+                    <span className="material-symbols-outlined" style={{ color: '#09347A' }}>description</span>
                     Essential Checklist
                   </h3>
                   <p className="ins_checklist_sub">

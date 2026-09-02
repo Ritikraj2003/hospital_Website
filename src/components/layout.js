@@ -10,18 +10,18 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: '/images/logo_fev.png', sizes: 'any' },
-      { url: '/images/logo_fev.png', sizes: '48x48', type: 'image/png' },
-      { url: '/images/logo_fev.png', sizes: '96x96', type: 'image/png' },
-      { url: '/images/logo_fev.png', sizes: '144x144', type: 'image/png' },
+      { url: '/images/Avni_Hospital_Logo.png', sizes: 'any' },
+      { url: '/images/Avni_Hospital_Logo.png', sizes: '48x48', type: 'image/png' },
+      { url: '/images/Avni_Hospital_Logo.png', sizes: '96x96', type: 'image/png' },
+      { url: '/images/Avni_Hospital_Logo.png', sizes: '144x144', type: 'image/png' },
     ],
     apple: [
-      { url: '/images/logo_fev.png', sizes: '180x180', type: 'image/png' },
+      { url: '/images/Avni_Hospital_Logo.png', sizes: '180x180', type: 'image/png' },
     ],
     other: [
       {
         rel: 'apple-touch-icon',
-        url: '/images/logo_fev.png',
+        url: '/images/Avni_Hospital_Logo.png',
       },
     ],
   },
@@ -93,7 +93,7 @@ const jsonLd = {
   "@type": ["Hospital", "MedicalOrganization", "LocalBusiness"],
   "name": "Avni Hospital",
   "url": "https://www.avnihospital.in",
-  "logo": "https://www.avnihospital.in/images/logo.png",
+  "logo": "https://www.avnihospital.in/images/Avni_Hospital_Logo.png",
   "image": "https://www.avnihospital.in/images/image(3).svg",
   "description": "Avni Hospital is a premier multispeciality hospital in Patna, Bihar. Recognized as the best hospital in Patna for heart treatment, surgery, pregnancy care, orthopedics, neurology, urology, and 24x7 emergency critical care.",
   "address": {

@@ -38,7 +38,7 @@ export default function ServiceHero({ service }) {
             <div className="row align-items-center g-5">
               {/* Left Text */}
               <div className="col-lg-7 text-white">
-                <span className="badge bg-primary-color mb-3 px-3 py-2 fs_14 rounded-pill shadow-sm" style={{ backgroundColor: "#006D5B" }}>
+                <span className="badge bg-primary-color mb-3 px-3 py-2 fs_14 rounded-pill shadow-sm" style={{ backgroundColor: "#09347A" }}>
                   Avni Hospital, Patna
                 </span>
                 <div className="fw-bold display-4 mb-3" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>
@@ -50,7 +50,7 @@ export default function ServiceHero({ service }) {
                 <button
                   onClick={() => setModalOpen(true)}
                   className="btn btn-lg btn-light fw-bold px-4 py-2 rounded-pill shadow"
-                  style={{ color: "#006D5B" }}
+                  style={{ color: "#09347A" }}
                 >
                   Book Appointment
                 </button>
@@ -58,10 +58,10 @@ export default function ServiceHero({ service }) {
 
               {/* Right Insurance Card */}
               <div className="col-lg-5 mt-5 mt-lg-0">
-                <div style={{ background: "rgba(255, 255, 255, 0.95)", backdropFilter: "blur(10px)", padding: "32px", borderRadius: "16px", boxShadow: "0 12px 40px rgba(0, 0, 0, 0.3)", maxWidth: "420px", marginLeft: "auto", borderTop: "5px solid #005344" }}>
+                <div style={{ background: "rgba(255, 255, 255, 0.95)", backdropFilter: "blur(10px)", padding: "32px", borderRadius: "16px", boxShadow: "0 12px 40px rgba(0, 0, 0, 0.3)", maxWidth: "420px", marginLeft: "auto", borderTop: "5px solid #0A3D91" }}>
                   <div className="d-flex align-items-center gap-2 mb-3">
                     <span style={{ fontSize: "28px" }}>🛡️</span>
-                    <h3 style={{ fontSize: "22px", fontWeight: "800", color: "#005344", margin: 0 }}>Cashless Insurance</h3>
+                    <h3 style={{ fontSize: "22px", fontWeight: "800", color: "#0A3D91", margin: 0 }}>Cashless Insurance</h3>
                   </div>
                   <p style={{ fontSize: "15px", color: "#404947", marginBottom: "20px", lineHeight: "1.6" }}>
                     Focus on your recovery while we handle the paperwork. Avni Hospital is empaneled with all major health insurance providers (TPAs) for a seamless, 100% cashless hospitalization experience.
@@ -74,7 +74,7 @@ export default function ServiceHero({ service }) {
                     <span className="badge bg-light text-dark border p-2">+ 20 More</span>
                   </div>
 
-                  <a href="/insurance-cashless-facility" className="btn w-100 fw-bold p-3" style={{ backgroundColor: "#005344", color: "#fff", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                  <a href="/insurance-cashless-facility" className="btn w-100 fw-bold p-3" style={{ backgroundColor: "#0A3D91", color: "#fff", textTransform: "uppercase", letterSpacing: "0.5px" }}>
                     View All Insurance Partners
                   </a>
                 </div>

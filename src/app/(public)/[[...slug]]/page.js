@@ -24,6 +24,10 @@ const routeMetadata = {
   "/insurance-cashless-facility": {
     title: "Best Insurance Hospital in Patna | Cashless TPA Facility | Avni Hospital",
     description: "Looking for the best insurance hospital in Patna? Avni Hospital, one of the top 10 hospitals in Patna, offers 24/7 cashless treatment and fast TPA claim support.",
+  },
+  "/doctors": {
+    title: "Our Specialist Doctors | Avni Hospital Patna",
+    description: "Meet the team of 60+ highly specialized doctors at Avni Hospital, providing expert care across Cardiology, Neurology, Orthopedics, Gynecology and more.",
   }
 };
 
@@ -168,7 +172,7 @@ export default async function Page({ params }) {
       "@type": "MedicalClinic",
       "name": `Avni Hospital - ${service.title} Department`,
       "url": `https://www.avnihospital.in/${serviceId}`,
-      "logo": "https://www.avnihospital.in/images/logo.png",
+      "logo": "https://www.avnihospital.in/images/Avni_Hospital_Logo.png",
       "image": `https://www.avnihospital.in${service.images?.[0] || '/images/default.jpg'}`,
       "description": service.description,
       "address": {

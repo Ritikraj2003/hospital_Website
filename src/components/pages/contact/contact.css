@@ -8,7 +8,7 @@
   min-height: 360px;
   display: flex;
   align-items: center;
-  background: #F2F9F8;
+  background: #F4F6F9;
   overflow: hidden;
 }
 .contact_hero_bg {
@@ -32,7 +32,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #009688;
+  color: #F57C00;
   display: block;
   margin-bottom: 16px;
 }
@@ -41,7 +41,7 @@
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: #005344;
+  color: #0A3D91;
   margin-bottom: 20px;
 }
 .contact_hero_sub {
@@ -60,14 +60,14 @@
 }
 .emergency_card {
   grid-column: 1 / -1;
-  background: linear-gradient(110deg, #005344 0%, #006D5B 60%, #009688 100%);
+  background: linear-gradient(110deg, #0A3D91 0%, #09347A 60%, #F57C00 100%);
   border-radius: 16px;
   padding: 36px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  box-shadow: 0 16px 48px rgba(0,83,68,0.28);
+  box-shadow: 0 16px 48px rgba(10, 61, 145,0.28);
   flex-wrap: wrap;
 }
 .emergency_left {
@@ -114,7 +114,7 @@
   align-items: center;
   gap: 8px;
   background: #fff;
-  color: #005344;
+  color: #0A3D91;
   border: none;
   border-radius: 999px;
   padding: 14px 28px;
@@ -125,7 +125,7 @@
   transition: all 0.3s ease;
   white-space: nowrap;
 }
-.emrg_btn_solid:hover { background: #E4F1EF; color: #003D30; transform: translateY(-2px); }
+.emrg_btn_solid:hover { background: #E4F1EF; color: #062763; transform: translateY(-2px); }
 .emrg_btn_outline {
   display: inline-flex;
   align-items: center;
@@ -166,13 +166,13 @@
 .info_card_new:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,109,91,0.13); }
 .info_card_icon_new {
   font-size: 32px;
-  color: #005344;
+  color: #0A3D91;
   line-height: 1;
 }
 .info_card_h3 {
   font-size: 20px;
   font-weight: 700;
-  color: #005344;
+  color: #0A3D91;
   margin: 0 0 4px;
 }
 .info_card_p {
@@ -189,7 +189,7 @@
 .form_map_section .form_side_title {
   font-size: 28px;
   font-weight: 700;
-  color: #005344;
+  color: #0A3D91;
   margin-bottom: 8px;
 }
 .form_map_section .form_side_sub {
@@ -213,7 +213,7 @@
 .cf_select,
 .cf_textarea {
   width: 100%;
-  background: #F2F9F8;
+  background: #F4F6F9;
   border: none;
   border-radius: 10px;
   padding: 16px;
@@ -225,7 +225,7 @@
 }
 .cf_input::placeholder, .cf_textarea::placeholder { color: #9fbfba; }
 .cf_input:focus, .cf_select:focus, .cf_textarea:focus {
-  box-shadow: 0 0 0 3px rgba(0, 83, 68, 0.18);
+  box-shadow: 0 0 0 3px rgba(10, 61, 145, 0.18);
 }
 .cf_select {
   appearance: none;
@@ -244,7 +244,7 @@
 }
 @media (max-width: 600px) { .cf_form_row { grid-template-columns: 1fr; } }
 .cf_submit_btn {
-  background: #005344;
+  background: #0A3D91;
   color: #fff;
   border: none;
   border-radius: 999px;
@@ -252,7 +252,7 @@
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 6px 24px rgba(0,83,68,0.25);
+  box-shadow: 0 6px 24px rgba(10, 61, 145,0.25);
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
@@ -260,17 +260,17 @@
   margin-top: 8px;
 }
 .cf_submit_btn:hover {
-  background: #006D5B;
+  background: #09347A;
   transform: scale(1.02);
-  box-shadow: 0 10px 32px rgba(0,83,68,0.3);
+  box-shadow: 0 10px 32px rgba(10, 61, 145,0.3);
 }
 .cf_submit_btn:active { transform: scale(0.97); }
 .cf_success {
   background: #E4F1EF;
-  border: 1px solid #006D5B;
+  border: 1px solid #09347A;
   border-radius: 10px;
   padding: 14px 18px;
-  color: #005344;
+  color: #0A3D91;
   font-size: 14px;
   font-weight: 600;
   margin-top: 16px;
@@ -309,14 +309,14 @@
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 .map_pin_box {
-  background: #005344;
+  background: #0A3D91;
   color: #fff;
   border-radius: 10px;
   padding: 8px;
   font-size: 18px;
   flex-shrink: 0;
 }
-.map_card_title { font-weight: 700; color: #005344; font-size: 15px; margin-bottom: 3px; }
+.map_card_title { font-weight: 700; color: #0A3D91; font-size: 15px; margin-bottom: 3px; }
 .map_card_addr  { font-size: 13px; color: #404947; line-height: 1.5; margin: 0; }
 
 /* ── Social Card ── */
@@ -330,7 +330,7 @@
   gap: 24px;
   flex-wrap: wrap;
 }
-.social_card_title_new { font-size: 20px; font-weight: 700; color: #005344; margin-bottom: 4px; }
+.social_card_title_new { font-size: 20px; font-weight: 700; color: #0A3D91; margin-bottom: 4px; }
 .social_card_sub_new   { font-size: 14px; color: #404947; margin: 0; }
 .social_btns_row { display: flex; gap: 12px; }
 .social_btn_new {
@@ -338,7 +338,7 @@
   height: 48px;
   border-radius: 50%;
   background: #fff;
-  color: #005344;
+  color: #0A3D91;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -348,5 +348,5 @@
   border: none;
   cursor: pointer;
 }
-.social_btn_new:hover { background: #005344; color: #fff; transform: translateY(-2px); }
+.social_btn_new:hover { background: #0A3D91; color: #fff; transform: translateY(-2px); }
 .social_btn_new svg { width: 22px; height: 22px; fill: currentColor; }
