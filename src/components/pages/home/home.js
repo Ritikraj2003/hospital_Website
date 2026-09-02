@@ -300,28 +300,28 @@ function Departments() {
   const [filter, setFilter] = useState("all");
 
   const depts = [
-    { name: "General Physician", icon: "🩺", category: "general" },
-    { name: "Neurology", icon: "🧠", category: "specialty" },
-    { name: "Urology", icon: "💧", category: "specialty" },
-    { name: "Gynecology", icon: "👩‍⚕️", category: "specialty" },
-    { name: "Cardiology", icon: "❤️", category: "specialty" },
-    { name: "Orthopaedics", icon: "🦴", category: "surgery" },
-    { name: "General Surgery", icon: "🏥", category: "surgery" },
-    { name: "Paediatric Surgery", icon: "👶", category: "surgery" },
-    { name: "Anaesthesia", icon: "💉", category: "general" },
-    { name: "Dermatology", icon: "✨", category: "specialty" },
-    { name: "Cosmetic Surgery", icon: "✂️", category: "surgery" },
-    { name: "General Medicine", icon: "💊", category: "general" },
-    { name: "Paediatrics", icon: "🍼", category: "general" },
-    { name: "Plastic Surgery", icon: "🎭", category: "surgery" },
-    { name: "Psychiatry", icon: "🗣️", category: "specialty" },
-    { name: "Pulmonology", icon: "🫁", category: "specialty" },
-    { name: "Gastrology", icon: "🍽️", category: "specialty" },
-    { name: "Neuro Surgery", icon: "🔪", category: "surgery" },
-    { name: "Oncology Surgery", icon: "🎗️", category: "surgery" },
-    { name: "Oncology", icon: "🔬", category: "specialty" },
-    { name: "Nephrology", icon: "🩸", category: "specialty" },
-    { name: "ENT", icon: "👂", category: "specialty" }
+    { name: "General Physician", id: "general-physician", icon: "🩺", category: "general" },
+    { name: "Neurology", id: "neurologist-physician", icon: "🧠", category: "specialty" },
+    { name: "Urology", id: "urologist", icon: "💧", category: "specialty" },
+    { name: "Gynecology", id: "gynecologist", icon: "👩‍⚕️", category: "specialty" },
+    { name: "Cardiology", id: "cardiologist", icon: "❤️", category: "specialty" },
+    { name: "Orthopaedics", id: "orthopaedics", icon: "🦴", category: "surgery" },
+    { name: "General Surgery", id: "general-surgeon", icon: "🏥", category: "surgery" },
+    { name: "Paediatric Surgery", id: "paediatric-surgeon", icon: "👶", category: "surgery" },
+    { name: "Anaesthesia", id: "anaesthesia", icon: "💉", category: "general" },
+    { name: "Dermatology", id: "dermatologist", icon: "✨", category: "specialty" },
+    { name: "Cosmetic Surgery", id: "cosmetic-surgery", icon: "✂️", category: "surgery" },
+    { name: "General Medicine", id: "general-medicine", icon: "💊", category: "general" },
+    { name: "Paediatrics", id: "paediatrician", icon: "🍼", category: "general" },
+    { name: "Plastic Surgery", id: "plastic-surgeon", icon: "🎭", category: "surgery" },
+    { name: "Psychiatry", id: "psychiatrist", icon: "🗣️", category: "specialty" },
+    { name: "Pulmonology", id: "pulmonologist", icon: "🫁", category: "specialty" },
+    { name: "Gastrology", id: "gastrologist", icon: "🍽️", category: "specialty" },
+    { name: "Neuro Surgery", id: "neuro-surgeon", icon: "🔪", category: "surgery" },
+    { name: "Oncology Surgery", id: "oncologist-surgeon", icon: "🎗️", category: "surgery" },
+    { name: "Oncology", id: "oncologist", icon: "🔬", category: "specialty" },
+    { name: "Nephrology", id: "nephrologist", icon: "🩸", category: "specialty" },
+    { name: "ENT", id: "ent", icon: "👂", category: "specialty" }
   ];
 
   const tabs = [
@@ -352,10 +352,10 @@ function Departments() {
         </div>
         <div className="hp_dept_grid">
           {filtered.map((d) => (
-            <div key={d.name} className="hp_dept_card">
+            <Link key={d.name} href={`/services/${d.id}`} className="hp_dept_card text-decoration-none">
               <div className="hp_dept_icon">{d.icon}</div>
               <p className="hp_dept_name">{d.name}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
